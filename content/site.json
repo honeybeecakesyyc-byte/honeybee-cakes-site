@@ -1,14 +1,14 @@
 {
-  "logo": "/assets/uploads/honeybee-logo.png",
-  "hero_image": "/assets/uploads/hero-placeholder.svg",
-  "hero_heading": "Cakes designed to feel as special as the celebration.",
-  "hero_subheading": "Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.",
-  "intro_heading": "Custom cakes, thoughtfully designed for beautiful celebrations.",
-  "intro_copy": "Romantic, design-led cakes with an editorial eye — made to be memorable from the first look to the last slice.",
-  "pricing_intro": "Starting prices are a guide. Final pricing depends on design detail, finish and decoration.",
+  "logo": "/assets/uploads/logos.png",
+  "hero_image": "/assets/uploads/ake.png",
+  "hero_heading": "Cakes designed to feel as special as the celebration",
+  "hero_subheading": "Thoughtfully designed custom cakes, made in small batches for Calgary celebrations",
+  "intro_heading": "Custom cakes, thoughtfully designed for beautiful celebrations",
+  "intro_copy": "Romantic, design-led cakes with an editorial eye",
+  "pricing_intro": "Starting prices are a guide. Final pricing depends on size and complexity of design.",
   "email": "hello@honeybeecakesyyc.ca",
   "location": "Stampede Park · Calgary, AB",
   "instagram_handle": "@honeybeecakesyyc",
   "instagram_url": "https://www.instagram.com/",
-  "youform_embed_url": ""
+  "youform_embed_url": "https://app.youform.com/forms/4guhsx9c"
 }
