@@ -1,0 +1,7 @@
+To preview the site before publishing, the simplest method is to upload the folder to GitHub/Cloudflare Pages.
+
+If Python is installed on your computer, you can also open a terminal in this folder and run:
+
+python -m http.server 8080
+
+Then visit http://localhost:8080 in your browser.

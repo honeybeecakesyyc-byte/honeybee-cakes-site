@@ -1,0 +1,162 @@
+media:
+  - name: site_images
+    label: Site images
+    input: assets/uploads
+    output: /assets/uploads
+    rename: safe
+    categories: [image]
+
+content:
+  - name: site
+    label: Site settings
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: logo
+        label: Logo
+        type: image
+        options:
+          media: site_images
+        description: Upload a replacement logo here if you change it later.
+      - name: hero_image
+        label: Landing page image
+        type: image
+        options:
+          media: site_images
+        description: This is the large first image visitors see.
+      - name: hero_heading
+        label: Hero headline
+        type: string
+      - name: hero_subheading
+        label: Hero subheading
+        type: text
+      - name: intro_heading
+        label: Intro headline
+        type: string
+      - name: intro_copy
+        label: Intro copy
+        type: text
+      - name: pricing_intro
+        label: Price guide note
+        type: text
+      - name: email
+        label: Contact email
+        type: string
+      - name: location
+        label: Pickup location text
+        type: string
+      - name: instagram_handle
+        label: Instagram handle
+        type: string
+      - name: instagram_url
+        label: Instagram URL
+        type: string
+      - name: youform_embed_url
+        label: Youform embed URL
+        type: string
+        description: Paste the public EMBED URL from Youform here, not the editor URL.
+
+  - name: gallery
+    label: Gallery
+    type: file
+    path: content/gallery.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: title
+        label: Cake title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          values: [Vintage, Floral, Minimal, Kids, Wedding, Cupcakes, Other]
+      - name: image
+        label: Photo
+        type: image
+        required: true
+        options:
+          media: site_images
+          rename: safe
+      - name: alt
+        label: Image description
+        type: string
+        description: Short description for accessibility and Google Images.
+
+  - name: flavours
+    label: Flavours
+    type: file
+    path: content/flavours.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: name
+        label: Flavour name
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: tag
+        label: Tag
+        type: select
+        options:
+          values: [Classic, Signature, Seasonal]
+
+  - name: pricing
+    label: Price + size guide
+    type: file
+    path: content/pricing.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: size
+        label: Size label
+        type: string
+      - name: diameter
+        label: Diameter in inches
+        type: number
+      - name: servings
+        label: Approximate servings
+        type: string
+      - name: price
+        label: Starting price
+        type: string
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: content/faq.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "Create {path} via Honey Bee Cakes CMS"
+      update: "Update {path} via Honey Bee Cakes CMS"
+      delete: "Delete {path} via Honey Bee Cakes CMS"
+      rename: "Rename {oldPath} to {newPath} via Honey Bee Cakes CMS"
