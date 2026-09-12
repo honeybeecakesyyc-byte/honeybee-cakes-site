@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Romantic Vintage",
+    "category": "Vintage",
+    "image": "/assets/uploads/gallery-placeholder-1.svg",
+    "alt": "Replace with a Honey Bee Cakes vintage cake photo"
+  },
+  {
+    "title": "Periwinkle Celebration",
+    "category": "Floral",
+    "image": "/assets/uploads/gallery-placeholder-2.svg",
+    "alt": "Replace with a Honey Bee Cakes floral cake photo"
+  },
+  {
+    "title": "Soft Editorial",
+    "category": "Minimal",
+    "image": "/assets/uploads/gallery-placeholder-3.svg",
+    "alt": "Replace with a Honey Bee Cakes minimal cake photo"
+  },
+  {
+    "title": "Modern Vintage",
+    "category": "Vintage",
+    "image": "/assets/uploads/gallery-placeholder-4.svg",
+    "alt": "Replace with a Honey Bee Cakes vintage cake photo"
+  },
+  {
+    "title": "Blush Garden",
+    "category": "Floral",
+    "image": "/assets/uploads/gallery-placeholder-5.svg",
+    "alt": "Replace with a Honey Bee Cakes floral cake photo"
+  },
+  {
+    "title": "Quiet Celebration",
+    "category": "Minimal",
+    "image": "/assets/uploads/gallery-placeholder-6.svg",
+    "alt": "Replace with a Honey Bee Cakes cake photo"
+  }
+]

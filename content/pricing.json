@@ -1,0 +1,8 @@
+[
+  {"size":"4 inch","diameter":4,"servings":"4–6","price":"$55"},
+  {"size":"5 inch","diameter":5,"servings":"6–10","price":"$65"},
+  {"size":"6 inch","diameter":6,"servings":"10–14","price":"$80"},
+  {"size":"7 inch","diameter":7,"servings":"14–18","price":"$95"},
+  {"size":"8 inch","diameter":8,"servings":"20–24","price":"$120"},
+  {"size":"10 inch","diameter":10,"servings":"30–38","price":"$170"}
+]

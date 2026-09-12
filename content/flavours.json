@@ -1,0 +1,12 @@
+[
+  {"name":"Vanilla Bean","description":"Soft vanilla sponge layered with fragrant vanilla buttercream.","tag":"Classic"},
+  {"name":"Strawberry Vanilla","description":"Vanilla sponge with vanilla buttercream and bright strawberry preserve.","tag":"Classic"},
+  {"name":"Strawberry Matcha","description":"Vanilla sponge with velvety matcha buttercream and strawberry preserve.","tag":"Signature"},
+  {"name":"Raspberry Velvet","description":"Red velvet sponge layered with vanilla buttercream and tart raspberry preserve.","tag":"Signature"},
+  {"name":"Almond Raspberry","description":"Delicate almond sponge layered with lemon buttercream and tart raspberry preserve.","tag":"Signature"},
+  {"name":"Caramel Latte","description":"Brown sugar sponge with smooth coffee buttercream and dulce de leche.","tag":"Signature"},
+  {"name":"Snickers","description":"Chocolate sponge with caramel buttercream, caramel-peanut filling and roasted peanut crunch.","tag":"Signature"},
+  {"name":"Chocolate Hazelnut","description":"Chocolate sponge with chocolate-hazelnut buttercream, Nutella and roasted hazelnut crunch.","tag":"Signature"},
+  {"name":"Biscoff Spice","description":"Brown sugar sponge with cinnamon buttercream, Biscoff spread and biscuit crunch.","tag":"Signature"},
+  {"name":"Milk Chocolate","description":"Chocolate sponge layered with silky milk chocolate buttercream.","tag":"Classic"}
+]
