@@ -20,6 +20,16 @@ async function getJSON(path, fallback) {
 function qs(sel) { return document.querySelector(sel); }
 function qsa(sel) { return [...document.querySelectorAll(sel)]; }
 
+// Pages CMS normally writes public image paths beginning with '/'.
+// On a GitHub Pages project site, that leading slash points to the account root
+// instead of this repository. Convert site-owned image paths to repo-relative URLs.
+function assetUrl(value) {
+  if (!value) return '';
+  const v = String(value).trim();
+  if (/^(https?:|data:|blob:)/i.test(v)) return v;
+  return v.replace(/^\/+/, '');
+}
+
 function initMobileNav() {
   const button = qs('.mobile-menu-button');
   const drawer = qs('.mobile-drawer');
@@ -58,9 +68,9 @@ function renderSite(site) {
   if (qs('#intro-heading')) qs('#intro-heading').textContent = site.intro_heading || '';
   if (qs('#intro-copy')) qs('#intro-copy').textContent = site.intro_copy || '';
   if (qs('#pricing-intro')) qs('#pricing-intro').textContent = site.pricing_intro || '';
-  if (site.logo && qs('#site-logo')) qs('#site-logo').src = site.logo;
+  if (site.logo && qs('#site-logo')) qs('#site-logo').src = assetUrl(site.logo);
   if (site.hero_image && qs('#hero-image')) {
-    qs('#hero-image').src = site.hero_image;
+    qs('#hero-image').src = assetUrl(site.hero_image);
     qs('.hero-image-note')?.remove();
   }
   if (site.email && qs('#contact-email')) {
@@ -90,8 +100,8 @@ function renderGallery(items = []) {
   const draw = category => {
     const list = category === 'All' ? items : items.filter(x => x.category === category);
     grid.innerHTML = list.map(item => `
-      <figure class="gallery-item reveal" data-title="${escapeAttr(item.title || '')}" data-category="${escapeAttr(item.category || '')}" data-image="${escapeAttr(item.image || '')}">
-        <img src="${escapeAttr(item.image || 'assets/uploads/gallery-placeholder-1.svg')}" alt="${escapeAttr(item.alt || item.title || 'Honey Bee Cakes design')}" loading="lazy" />
+      <figure class="gallery-item reveal" data-title="${escapeAttr(item.title || '')}" data-category="${escapeAttr(item.category || '')}" data-image="${escapeAttr(assetUrl(item.image || ''))}">
+        <img src="${escapeAttr(assetUrl(item.image || 'assets/uploads/gallery-placeholder-1.svg'))}" alt="${escapeAttr(item.alt || item.title || 'Honey Bee Cakes design')}" loading="lazy" />
         <figcaption class="gallery-overlay"><strong>${escapeHTML(item.title || 'Custom Cake')}</strong><span>${escapeHTML(item.category || '')}</span></figcaption>
       </figure>`).join('');
     initReveal();
