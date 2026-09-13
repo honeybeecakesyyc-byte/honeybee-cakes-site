@@ -81,6 +81,20 @@ content:
       - { name: contact_orders_label, label: "CONTACT — Orders label", type: string }
       - { name: contact_orders, label: "CONTACT — Orders text", type: string }
       - { name: email, label: "CONTACT — Email", type: string }
+      - { name: formspree_endpoint, label: "CONTACT FORM — Formspree endpoint", type: string, description: "Already connected. Only change this if you create a new Formspree form." }
+      - { name: contact_form_eyebrow, label: "CONTACT FORM — Small label", type: string }
+      - { name: contact_form_heading, label: "CONTACT FORM — Heading", type: string }
+      - { name: contact_form_note, label: "CONTACT FORM — Note above form", type: text }
+      - { name: contact_form_order_link, label: "CONTACT FORM — Order link text", type: string }
+      - { name: contact_form_name_label, label: "CONTACT FORM — Name label", type: string }
+      - { name: contact_form_email_label, label: "CONTACT FORM — Email label", type: string }
+      - { name: contact_form_topic_label, label: "CONTACT FORM — Topic label", type: string }
+      - { name: contact_form_topics, label: "CONTACT FORM — Topics (comma separated)", type: string }
+      - { name: contact_form_message_label, label: "CONTACT FORM — Message label", type: string }
+      - { name: contact_form_submit, label: "CONTACT FORM — Send button", type: string }
+      - { name: contact_form_sending, label: "CONTACT FORM — Sending text", type: string }
+      - { name: contact_form_success, label: "CONTACT FORM — Success message", type: string }
+      - { name: contact_form_error, label: "CONTACT FORM — Error message", type: text }
       - { name: reviews_eyebrow, label: "REVIEWS — Small label", type: string }
       - { name: reviews_heading, label: "REVIEWS — Heading", type: string }
       - { name: reviews_copy, label: "REVIEWS — Paragraph", type: text }
