@@ -1,0 +1,4 @@
+Honey Bee Cakes website — FULL EDITOR v4
+FAQ and Policies are in the homepage scroll flow.
+Sidebar has text-only HONEY BEE CAKES.
+Pricing supports uploadable images and 4-layer fallback cylinders.
