@@ -1,164 +1,596 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-build="HBC_VERIFIED_V5">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Honey Bee Cakes — custom cakes in Calgary." />
-  <title>Honey Bee Cakes | Calgary Custom Cakes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Honey Bee Cakes — custom cakes in Calgary."><title>Honey Bee Cakes | Calgary Custom Cakes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&family=EB+Garamond:wght@400;500;600&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f3f1ea;
+  --paper: #f8f6f0;
+  --cocoa: #4a403c;
+  --taupe: #6d5f59;
+  --periwinkle: #8796b5;
+  --rose: #c58f9a;
+  --gold: #b29a70;
+  --line: rgba(74, 64, 60, 0.24);
+  --nav-width: 176px;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--cocoa);
+  background: var(--cream);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.55;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, textarea { font: inherit; }
+::selection { background: var(--periwinkle); color: #fff; }
+
+.side-nav {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--nav-width);
+  border-right: 1px solid var(--line);
+  background: rgba(243, 241, 234, 0.94);
+  backdrop-filter: blur(9px);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 34px 22px 28px;
+}
+.side-brand {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: .16em;
+  font-weight: 500;
+}
+.side-brand-bee { color: var(--gold); font-size: 14px; }
+.side-nav nav { display: grid; gap: 12px; margin: auto 0; }
+.side-nav nav a {
+  width: fit-content;
+  font-family: var(--serif);
+  font-size: 23px;
+  line-height: 1;
+  position: relative;
+}
+.side-nav nav a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -5px;
+  width: 0; height: 1px;
+  background: var(--cocoa);
+  transition: width .25s ease;
+}
+.side-nav nav a:hover::after,
+.side-nav nav a[aria-current="page"]::after { width: 100%; }
+.side-meta { display: grid; gap: 3px; font-size: 8px; letter-spacing: .18em; color: var(--taupe); }
+
+main { margin-left: var(--nav-width); }
+.mobile-menu-button, .mobile-drawer { display: none; }
+
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 44% 56%;
+  border-bottom: 1px solid var(--line);
+}
+.hero-copy {
+  padding: clamp(70px, 9vw, 140px) clamp(42px, 6vw, 95px) 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero-logo-wrap { width: min(420px, 100%); margin: 0 0 54px -18px; }
+.hero-logo { width: 100%; mix-blend-mode: multiply; }
+.eyebrow { margin: 0 0 15px; font-size: 10px; letter-spacing: .22em; font-weight: 500; color: var(--taupe); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; line-height: .98; }
+.hero h1 { font-size: clamp(46px, 5vw, 80px); max-width: 820px; letter-spacing: -.025em; }
+.hero-subheading { max-width: 540px; font-size: 14px; margin: 24px 0 32px; color: var(--taupe); }
+.text-link {
+  display: inline-flex; gap: 18px; align-items: center;
+  border-bottom: 1px solid var(--cocoa); padding-bottom: 6px;
+  font-size: 10px; letter-spacing: .17em; font-weight: 500;
+}
+.hero-image-wrap { position: relative; overflow: hidden; background: #ded8cd; min-height: 680px; }
+.hero-image { width: 100%; height: 100%; object-fit: cover; }
+.hero-image-note {
+  position: absolute; right: 20px; bottom: 18px; color: rgba(255,255,255,.9);
+  font-size: 8px; letter-spacing: .2em;
+}
+
+.section-pad { padding: clamp(90px, 10vw, 150px) clamp(34px, 7vw, 110px); }
+.intro { border-bottom: 1px solid var(--line); text-align: center; }
+.intro h2 { max-width: 980px; margin: 0 auto; font-size: clamp(48px, 6vw, 88px); letter-spacing: -.03em; }
+.intro > p:last-child { max-width: 600px; margin: 30px auto 0; color: var(--taupe); font-size: 14px; }
+
+.section-heading { margin-bottom: 50px; max-width: 760px; }
+.section-heading h2 { font-size: clamp(56px, 7vw, 98px); letter-spacing: -.035em; }
+.section-heading > p:last-child { color: var(--taupe); max-width: 560px; margin-top: 18px; font-size: 13px; }
+.split-heading { max-width: none; display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 70px; }
+.split-heading > p { max-width: 500px; justify-self: end; }
+
+.gallery-section { background: var(--paper); }
+.gallery-filters { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-bottom: 34px; }
+.gallery-filter {
+  border: 0; background: transparent; padding: 0 0 4px; cursor: pointer;
+  color: var(--taupe); font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+}
+.gallery-filter.active { color: var(--cocoa); border-color: var(--cocoa); }
+.gallery-grid { columns: 3 300px; column-gap: 18px; }
+.gallery-item {
+  position: relative; break-inside: avoid; margin: 0 0 18px; cursor: zoom-in; overflow: hidden;
+  background: #e5e0d6;
+}
+.gallery-item img { width: 100%; height: auto; transition: transform .55s ease; }
+.gallery-item:hover img { transform: scale(1.018); }
+.gallery-overlay {
+  position: absolute; inset: auto 0 0; padding: 45px 18px 15px;
+  background: linear-gradient(transparent, rgba(45,37,34,.45)); color: #fff;
+  display: flex; justify-content: space-between; align-items: end; gap: 15px;
+  opacity: 0; transition: opacity .3s ease;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay strong { font-family: var(--serif); font-weight: 400; font-size: 22px; }
+.gallery-overlay span { font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
+
+.flavours-section { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.flavour-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-top: 1px solid var(--line); }
+.flavour-card { display: grid; grid-template-columns: 52px 1fr; gap: 22px; padding: 30px 30px 32px 0; border-bottom: 1px solid var(--line); }
+.flavour-card:nth-child(odd) { border-right: 1px solid var(--line); padding-right: 40px; }
+.flavour-card:nth-child(even) { padding-left: 40px; }
+.flavour-number { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 18px; }
+.flavour-card h3 { font-size: 31px; margin-bottom: 8px; }
+.flavour-card p { margin: 0; color: var(--taupe); font-size: 12px; max-width: 430px; }
+.flavour-tag { display: inline-block; margin-top: 12px; font-size: 8px; letter-spacing: .15em; text-transform: uppercase; color: var(--periwinkle); }
+
+/* Build-your-own flavour menu */
+.flavour-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-top: 1px solid var(--line); }
+.builder-group { min-height: 390px; padding: 38px 38px 42px 0; border-bottom: 1px solid var(--line); }
+.builder-group:nth-child(odd) { border-right: 1px solid var(--line); padding-right: 48px; }
+.builder-group:nth-child(even) { padding-left: 48px; }
+.builder-heading { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px; }
+.builder-number { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 18px; padding-top: 8px; }
+.builder-heading h3 { font-size: 34px; margin: 0; }
+.builder-optional { display: inline-block; margin-top: 5px; font-size: 8px; letter-spacing: .15em; text-transform: uppercase; color: var(--periwinkle); }
+.builder-options { margin-left: 48px; border-top: 1px solid var(--line); }
+.builder-option { display: grid; grid-template-columns: minmax(120px, .8fr) 1.2fr; gap: 18px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid rgba(74,64,60,.14); }
+.builder-option strong { font-family: var(--serif); font-size: 20px; font-weight: 400; }
+.builder-option span { color: var(--taupe); font-size: 10px; line-height: 1.5; }
+.builder-empty { color: var(--taupe); font-size: 11px; }
+
+.pricing-section { background: #ded8cf; }
+.size-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: rgba(74,64,60,.22); border: 1px solid rgba(74,64,60,.22); }
+.size-card { background: #ded8cf; min-height: 360px; padding: 38px 30px 30px; display: flex; flex-direction: column; justify-content: space-between; }
+.cake-illustration { height: 175px; display: flex; align-items: end; justify-content: center; }
+.cake-shape { position: relative; width: var(--cake-width); height: var(--cake-height); border: 1px solid var(--cocoa); border-radius: 50% 50% 11% 11% / 13% 13% 8% 8%; background: rgba(243,241,234,.24); }
+.cake-shape::before, .cake-shape::after { content: ""; position: absolute; left: 5%; right: 5%; border-top: 1px solid rgba(74,64,60,.42); }
+.cake-shape::before { top: 34%; }.cake-shape::after { top: 67%; }
+.size-card-top { text-align: center; }
+.size-card h3 { font-size: 39px; }
+.size-details { display: flex; justify-content: space-between; align-items: end; border-top: 1px solid var(--line); padding-top: 18px; }
+.size-details span { display: block; font-size: 8px; letter-spacing: .14em; color: var(--taupe); text-transform: uppercase; }
+.size-details strong { font-family: var(--serif); font-size: 24px; font-weight: 400; }
+.pricing-footnote { margin: 24px 0 0; color: var(--taupe); font-size: 10px; max-width: 620px; }
+
+.order-section { display: grid; grid-template-columns: 38% 62%; gap: clamp(40px, 7vw, 110px); background: var(--periwinkle); color: #fff; }
+.order-section .eyebrow { color: rgba(255,255,255,.72); }
+.order-copy h2 { font-size: clamp(52px, 6vw, 90px); }
+.order-copy > p:not(.eyebrow) { margin: 24px 0; color: rgba(255,255,255,.82); font-size: 13px; }
+.order-meta { display: grid; gap: 8px; border-top: 1px solid rgba(255,255,255,.3); padding-top: 20px; margin-top: 35px; }
+.order-meta span { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+.form-shell { min-height: 660px; background: var(--paper); color: var(--cocoa); position: relative; }
+.form-shell iframe { width: 100%; height: 760px; border: 0; display: none; background: #fff; }
+.form-placeholder { min-height: 660px; padding: 70px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.form-placeholder-bee { font-size: 34px; color: var(--gold); margin-bottom: 24px; }
+.form-placeholder h3 { font-size: 42px; }
+.form-placeholder p { max-width: 430px; font-size: 12px; color: var(--taupe); }
+
+.contact-section { display: grid; grid-template-columns: 1.2fr .8fr; gap: 80px; border-bottom: 1px solid var(--line); }
+.contact-main h2 { font-size: clamp(56px, 6vw, 94px); max-width: 780px; }
+.contact-email { display: inline-block; margin-top: 35px; font-family: var(--serif); font-size: clamp(24px, 3vw, 40px); border-bottom: 1px solid var(--line); }
+.contact-details { align-self: end; display: grid; gap: 25px; }
+.contact-details div { border-top: 1px solid var(--line); padding-top: 13px; }
+.contact-details span { font-size: 8px; letter-spacing: .15em; color: var(--taupe); }
+.contact-details p { margin: 4px 0 0; font-size: 13px; }
+
+footer { padding: 38px clamp(34px, 7vw, 110px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px; }
+.footer-mark { font-family: var(--serif); font-size: 21px; letter-spacing: .08em; }
+.footer-links { display: flex; gap: 22px; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+.footer-small { justify-self: end; font-size: 8px; letter-spacing: .1em; color: var(--taupe); }
+
+.lightbox { border: 0; padding: 0; width: min(920px, 92vw); max-height: 92vh; background: var(--paper); color: var(--cocoa); box-shadow: 0 20px 80px rgba(40,33,30,.34); }
+.lightbox::backdrop { background: rgba(36,31,29,.72); backdrop-filter: blur(4px); }
+.lightbox img { width: 100%; max-height: 78vh; object-fit: contain; background: #e8e3da; }
+.lightbox-close { position: absolute; right: 12px; top: 8px; border: 0; background: rgba(243,241,234,.86); width: 38px; height: 38px; border-radius: 50%; font-size: 26px; cursor: pointer; z-index: 2; }
+.lightbox-caption { display: flex; justify-content: space-between; padding: 14px 18px 16px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+
+.faq-hero { min-height: 56vh; display: flex; flex-direction: column; justify-content: end; border-bottom: 1px solid var(--line); }
+.faq-hero h1 { font-size: clamp(64px, 9vw, 135px); letter-spacing: -.04em; max-width: 1000px; }
+.faq-hero > p:last-child { color: var(--taupe); max-width: 580px; margin-top: 24px; }
+.faq-list-wrap { background: var(--paper); }
+.faq-list { max-width: 1000px; margin: 0 auto; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-question { width: 100%; padding: 27px 0; background: transparent; border: 0; cursor: pointer; color: var(--cocoa); display: flex; justify-content: space-between; gap: 25px; text-align: left; font-family: var(--serif); font-size: 29px; }
+.faq-plus { transition: transform .25s ease; font-family: var(--sans); font-size: 20px; }
+.faq-item.open .faq-plus { transform: rotate(45deg); }
+.faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.faq-answer > div { overflow: hidden; }
+.faq-answer p { margin: 0; padding: 0 60px 28px 0; color: var(--taupe); font-size: 13px; }
+.faq-item.open .faq-answer { grid-template-rows: 1fr; }
+.faq-cta { text-align: center; }
+.faq-cta h2 { font-size: clamp(54px, 7vw, 92px); margin-bottom: 30px; }
+
+.reveal { opacity: 0; transform: translateY(15px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 980px) {
+  :root { --nav-width: 0px; }
+  .side-nav { display: none; }
+  main { margin-left: 0; }
+  .mobile-menu-button {
+    display: block; position: fixed; z-index: 60; top: 16px; right: 16px;
+    border: 1px solid var(--line); background: rgba(243,241,234,.92); color: var(--cocoa);
+    padding: 11px 14px; font-size: 9px; letter-spacing: .15em; backdrop-filter: blur(7px);
+  }
+  .mobile-drawer {
+    display: flex; position: fixed; inset: 0; z-index: 80; background: var(--cream);
+    padding: 75px 35px 40px; transform: translateX(100%); transition: transform .32s ease;
+  }
+  .mobile-drawer.open { transform: translateX(0); }
+  .mobile-drawer nav { display: grid; align-content: center; gap: 12px; width: 100%; }
+  .mobile-drawer nav a { font-family: var(--serif); font-size: 48px; line-height: 1; }
+  .mobile-close { position: absolute; top: 15px; right: 20px; border: 0; background: transparent; font-size: 35px; color: var(--cocoa); }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-copy { min-height: 72svh; padding: 85px 30px 60px; }
+  .hero-logo-wrap { width: min(360px, 88vw); margin: 0 0 38px -8px; }
+  .hero h1 { font-size: clamp(47px, 13vw, 72px); }
+  .hero-image-wrap { min-height: 70svh; }
+  .split-heading { grid-template-columns: 1fr; gap: 20px; }
+  .split-heading > p { justify-self: start; }
+  .size-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .order-section, .contact-section { grid-template-columns: 1fr; }
+  footer { grid-template-columns: 1fr; justify-items: start; }
+  .footer-small { justify-self: start; }
+}
+
+@media (max-width: 650px) {
+  .section-pad { padding: 78px 22px; }
+  .intro h2 { font-size: 48px; }
+  .section-heading h2 { font-size: 58px; }
+  .gallery-grid { columns: 2 160px; column-gap: 8px; }
+  .gallery-item { margin-bottom: 8px; }
+  .gallery-overlay { display: none; }
+  .flavour-grid { grid-template-columns: 1fr; }
+  .flavour-card, .flavour-card:nth-child(odd), .flavour-card:nth-child(even) { border-right: 0; padding: 24px 0; grid-template-columns: 38px 1fr; }
+  .builder-group, .builder-group:nth-child(odd), .builder-group:nth-child(even) { min-height: auto; border-right: 0; padding: 28px 0 34px; }
+  .builder-options { margin-left: 0; }
+  .builder-option { grid-template-columns: 1fr; gap: 3px; }
+
+  .size-grid { grid-template-columns: 1fr; }
+  .size-card { min-height: 320px; }
+  .order-section { padding-top: 88px; }
+  .form-placeholder { padding: 38px 24px; min-height: 520px; }
+  .form-shell { min-height: 520px; }
+  .contact-email { font-size: 22px; word-break: break-all; }
+  .footer-links { flex-wrap: wrap; }
+  .faq-hero { min-height: 60vh; }
+  .faq-question { font-size: 25px; }
+}
+
+/* ===== Honey Bee Cakes customisable update ===== */
+.side-nav { background: var(--bg-nav, rgba(243, 241, 234, 0.94)); }
+.side-brand { gap: 8px; letter-spacing: .135em; }
+.side-brand-bee { width: 24px; height: 18px; object-fit: cover; object-position: center; flex: 0 0 auto; }
+.mobile-brand { position: absolute; top: 24px; left: 30px; display: flex; align-items: center; gap: 10px; font-size: 10px; letter-spacing: .14em; font-weight: 500; }
+.mobile-brand img { width: 28px; height: 20px; object-fit: cover; object-position: center; }
+.mobile-drawer { background: var(--bg-nav, var(--cream)); }
+
+.hero-copy { background: var(--bg-hero, var(--cream)); }
+.intro { background: var(--bg-intro, var(--cream)); }
+.gallery-section { background: var(--bg-gallery, var(--paper)); }
+.flavours-section { background: var(--bg-flavours, var(--cream)); }
+.pricing-section { background: var(--bg-pricing, #ded8cf); }
+.size-card { background: var(--bg-pricing, #ded8cf); }
+.order-section { background: var(--bg-order, var(--periwinkle)); color: var(--order-text, #fff); }
+.order-section .eyebrow { color: color-mix(in srgb, var(--order-text, #fff) 72%, transparent); }
+.order-copy > p:not(.eyebrow) { color: color-mix(in srgb, var(--order-text, #fff) 82%, transparent); }
+.order-meta { border-color: color-mix(in srgb, var(--order-text, #fff) 30%, transparent); }
+.contact-section { background: var(--bg-contact, var(--cream)); }
+footer { background: var(--bg-footer, var(--cream)); }
+.faq-hero, .policies-hero { background: var(--bg-faq, var(--cream)); }
+.faq-list-wrap, .policies-content-wrap { background: var(--bg-page-content, var(--paper)); }
+
+#hero-eyebrow:empty, #intro-eyebrow:empty, #gallery-eyebrow:empty, #gallery-copy:empty,
+#flavours-eyebrow:empty, #flavours-copy:empty, #pricing-eyebrow:empty, #pricing-intro:empty,
+#pricing-footnote:empty, #order-eyebrow:empty, #order-copy:empty, #contact-eyebrow:empty { display: none; }
+
+.gallery-empty { column-span: all; padding: 50px 0; color: var(--taupe); font-family: var(--serif); font-size: 26px; }
+.form-placeholder-bee-image { width: 78px; height: 55px; object-fit: cover; object-position: center; margin-bottom: 24px; opacity: .85; }
+
+.policies-hero { min-height: 50vh; display: flex; flex-direction: column; justify-content: end; border-bottom: 1px solid var(--line); }
+.policies-hero h1 { font-size: clamp(64px, 9vw, 135px); letter-spacing: -.04em; max-width: 1000px; }
+.policies-hero > p:last-child { color: var(--taupe); max-width: 650px; margin-top: 24px; }
+.policies-body { max-width: 900px; margin: 0 auto; }
+.policies-body p { margin: 0 0 24px; font-size: 14px; line-height: 1.8; color: var(--taupe); }
+.policies-body p:first-child { font-family: var(--serif); font-size: 24px; line-height: 1.5; color: var(--cocoa); }
+
+@media (max-width: 980px) {
+  .mobile-drawer nav { margin-top: 35px; }
+}
+
+/* ===== Full editor update: typography, reviews, size images ===== */
+:root {
+  --heading-font: "Bodoni Moda", Georgia, serif;
+  --body-font: "Cormorant Garamond", Georgia, serif;
+  --ui-font: "DM Sans", Arial, sans-serif;
+  --heading-color: #4a403c;
+  --body-color: #4a403c;
+  --muted-color: #6d5f59;
+  --accent-color: #b29a70;
+  --line-color: rgba(74,64,60,.24);
+  --line: var(--line-color);
+  --bg-reviews: #f3f1ea;
+}
+body { font-family: var(--body-font); color: var(--body-color); font-size: 17px; }
+h1,h2,h3,.faq-question,.footer-mark,.side-nav nav a,.mobile-drawer nav a,.gallery-overlay strong,.builder-option strong,.size-details strong,.policies-body p:first-child { font-family: var(--heading-font); color: var(--heading-color); }
+.hero h1,.intro h2,.section-heading h2,.faq-hero h1,.policies-hero h1,.faq-cta h2 { font-family: var(--heading-font); }
+.eyebrow,.text-link,.gallery-filter,.builder-optional,.size-details span,.side-brand,.side-meta,.footer-links,.footer-small,.contact-details span,.order-meta,.mobile-menu-button,.review-meta,.review-stars { font-family: var(--ui-font); }
+.eyebrow,.hero-subheading,.intro > p:last-child,.section-heading > p:last-child,.builder-option span,.pricing-footnote,.contact-details p,.policies-body p,.faq-answer p { color: var(--muted-color); }
+.side-brand { display:block; font-family:var(--ui-font); line-height:1.35; letter-spacing:.15em; }
+.side-brand-bee,.mobile-brand img,.form-placeholder-bee-image { display:none !important; }
+.mobile-brand { gap:0; }
+.gallery-filter.active { color:var(--heading-color); border-color:var(--heading-color); }
+.text-link { border-color:var(--heading-color); }
+.builder-number,.flavour-number { color:var(--accent-color); }
+
+.reviews-section { background: var(--bg-reviews); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.reviews-intro-wrap { justify-self:end; max-width:540px; }
+.reviews-intro-wrap > p { margin:0 0 20px; color:var(--muted-color); }
+.reviews-summary { display:flex; align-items:baseline; gap:12px; margin:0 0 22px; }
+.reviews-summary strong { font-family:var(--heading-font); font-size:34px; font-weight:400; color:var(--heading-color); }
+.reviews-summary span { font-family:var(--ui-font); font-size:10px; letter-spacing:.08em; color:var(--muted-color); }
+.reviews-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:42px; }
+.review-card { background:var(--bg-reviews); padding:34px 30px; min-height:260px; display:flex; flex-direction:column; }
+.review-stars { color:var(--accent-color); letter-spacing:.12em; font-size:11px; }
+.review-card blockquote { margin:24px 0 32px; font-family:var(--body-font); font-size:21px; line-height:1.45; color:var(--body-color); }
+.review-meta { display:flex; justify-content:space-between; gap:15px; margin-top:auto; font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted-color); }
+.review-meta strong { font-weight:500; color:var(--body-color); }
+
+.size-guide-image { height:175px; width:100%; object-fit:contain; margin:0 auto; }
+.cake-shape.four-layer::before,.cake-shape.four-layer::after { display:none; }
+.cake-shape.four-layer i { position:absolute; left:5%; right:5%; border-top:1px solid color-mix(in srgb,var(--heading-color) 45%, transparent); }
+.cake-shape.four-layer i:nth-child(1){ top:25%; }.cake-shape.four-layer i:nth-child(2){ top:50%; }.cake-shape.four-layer i:nth-child(3){ top:75%; }
+
+@media (max-width: 980px) { .reviews-intro-wrap { justify-self:start; } .reviews-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width: 650px) { .reviews-grid { grid-template-columns:1fr; } .review-card { min-height:220px; } }
+.order-section h2,.order-section .order-copy h2 { color: var(--order-text, #fff); }
+.order-section .text-link { color: var(--order-text, #fff); border-color: var(--order-text, #fff); }
+.gallery-overlay strong { color:#fff; }
+.form-shell h3 { color:var(--heading-color); }
+
+
+/* v4: FAQ + Policies are part of the homepage scroll flow */
+.faq-flow { background: var(--bg-faq, var(--cream)); border-top: 1px solid var(--line); }
+.policies-flow { background: var(--bg-policies, var(--paper)); border-top: 1px solid var(--line); }
+.faq-flow .section-heading, .policies-flow .section-heading { margin-bottom: 48px; }
+.faq-flow .faq-list { max-width: 1000px; margin: 0 auto; }
+.policies-flow .policies-body { max-width: 900px; margin: 0 auto; }
+.flow-cta { text-align: center; margin: 86px auto 0; padding-top: 58px; border-top: 1px solid var(--line); }
+.flow-cta h3 { font-family: var(--heading-font); font-weight: 400; font-size: clamp(44px, 6vw, 82px); line-height: .98; margin: 14px auto 30px; max-width: 980px; }
+@media (max-width: 760px) { .flow-cta { margin-top: 60px; padding-top: 40px; } }
+
+/* ===== VERIFIED V5: single-page flow + editable contact reviews ===== */
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+.side-brand { display:block !important; }
+.side-brand img, .side-brand-bee, .mobile-brand img { display:none !important; }
+.contact-section { display:block; }
+.contact-top { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr); gap:70px; }
+.contact-reviews { margin-top:80px; padding-top:60px; border-top:1px solid var(--line); }
+.contact-reviews-head { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:end; margin-bottom:34px; }
+.contact-reviews-head > div:last-child { justify-self:end; max-width:520px; }
+.contact-reviews-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); }
+.contact-reviews-grid:empty { display:none; }
+.contact-google-line { margin-top:8px; }
+.contact-google-line a { text-decoration:underline; text-underline-offset:4px; }
+.faq-flow, .policies-flow { min-height: 60vh; }
+.faq-flow { background:var(--bg-faq, var(--cream)); }
+.policies-flow { background:var(--bg-policies, var(--paper)); }
+/* Default size guide = cylinder split into FOUR equal layers. */
+.cake-shape.four-layer { position:relative; border:1px solid color-mix(in srgb,var(--heading-color) 58%, transparent); border-radius:50% / 10%; background:transparent; }
+.cake-shape.four-layer::before { content:''; position:absolute; left:-1px; right:-1px; top:-1px; height:18%; border:1px solid color-mix(in srgb,var(--heading-color) 58%, transparent); border-radius:50%; background:var(--bg-pricing,#ded8cf); }
+.cake-shape.four-layer::after { content:''; position:absolute; left:-1px; right:-1px; bottom:-1px; height:18%; border-bottom:1px solid color-mix(in srgb,var(--heading-color) 58%, transparent); border-radius:50%; }
+.cake-shape.four-layer i { position:absolute; z-index:2; left:2%; right:2%; height:0; border-top:1px solid color-mix(in srgb,var(--heading-color) 42%, transparent); }
+.cake-shape.four-layer i:nth-child(1){ top:25%; }.cake-shape.four-layer i:nth-child(2){ top:50%; }.cake-shape.four-layer i:nth-child(3){ top:75%; }
+@media(max-width:980px){ .contact-top,.contact-reviews-head{grid-template-columns:1fr;} .contact-reviews-head>div:last-child{justify-self:start;} .contact-reviews-grid{grid-template-columns:1fr 1fr;} }
+@media(max-width:650px){ .contact-reviews-grid{grid-template-columns:1fr;} }
+
+</style>
 </head>
-<body>
-  <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">MENU</button>
+<body data-build="HBC_VERIFIED_V5">
+<button id="mobile-menu-text" class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">MENU</button>
+<aside class="side-nav" aria-label="Primary navigation">
+  <a class="side-brand" href="#home" aria-label="Honey Bee Cakes home"><span id="brand-name">HONEY BEE CAKES</span></a>
+  <nav>
+    <a id="nav-home" href="#home">Home</a><a id="nav-gallery" href="#gallery">Gallery</a><a id="nav-flavours" href="#flavours">Flavours</a>
+    <a id="nav-pricing" href="#pricing">Price + Size</a><a id="nav-faq" href="#faq">FAQ</a><a id="nav-order" href="#order">Order</a>
+    <a id="nav-policies" href="#policies">Policies</a><a id="nav-contact" href="#contact">Contact</a>
+  </nav>
+  <div class="side-meta"><span id="side-meta-1">CALGARY</span><span id="side-meta-2">EST. 2026</span></div>
+</aside>
+<div class="mobile-drawer" aria-hidden="true"><button class="mobile-close" aria-label="Close menu">×</button><a class="mobile-brand" href="#home"><span id="mobile-brand-name">HONEY BEE CAKES</span></a><nav>
+  <a data-nav="home" href="#home">Home</a><a data-nav="gallery" href="#gallery">Gallery</a><a data-nav="flavours" href="#flavours">Flavours</a><a data-nav="pricing" href="#pricing">Price + Size</a><a data-nav="faq" href="#faq">FAQ</a><a data-nav="order" href="#order">Order</a><a data-nav="policies" href="#policies">Policies</a><a data-nav="contact" href="#contact">Contact</a>
+</nav></div>
+<main>
+<section class="hero" id="home"><div class="hero-copy reveal"><div class="hero-logo-wrap"><img id="site-logo" src="assets/uploads/honeybee-logo.png" alt="Honey Bee Cakes Calgary" class="hero-logo"></div><p id="hero-eyebrow" class="eyebrow"></p><h1 id="hero-heading">Cakes designed to feel as special as the celebration.</h1><p id="hero-subheading" class="hero-subheading">Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.</p><a id="hero-cta" class="text-link" href="#order"><span id="hero-cta-text">ORDER A CAKE</span> <span id="hero-cta-arrow">↘</span></a></div><div class="hero-image-wrap reveal"><img id="hero-image" src="assets/uploads/hero-placeholder.svg" alt="Honey Bee Cakes featured cake" class="hero-image"></div></section>
+<section class="intro section-pad reveal"><p id="intro-eyebrow" class="eyebrow">HONEY BEE CAKES</p><h2 id="intro-heading">Custom cakes, thoughtfully designed for beautiful celebrations.</h2><p id="intro-copy">Romantic, design-led cakes with an editorial eye — made to be memorable from the first look to the last slice.</p></section>
+<section class="gallery-section section-pad" id="gallery"><div class="section-heading reveal"><p id="gallery-eyebrow" class="eyebrow"></p><h2 id="gallery-heading">Gallery</h2><p id="gallery-copy"></p></div><div id="gallery-filters" class="gallery-filters reveal" aria-label="Gallery filters"></div><div id="gallery-grid" class="gallery-grid"></div></section>
+<section class="flavours-section section-pad" id="flavours"><div class="section-heading split-heading reveal"><div><p id="flavours-eyebrow" class="eyebrow">THE MENU</p><h2 id="flavours-heading">Build your flavour</h2></div><p id="flavours-copy">Make it yours. Choose one sponge, one frosting and one filling, then add a little texture if you like.</p></div><div id="flavour-grid" class="flavour-grid"></div></section>
+<section class="pricing-section section-pad" id="pricing"><div class="section-heading reveal"><p id="pricing-eyebrow" class="eyebrow">PLANNING YOUR CAKE</p><h2 id="pricing-heading">Price + size guide</h2><p id="pricing-intro">Starting prices are a guide. Final pricing depends on design detail, finish and decoration.</p></div><div id="size-grid" class="size-grid"></div><p id="pricing-footnote" class="pricing-footnote">Serving counts are estimates and can vary by cutting style.</p></section>
+<section class="faq-flow section-pad" id="faq"><div class="section-heading reveal"><p id="faq-eyebrow" class="eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading">Frequently asked questions</h2><p id="faq-intro">Everything you need to know about ordering, pickup, storage and allergens.</p></div><div id="faq-list" class="faq-list reveal"></div><div class="flow-cta reveal"><p id="faq-cta-eyebrow" class="eyebrow">READY?</p><h3 id="faq-cta-heading">Start your cake inquiry.</h3><a id="faq-order-link" class="text-link" href="#order"><span id="faq-cta-button">ORDER A CAKE</span> <span id="faq-cta-arrow">↗</span></a></div></section>
+<section class="order-section section-pad" id="order"><div class="order-copy reveal"><p id="order-eyebrow" class="eyebrow">START YOUR ORDER</p><h2 id="order-heading">Tell me what you’re celebrating.</h2><p id="order-copy">Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.</p><div class="order-meta"><span id="order-meta-1">Pickup near Stampede Park</span><span id="order-meta-2">Licensed home bakery</span><span id="order-meta-3">Pickup only</span></div></div><div class="form-shell reveal"><iframe id="youform-frame" title="Honey Bee Cakes order form" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="form-placeholder" class="form-placeholder"><h3 id="form-placeholder-heading">Your Youform goes here</h3><p id="form-placeholder-copy">Paste your Youform embed URL into Website text and it appears here automatically.</p></div></div></section>
+<section class="policies-flow section-pad" id="policies"><div class="section-heading reveal"><p id="policies-eyebrow" class="eyebrow">HONEY BEE CAKES</p><h2 id="policies-title">Policies</h2><p id="policies-intro">Please review these policies before placing your order.</p></div><div id="policies-body" class="policies-body reveal"></div><div class="flow-cta reveal"><p id="policies-cta-eyebrow" class="eyebrow">QUESTIONS?</p><h3 id="policies-cta-heading">Get in touch before ordering.</h3><a id="policies-contact-link" class="text-link" href="#contact"><span id="policies-cta-button">CONTACT</span> <span id="policies-cta-arrow">↗</span></a></div></section>
+<section class="contact-section section-pad" id="contact"><div class="contact-top"><div class="contact-main reveal"><p id="contact-eyebrow" class="eyebrow">CONTACT</p><h2 id="contact-heading">Let’s make something beautiful.</h2><a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a></div><div class="contact-details reveal"><div><span id="contact-location-label">LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div><div><span id="contact-instagram-label">INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div><div><span id="contact-google-label">GOOGLE</span><p class="contact-google-line"><a id="google-reviews-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener"><span id="reviews-button-text">SEE GOOGLE REVIEWS</span> <span id="reviews-button-arrow">↗</span></a></p></div><div><span id="contact-orders-label">ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div></div></div><div class="contact-reviews"><div class="contact-reviews-head reveal"><div><p id="contact-reviews-eyebrow" class="eyebrow">KIND WORDS</p><h2 id="contact-reviews-heading">Google reviews</h2></div><div><p id="contact-reviews-copy">Read what customers have shared about their Honey Bee Cakes orders.</p><div id="reviews-summary" class="reviews-summary" hidden><strong id="reviews-rating"></strong><span id="reviews-count"></span></div></div></div><div id="contact-reviews-grid" class="contact-reviews-grid"></div></div></section>
+<footer><div id="footer-brand" class="footer-mark">HONEY BEE CAKES</div><div class="footer-links"><a id="footer-gallery" href="#gallery">Gallery</a><a id="footer-flavours" href="#flavours">Flavours</a><a id="footer-pricing" href="#pricing">Pricing</a><a id="footer-faq" href="#faq">FAQ</a><a id="footer-policies" href="#policies">Policies</a></div><div id="footer-copyright" class="footer-small">© 2026 Honey Bee Cakes Calgary</div></footer>
+</main>
+<dialog id="lightbox" class="lightbox"><button class="lightbox-close" aria-label="Close image">×</button><img id="lightbox-image" alt=""><div class="lightbox-caption"><span id="lightbox-title"></span><span id="lightbox-category"></span></div></dialog>
+<script>
+const DATA = {
+  legacySite: 'content/site.json', text: 'content/text.json', design: 'content/design.json', images: 'content/images.json',
+  gallery: 'content/gallery.json', reviews: 'content/reviews.json', flavours: 'content/flavours.json',
+  pricing: 'content/pricing.json', faq: 'content/faq.json', policies: 'content/policies.json'
+};
 
-  <aside class="side-nav" aria-label="Primary navigation">
-    <a class="side-brand" href="#home" aria-label="Honey Bee Cakes home">
-      <img class="side-brand-bee" src="assets/uploads/nav-bee.png" alt="" />
-      <span>HONEY BEE CAKES</span>
-    </a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#flavours">Flavours</a>
-      <a href="#pricing">Price + Size</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
-      <a href="policies.html">Policies</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
-    <div class="side-meta">
-      <span>CALGARY</span>
-      <span>EST. 2026</span>
-    </div>
-  </aside>
+async function getJSON(path, fallback) {
+  try { const r = await fetch(path, { cache: 'no-store' }); if (!r.ok) throw new Error(`${r.status}`); return await r.json(); }
+  catch (e) { console.warn(`Could not load ${path}`, e); return fallback; }
+}
+function qs(sel){ return document.querySelector(sel); }
+function qsa(sel){ return [...document.querySelectorAll(sel)]; }
+function assetUrl(value){
+  if(!value) return '';
+  const v=String(value).trim();
+  if(/^(https?:|data:|blob:)/i.test(v)) return v;
+  try { return new URL(v.replace(/^\/+/, ''), document.baseURI).href; }
+  catch(e){ return v.replace(/^\/+/, ''); }
+}
+function escapeHTML(v=''){ return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c])); }
+function escapeAttr(v=''){ return escapeHTML(v); }
+function setText(selector, value, fallback=''){ const el=qs(selector); if(!el) return; el.textContent = value ?? fallback; }
+function setOptionalText(selector,value,fallback=''){ const el=qs(selector); if(!el) return; const text=value ?? fallback; el.textContent=text; el.style.display=String(text||'').trim()?'':'none'; }
+function validColour(v){ return typeof v==='string' && v.trim() && CSS.supports('color', v.trim()); }
+function contrastText(bg){ const m=String(bg||'').trim().match(/^#([0-9a-f]{6})$/i); if(!m) return '#ffffff'; const n=parseInt(m[1],16); const r=(n>>16)&255,g=(n>>8)&255,b=n&255; return ((0.299*r+0.587*g+0.114*b)/255)>.67 ? '#4a403c' : '#ffffff'; }
+function fontStack(name, fallback){ return name ? `"${String(name).replace(/"/g,'')}"${fallback}` : ''; }
 
-  <div class="mobile-drawer" aria-hidden="true">
-    <button class="mobile-close" aria-label="Close menu">×</button>
-    <a class="mobile-brand" href="#home"><img src="assets/uploads/nav-bee.png" alt="" /><span>HONEY BEE CAKES</span></a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#flavours">Flavours</a>
-      <a href="#pricing">Price + Size</a>
-      <a href="#order">Order</a>
-      <a href="#contact">Contact</a>
-      <a href="policies.html">Policies</a>
-      <a href="faq.html">FAQ</a>
-    </nav>
-  </div>
+function applyDesign(site={}){
+  const colorMap={
+    color_heading:'--heading-color', color_body:'--body-color', color_muted:'--muted-color', color_accent:'--accent-color', color_line:'--line-color',
+    bg_navigation:'--bg-nav', bg_hero:'--bg-hero', bg_intro:'--bg-intro', bg_gallery:'--bg-gallery', bg_reviews:'--bg-reviews',
+    bg_flavours:'--bg-flavours', bg_pricing:'--bg-pricing', bg_order:'--bg-order', bg_contact:'--bg-contact', bg_footer:'--bg-footer',
+    bg_faq:'--bg-faq', bg_policies:'--bg-policies', bg_page_content:'--bg-page-content'
+  };
+  Object.entries(colorMap).forEach(([k,v])=>{ if(validColour(site[k])) document.documentElement.style.setProperty(v,site[k].trim()); });
+  if(site.heading_font) document.documentElement.style.setProperty('--heading-font',fontStack(site.heading_font,', Georgia, serif'));
+  if(site.body_font) document.documentElement.style.setProperty('--body-font',fontStack(site.body_font,', Georgia, serif'));
+  if(site.ui_font) document.documentElement.style.setProperty('--ui-font',fontStack(site.ui_font,', Arial, sans-serif'));
+  if(validColour(site.bg_order)) document.documentElement.style.setProperty('--order-text', site.order_text_color && validColour(site.order_text_color) ? site.order_text_color : contrastText(site.bg_order));
+  else if(validColour(site.order_text_color)) document.documentElement.style.setProperty('--order-text', site.order_text_color);
+}
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy reveal">
-        <div class="hero-logo-wrap">
-          <img id="site-logo" src="assets/uploads/honeybee-logo.png" alt="Honey Bee Cakes Calgary" class="hero-logo" />
-        </div>
-        <p id="hero-eyebrow" class="eyebrow"></p>
-        <h1 id="hero-heading">Cakes designed to feel as special as the celebration.</h1>
-        <p id="hero-subheading" class="hero-subheading">Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.</p>
-        <a id="hero-cta" class="text-link" href="#order">ORDER A CAKE <span>↘</span></a>
-      </div>
-      <div class="hero-image-wrap reveal">
-        <img id="hero-image" src="assets/uploads/hero-placeholder.svg" alt="Honey Bee Cakes featured cake" class="hero-image" />
-        <div class="hero-image-note">YOUR HERO PHOTO</div>
-      </div>
-    </section>
+function navValues(site={}){
+  return {
+    home: site.nav_home || 'Home', gallery: site.nav_gallery || 'Gallery', reviews: site.nav_reviews || 'Reviews', flavours: site.nav_flavours || 'Flavours',
+    pricing: site.nav_pricing || 'Price + Size', order: site.nav_order || 'Order', contact: site.nav_contact || 'Contact', policies: site.nav_policies || 'Policies', faq: site.nav_faq || 'FAQ'
+  };
+}
 
-    <section class="intro section-pad reveal">
-      <p id="intro-eyebrow" class="eyebrow">HONEY BEE CAKES</p>
-      <h2 id="intro-heading">Custom cakes, thoughtfully designed for beautiful celebrations.</h2>
-      <p id="intro-copy">Romantic, design-led cakes with an editorial eye — made to be memorable from the first look to the last slice.</p>
-    </section>
+function nonEmpty(obj={}){ const out={}; Object.entries(obj||{}).forEach(([k,v])=>{ if(v!==undefined && v!==null && v!=='' ) out[k]=v; }); return out; }
+function mergeSite(legacy={}, text={}, design={}, images={}){ return {...legacy, ...nonEmpty(text), ...nonEmpty(design), ...nonEmpty(images)}; }
+function renderShared(site={}){
+  applyDesign(site);
+  const nav=navValues(site);
+  setText('#brand-name',site.brand_name,'HONEY BEE CAKES'); setText('#mobile-brand-name',site.brand_name,'HONEY BEE CAKES');
+  Object.entries(nav).forEach(([key,val])=>{ setText(`#nav-${key}`,val,val); qsa(`[data-nav="${key}"]`).forEach(el=>el.textContent=val); });
+  setText('#side-meta-1',site.side_meta_1,'CALGARY'); setText('#side-meta-2',site.side_meta_2,'EST. 2026');
+  setText('#mobile-menu-text',site.mobile_menu_text,'MENU');
 
-    <section class="gallery-section section-pad" id="gallery">
-      <div class="section-heading reveal">
-        <p id="gallery-eyebrow" class="eyebrow"></p>
-        <h2 id="gallery-heading">Gallery</h2>
-        <p id="gallery-copy"></p>
-      </div>
-      <div id="gallery-filters" class="gallery-filters reveal" aria-label="Gallery filters"></div>
-      <div id="gallery-grid" class="gallery-grid"></div>
-    </section>
+  setText('#footer-brand',site.footer_brand,site.brand_name||'HONEY BEE CAKES');
+  setText('#footer-gallery',site.footer_gallery,nav.gallery); setText('#footer-reviews',site.footer_reviews,nav.reviews); setText('#footer-flavours',site.footer_flavours,nav.flavours);
+  setText('#footer-pricing',site.footer_pricing,'Pricing'); setText('#footer-policies',site.footer_policies,nav.policies); setText('#footer-faq',site.footer_faq,nav.faq);
+  const year=new Date().getFullYear(); setText('#footer-copyright',String(site.footer_copyright||'© {year} Honey Bee Cakes Calgary').replaceAll('{year}',year));
+}
 
-    <section class="flavours-section section-pad" id="flavours">
-      <div class="section-heading split-heading reveal">
-        <div>
-          <p id="flavours-eyebrow" class="eyebrow">THE MENU</p>
-          <h2 id="flavours-heading">Build your flavour</h2>
-        </div>
-        <p id="flavours-copy">Make it yours. Choose one sponge, one frosting and one filling, then add a little texture if you like.</p>
-      </div>
-      <div id="flavour-grid" class="flavour-grid"></div>
-    </section>
+function renderSite(site={}){
+  renderShared(site);
+  setOptionalText('#hero-eyebrow',site.hero_eyebrow,''); setText('#hero-heading',site.hero_heading,'Cakes designed to feel as special as the celebration.');
+  setOptionalText('#hero-subheading',site.hero_subheading,'Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.');
+  setText('#hero-cta-text',site.hero_cta,'ORDER A CAKE'); setText('#hero-cta-arrow',site.hero_cta_arrow,'↘');
+  setOptionalText('#intro-eyebrow',site.intro_eyebrow,'HONEY BEE CAKES'); setText('#intro-heading',site.intro_heading,'Custom cakes, thoughtfully designed for beautiful celebrations.'); setOptionalText('#intro-copy',site.intro_copy,'Romantic, design-led cakes with an editorial eye — made to be memorable from the first look to the last slice.');
+  setOptionalText('#gallery-eyebrow',site.gallery_eyebrow,''); setText('#gallery-heading',site.gallery_heading,'Gallery'); setOptionalText('#gallery-copy',site.gallery_copy,'');
+  setOptionalText('#reviews-eyebrow',site.reviews_eyebrow,'KIND WORDS'); setText('#reviews-heading',site.reviews_heading,'Google reviews'); setOptionalText('#reviews-copy',site.reviews_copy,'Read what customers have shared about their Honey Bee Cakes orders.'); setText('#reviews-button-text',site.reviews_button_text,'SEE ALL GOOGLE REVIEWS'); setText('#reviews-button-arrow',site.reviews_button_arrow,'↗');
+  setOptionalText('#flavours-eyebrow',site.flavours_eyebrow,'THE MENU'); setText('#flavours-heading',site.flavours_heading,'Build your flavour'); setOptionalText('#flavours-copy',site.flavours_copy,'Make it yours. Choose one sponge, one frosting and one filling, then add a little texture if you like.');
+  setOptionalText('#pricing-eyebrow',site.pricing_eyebrow,'PLANNING YOUR CAKE'); setText('#pricing-heading',site.pricing_heading,'Price + size guide'); setOptionalText('#pricing-intro',site.pricing_intro,'Starting prices are a guide. Final pricing depends on design detail, finish and decoration.'); setOptionalText('#pricing-footnote',site.pricing_footnote,'Serving counts are estimates and can vary by cutting style.');
+  setOptionalText('#order-eyebrow',site.order_eyebrow,'START YOUR ORDER'); setText('#order-heading',site.order_heading,'Tell me what you’re celebrating.'); setOptionalText('#order-copy',site.order_copy,'Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.');
+  setText('#order-meta-1',site.order_meta_1,'Pickup near Stampede Park'); setText('#order-meta-2',site.order_meta_2,'Licensed home bakery'); setText('#order-meta-3',site.order_meta_3,'Pickup only');
+  setText('#form-placeholder-heading',site.form_placeholder_heading,'Your Youform goes here'); setText('#form-placeholder-copy',site.form_placeholder_copy,'Paste your Youform embed URL into Site settings and it appears here automatically.');
+  setOptionalText('#contact-eyebrow',site.contact_eyebrow,'CONTACT'); setText('#contact-heading',site.contact_heading,'Let’s make something beautiful.'); setText('#contact-orders',site.contact_orders,'By inquiry · Pickup only');
+  setText('#contact-location-label',site.contact_location_label,'LOCATION'); setText('#contact-instagram-label',site.contact_instagram_label,'INSTAGRAM'); setText('#contact-orders-label',site.contact_orders_label,'ORDERS'); setText('#contact-google-label',site.contact_google_label,'GOOGLE'); setText('#contact-reviews-eyebrow',site.reviews_eyebrow,'KIND WORDS'); setText('#contact-reviews-heading',site.reviews_heading,'Google reviews'); setOptionalText('#contact-reviews-copy',site.reviews_copy,'Read what customers have shared about their Honey Bee Cakes orders.'); setText('#reviews-button-text',site.reviews_button_text,'SEE ALL GOOGLE REVIEWS'); setText('#reviews-button-arrow',site.reviews_button_arrow,'↗');
+  setText('#faq-eyebrow',site.faq_eyebrow,'BEFORE YOU ORDER'); setText('#faq-heading',site.faq_heading,'Frequently asked questions'); setOptionalText('#faq-intro',site.faq_intro,'Everything you need to know about ordering, pickup, storage and allergens.');
+  setOptionalText('#faq-cta-eyebrow',site.faq_cta_eyebrow,'READY?'); setText('#faq-cta-heading',site.faq_cta_heading,'Start your cake inquiry.'); setText('#faq-cta-button',site.faq_cta_button,'ORDER A CAKE'); if(qs('#faq-cta-arrow')) setText('#faq-cta-arrow',site.faq_cta_arrow,'↗');
+  setOptionalText('#policies-eyebrow',site.policies_eyebrow,'HONEY BEE CAKES'); setOptionalText('#policies-cta-eyebrow',site.policies_cta_eyebrow,'QUESTIONS?'); setText('#policies-cta-heading',site.policies_cta_heading,'Get in touch before ordering.'); setText('#policies-cta-button',site.policies_cta_button,'CONTACT'); if(qs('#policies-cta-arrow')) setText('#policies-cta-arrow',site.policies_cta_arrow,'↗');
 
-    <section class="pricing-section section-pad" id="pricing">
-      <div class="section-heading reveal">
-        <p id="pricing-eyebrow" class="eyebrow">PLANNING YOUR CAKE</p>
-        <h2 id="pricing-heading">Price + size guide</h2>
-        <p id="pricing-intro">Starting prices are a guide. Final pricing depends on design detail, finish and decoration.</p>
-      </div>
-      <div id="size-grid" class="size-grid"></div>
-      <p id="pricing-footnote" class="pricing-footnote">Serving counts are estimates and can vary by cutting style. Your final quote confirms the size recommended for your event.</p>
-    </section>
+  if(site.logo && qs('#site-logo')) { qs('#site-logo').src=assetUrl(site.logo); qs('#site-logo').alt=site.logo_alt||'Honey Bee Cakes Calgary'; }
+  if(site.hero_image && qs('#hero-image')) { qs('#hero-image').src=assetUrl(site.hero_image); qs('#hero-image').alt=site.hero_image_alt||'Honey Bee Cakes featured cake'; }
+  if(site.email && qs('#contact-email')) { qs('#contact-email').textContent=site.email; qs('#contact-email').href=`mailto:${site.email}`; }
+  if(site.location && qs('#contact-location')) qs('#contact-location').textContent=site.location;
+  if(qs('#instagram-link')) { if(site.instagram_url) qs('#instagram-link').href=site.instagram_url; qs('#instagram-link').textContent=site.instagram_handle||'@honeybeecakesyyc'; }
+  if(site.youform_embed_url && qs('#youform-frame')) { const frame=qs('#youform-frame'); frame.src=site.youform_embed_url; frame.style.display='block'; qs('#form-placeholder')?.remove(); }
+}
 
-    <section class="order-section section-pad" id="order">
-      <div class="order-copy reveal">
-        <p id="order-eyebrow" class="eyebrow">START YOUR ORDER</p>
-        <h2 id="order-heading">Tell me what you’re celebrating.</h2>
-        <p id="order-copy">Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.</p>
-        <div class="order-meta">
-          <span id="order-meta-1">Pickup near Stampede Park</span>
-          <span id="order-meta-2">Licensed home bakery</span>
-          <span id="order-meta-3">Pickup only</span>
-        </div>
-      </div>
-      <div class="form-shell reveal">
-        <iframe id="youform-frame" title="Honey Bee Cakes order form" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <div id="form-placeholder" class="form-placeholder">
-          <img class="form-placeholder-bee-image" src="assets/uploads/nav-bee.png" alt="" />
-          <h3>Your Youform goes here</h3>
-          <p>Paste your Youform embed URL into <strong>Site settings</strong> in the CMS and it appears here automatically.</p>
-        </div>
-      </div>
-    </section>
+const DEFAULT_CATEGORIES=['Vintage','Floral','Minimal','Kids','Wedding','Cupcakes','Bento Box','Other'];
+function renderGallery(items=[],site={}){
+  const grid=qs('#gallery-grid'), filters=qs('#gallery-filters'); if(!grid||!filters) return;
+  const preferred=String(site.gallery_categories||DEFAULT_CATEGORIES.join(',')).split(',').map(x=>x.trim()).filter(Boolean); const extras=[...new Set(items.map(x=>x.category).filter(Boolean))].filter(x=>!preferred.includes(x)); const categories=[site.gallery_all_label||'All',...preferred,...extras]; const allLabel=categories[0];
+  filters.innerHTML=categories.map((cat,i)=>`<button class="gallery-filter ${i===0?'active':''}" data-filter="${escapeAttr(cat)}">${escapeHTML(cat)}</button>`).join('');
+  const draw=category=>{ const list=category===allLabel?items:items.filter(x=>x.category===category); if(!list.length){ grid.innerHTML=`<div class="gallery-empty">${escapeHTML(site.gallery_empty_text||'No photos added yet.')}</div>`; return; }
+    grid.innerHTML=list.map(item=>`<figure class="gallery-item reveal" data-title="${escapeAttr(item.title||'')}" data-category="${escapeAttr(item.category||'')}" data-image="${escapeAttr(assetUrl(item.image||''))}"><img src="${escapeAttr(assetUrl(item.image||''))}" alt="${escapeAttr(item.alt||item.title||'Honey Bee Cakes design')}" loading="lazy"/><figcaption class="gallery-overlay"><strong>${escapeHTML(item.title||'')}</strong><span>${escapeHTML(item.category||'')}</span></figcaption></figure>`).join(''); initReveal(); grid.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>openLightbox(item))); };
+  draw(allLabel); filters.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{filters.querySelectorAll('button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');draw(btn.dataset.filter);}));
+}
 
-    <section class="contact-section section-pad" id="contact">
-      <div class="contact-main reveal">
-        <p id="contact-eyebrow" class="eyebrow">CONTACT</p>
-        <h2 id="contact-heading">Let’s make something beautiful.</h2>
-        <a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a>
-      </div>
-      <div class="contact-details reveal">
-        <div><span>LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div>
-        <div><span>INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div>
-        <div><span>ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div>
-      </div>
-    </section>
+function renderReviews(data={},site={}){
+  const grid=qs('#contact-reviews-grid'); if(!grid) return; const items=Array.isArray(data.items)?data.items:[];
+  const link=qs('#google-reviews-link'); if(link && data.google_url) link.href=data.google_url;
+  const summary=qs('#reviews-summary'); if(summary && (data.rating||data.review_count)){ summary.hidden=false; setText('#reviews-rating',data.rating?`${data.rating} ★`:''); setText('#reviews-count',data.review_count||''); }
+  if(!items.length){ grid.innerHTML=''; return; }
+  grid.innerHTML=items.map(item=>{ const stars=Math.max(0,Math.min(5,Number(item.stars)||5)); return `<article class="review-card reveal"><div class="review-stars" aria-label="${stars} out of 5 stars">${'★'.repeat(stars)}${'☆'.repeat(5-stars)}</div><blockquote>${escapeHTML(item.text||'')}</blockquote><div class="review-meta"><strong>${escapeHTML(item.author||'')}</strong><span>${escapeHTML(item.date||'')}</span></div></article>`; }).join(''); initReveal();
+}
 
-    <footer>
-      <div class="footer-mark">HONEY BEE CAKES</div>
-      <div class="footer-links">
-        <a href="#gallery">Gallery</a>
-        <a href="#flavours">Flavours</a>
-        <a href="#pricing">Pricing</a>
-        <a href="policies.html">Policies</a>
-        <a href="faq.html">FAQ</a>
-      </div>
-      <div class="footer-small">© <span id="year"></span> Honey Bee Cakes Calgary</div>
-    </footer>
-  </main>
+function normalizeFlavourGroup(data,key,defaults){ const raw=data?.[key]; if(Array.isArray(raw)) return {...defaults,items:raw}; if(raw&&typeof raw==='object') return {number:raw.number||defaults.number,title:raw.title||defaults.title,optional_label:raw.optional_label??defaults.optional_label,items:Array.isArray(raw.items)?raw.items:[]}; return {...defaults,items:[]}; }
+function renderFlavours(data={}){
+  const grid=qs('#flavour-grid'); if(!grid) return; const groups=[
+    normalizeFlavourGroup(data,'sponges',{number:'01',title:'Choose a sponge cake',optional_label:''}),
+    normalizeFlavourGroup(data,'frostings',{number:'02',title:'Choose a frosting flavour',optional_label:''}),
+    normalizeFlavourGroup(data,'fillings',{number:'03',title:'Optional filling',optional_label:'optional'}),
+    normalizeFlavourGroup(data,'add_ins',{number:'04',title:'Optional add-in',optional_label:'optional'})
+  ];
+  grid.innerHTML=groups.map(group=>`<article class="builder-group reveal"><div class="builder-heading"><span class="builder-number">${escapeHTML(group.number)}</span><div><h3>${escapeHTML(group.title)}</h3>${group.optional_label?`<span class="builder-optional">${escapeHTML(group.optional_label)}</span>`:''}</div></div><div class="builder-options">${group.items.map(item=>`<div class="builder-option"><strong>${escapeHTML(item.name||'')}</strong>${item.note?`<span>${escapeHTML(item.note)}</span>`:''}</div>`).join('')}</div></article>`).join(''); initReveal();
+}
 
-  <dialog id="lightbox" class="lightbox">
-    <button class="lightbox-close" aria-label="Close image">×</button>
-    <img id="lightbox-image" alt="" />
-    <div class="lightbox-caption">
-      <span id="lightbox-title"></span>
-      <span id="lightbox-category"></span>
-    </div>
-  </dialog>
+function renderPricing(items=[],site={}){
+  const grid=qs('#size-grid'); if(!grid) return; const max=Math.max(...items.map(x=>Number(x.diameter)||1),1);
+  grid.innerHTML=items.map(item=>{ const d=Number(item.diameter)||6; const w=68+(d/max)*72,h=92+(d/max)*48; const visual=item.image?`<img class="size-guide-image" src="${escapeAttr(assetUrl(item.image))}" alt="${escapeAttr(item.image_alt||item.size||'Cake size illustration')}"/>`:`<div class="cake-illustration"><div class="cake-shape four-layer" style="--cake-width:${w}px;--cake-height:${h}px"><i></i><i></i><i></i></div></div>`; return `<article class="size-card reveal"><div class="size-card-top">${visual}<h3>${escapeHTML(item.size||`${d}”`)}</h3></div><div class="size-details"><div><span>${escapeHTML(site.pricing_serves_label||'Approx. serves')}</span><strong>${escapeHTML(item.servings||'—')}</strong></div><div style="text-align:right"><span>${escapeHTML(site.pricing_price_label||'Starts at')}</span><strong>${escapeHTML(item.price||'Quote')}</strong></div></div></article>`; }).join(''); initReveal();
+}
 
-  <script src="assets/js/site.js" defer></script>
-</body>
-</html>
+function renderFAQ(items=[]){ const list=qs('#faq-list'); if(!list) return; list.innerHTML=items.map((item,i)=>`<article class="faq-item ${i===0?'open':''}"><button class="faq-question" aria-expanded="${i===0?'true':'false'}"><span>${escapeHTML(item.question||'')}</span><span class="faq-plus">+</span></button><div class="faq-answer"><div><p>${escapeHTML(item.answer||'')}</p></div></div></article>`).join(''); list.querySelectorAll('.faq-question').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');item.classList.toggle('open');btn.setAttribute('aria-expanded',item.classList.contains('open')?'true':'false');})); }
+function renderPolicies(data={}){ if(!qs('#policies-body')) return; setText('#policies-title',data.title,'Policies'); setOptionalText('#policies-intro',data.intro,'Please review these policies before placing your order.'); const body=String(data.body||'').trim(); qs('#policies-body').innerHTML=body?body.split(/\n\s*\n/).map(p=>`<p>${escapeHTML(p).replace(/\n/g,'<br>')}</p>`).join(''):''; }
+
+function initMobileNav(){ const button=qs('.mobile-menu-button'),drawer=qs('.mobile-drawer'),close=qs('.mobile-close'); if(!button||!drawer)return; const shut=()=>{drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');button.setAttribute('aria-expanded','false');};button.addEventListener('click',()=>{drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');button.setAttribute('aria-expanded','true');});close?.addEventListener('click',shut);drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut)); }
+function initReveal(){ const items=qsa('.reveal'); if(!('IntersectionObserver'in window))return items.forEach(x=>x.classList.add('visible'));const obs=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}}),{threshold:.08});items.forEach(el=>obs.observe(el)); }
+function openLightbox(item){ const dialog=qs('#lightbox'); if(!dialog)return;qs('#lightbox-image').src=item.dataset.image;qs('#lightbox-image').alt=item.dataset.title||'Cake design';qs('#lightbox-title').textContent=item.dataset.title;qs('#lightbox-category').textContent=item.dataset.category;dialog.showModal(); }
+function initLightbox(){ const d=qs('#lightbox');if(!d)return;qs('.lightbox-close')?.addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d)d.close();}); }
+
+(async function init(){
+  initMobileNav(); initLightbox();
+  const [legacySite,text,design,images,gallery,reviews,flavours,pricing,faq,policies]=await Promise.all([
+    getJSON(DATA.legacySite,{}),getJSON(DATA.text,{}),getJSON(DATA.design,{}),getJSON(DATA.images,{}),
+    getJSON(DATA.gallery,[]),getJSON(DATA.reviews,{}),getJSON(DATA.flavours,{}),getJSON(DATA.pricing,[]),getJSON(DATA.faq,[]),getJSON(DATA.policies,{})
+  ]);
+  const site=mergeSite(legacySite,text,design,images);
+  renderSite(site); renderGallery(gallery,site); renderReviews(reviews,site); renderFlavours(flavours); renderPricing(pricing,site); renderFAQ(faq); renderPolicies(policies); initReveal();
+})();
+
+</script>
+</body></html>

@@ -1,0 +1,2 @@
+HBC_VERIFIED_V5
+If GitHub root VERSION.txt does not say this, the update did not replace the root files.

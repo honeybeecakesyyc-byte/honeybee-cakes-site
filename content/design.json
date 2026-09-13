@@ -1,0 +1,22 @@
+{
+  "heading_font": "Bodoni Moda",
+  "body_font": "Cormorant Garamond",
+  "ui_font": "DM Sans",
+  "color_heading": "#4A403C",
+  "color_body": "#4A403C",
+  "color_muted": "#6D5F59",
+  "color_accent": "#B29A70",
+  "color_line": "rgba(74,64,60,.24)",
+  "order_text_color": "",
+  "bg_navigation": "#F3F1EA",
+  "bg_hero": "#F3F1EA",
+  "bg_intro": "#F3F1EA",
+  "bg_gallery": "#F3F1EA",
+  "bg_flavours": "#F3F1EA",
+  "bg_pricing": "#DED8CF",
+  "bg_faq": "#F3F1EA",
+  "bg_order": "#8796B5",
+  "bg_policies": "#F3F1EA",
+  "bg_contact": "#F3F1EA",
+  "bg_footer": "#F3F1EA"
+}
