@@ -3,7 +3,8 @@ const DATA = {
   gallery: 'content/gallery.json',
   flavours: 'content/flavours.json',
   pricing: 'content/pricing.json',
-  faq: 'content/faq.json'
+  faq: 'content/faq.json',
+  policies: 'content/policies.json'
 };
 
 async function getJSON(path, fallback) {
@@ -20,14 +21,61 @@ async function getJSON(path, fallback) {
 function qs(sel) { return document.querySelector(sel); }
 function qsa(sel) { return [...document.querySelectorAll(sel)]; }
 
-// Pages CMS normally writes public image paths beginning with '/'.
-// On a GitHub Pages project site, that leading slash points to the account root
-// instead of this repository. Convert site-owned image paths to repo-relative URLs.
+// Fixes Pages CMS image paths when the site is hosted as a GitHub Pages project site.
 function assetUrl(value) {
   if (!value) return '';
   const v = String(value).trim();
   if (/^(https?:|data:|blob:)/i.test(v)) return v;
   return v.replace(/^\/+/, '');
+}
+
+function setText(selector, value, fallback = '') {
+  const el = qs(selector);
+  if (!el) return;
+  const text = value ?? fallback;
+  el.textContent = text;
+}
+
+function setOptionalText(selector, value, fallback = '') {
+  const el = qs(selector);
+  if (!el) return;
+  const text = value ?? fallback;
+  el.textContent = text;
+  el.style.display = String(text || '').trim() ? '' : 'none';
+}
+
+function validColour(v) {
+  return typeof v === 'string' && v.trim() && CSS.supports('color', v.trim());
+}
+
+function contrastText(bg) {
+  const v = String(bg || '').trim();
+  const m = v.match(/^#([0-9a-f]{6})$/i);
+  if (!m) return '#ffffff';
+  const n = parseInt(m[1], 16);
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  return luminance > .67 ? '#4a403c' : '#ffffff';
+}
+
+function applyColours(site = {}) {
+  const map = {
+    bg_navigation: '--bg-nav',
+    bg_hero: '--bg-hero',
+    bg_intro: '--bg-intro',
+    bg_gallery: '--bg-gallery',
+    bg_flavours: '--bg-flavours',
+    bg_pricing: '--bg-pricing',
+    bg_order: '--bg-order',
+    bg_contact: '--bg-contact',
+    bg_footer: '--bg-footer',
+    bg_faq: '--bg-faq',
+    bg_page_content: '--bg-page-content'
+  };
+  Object.entries(map).forEach(([key, cssVar]) => {
+    if (validColour(site[key])) document.documentElement.style.setProperty(cssVar, site[key].trim());
+  });
+  if (validColour(site.bg_order)) document.documentElement.style.setProperty('--order-text', contrastText(site.bg_order));
 }
 
 function initMobileNav() {
@@ -61,13 +109,44 @@ function initReveal() {
   items.forEach(el => obs.observe(el));
 }
 
-function renderSite(site) {
-  if (!site) return;
-  if (qs('#hero-heading')) qs('#hero-heading').textContent = site.hero_heading || '';
-  if (qs('#hero-subheading')) qs('#hero-subheading').textContent = site.hero_subheading || '';
-  if (qs('#intro-heading')) qs('#intro-heading').textContent = site.intro_heading || '';
-  if (qs('#intro-copy')) qs('#intro-copy').textContent = site.intro_copy || '';
-  if (qs('#pricing-intro')) qs('#pricing-intro').textContent = site.pricing_intro || '';
+function renderSite(site = {}) {
+  applyColours(site);
+
+  // Hero — redundant eyebrow removed by default, but editable if you want it back.
+  setOptionalText('#hero-eyebrow', site.hero_eyebrow, '');
+  setText('#hero-heading', site.hero_heading, 'Cakes designed to feel as special as the celebration.');
+  setOptionalText('#hero-subheading', site.hero_subheading, 'Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.');
+  if (site.hero_cta && qs('#hero-cta')) qs('#hero-cta').childNodes[0].nodeValue = `${site.hero_cta} `;
+
+  setOptionalText('#intro-eyebrow', site.intro_eyebrow, 'HONEY BEE CAKES');
+  setText('#intro-heading', site.intro_heading, 'Custom cakes, thoughtfully designed for beautiful celebrations.');
+  setOptionalText('#intro-copy', site.intro_copy, 'Romantic, design-led cakes with an editorial eye — made to be memorable from the first look to the last slice.');
+
+  // Gallery — "Selected Work" and the old descriptive sentence are blank by default.
+  setOptionalText('#gallery-eyebrow', site.gallery_eyebrow, '');
+  setText('#gallery-heading', site.gallery_heading, 'Gallery');
+  setOptionalText('#gallery-copy', site.gallery_copy, '');
+
+  setOptionalText('#flavours-eyebrow', site.flavours_eyebrow, 'THE MENU');
+  setText('#flavours-heading', site.flavours_heading, 'Build your flavour');
+  setOptionalText('#flavours-copy', site.flavours_copy, 'Make it yours. Choose one sponge, one frosting and one filling, then add a little texture if you like.');
+
+  setOptionalText('#pricing-eyebrow', site.pricing_eyebrow, 'PLANNING YOUR CAKE');
+  setText('#pricing-heading', site.pricing_heading, 'Price + size guide');
+  setOptionalText('#pricing-intro', site.pricing_intro, 'Starting prices are a guide. Final pricing depends on design detail, finish and decoration.');
+  setOptionalText('#pricing-footnote', site.pricing_footnote, 'Serving counts are estimates and can vary by cutting style. Your final quote confirms the size recommended for your event.');
+
+  setOptionalText('#order-eyebrow', site.order_eyebrow, 'START YOUR ORDER');
+  setText('#order-heading', site.order_heading, 'Tell me what you’re celebrating.');
+  setOptionalText('#order-copy', site.order_copy, 'Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.');
+  setText('#order-meta-1', site.order_meta_1, 'Pickup near Stampede Park');
+  setText('#order-meta-2', site.order_meta_2, 'Licensed home bakery');
+  setText('#order-meta-3', site.order_meta_3, 'Pickup only');
+
+  setOptionalText('#contact-eyebrow', site.contact_eyebrow, 'CONTACT');
+  setText('#contact-heading', site.contact_heading, 'Let’s make something beautiful.');
+  setText('#contact-orders', site.contact_orders, 'By inquiry · Pickup only');
+
   if (site.logo && qs('#site-logo')) qs('#site-logo').src = assetUrl(site.logo);
   if (site.hero_image && qs('#hero-image')) {
     qs('#hero-image').src = assetUrl(site.hero_image);
@@ -90,15 +169,23 @@ function renderSite(site) {
   }
 }
 
+const GALLERY_CATEGORIES = ['All', 'Vintage', 'Floral', 'Minimal', 'Kids', 'Wedding', 'Cupcakes', 'Bento Box', 'Other'];
+
 function renderGallery(items = []) {
   const grid = qs('#gallery-grid');
   const filters = qs('#gallery-filters');
   if (!grid || !filters) return;
-  const categories = ['All', ...new Set(items.map(x => x.category).filter(Boolean))];
-  filters.innerHTML = categories.map((cat, i) => `<button class="gallery-filter ${i===0 ? 'active':''}" data-filter="${escapeHTML(cat)}">${escapeHTML(cat)}</button>`).join('');
+
+  const extras = [...new Set(items.map(x => x.category).filter(Boolean))].filter(x => !GALLERY_CATEGORIES.includes(x));
+  const categories = [...GALLERY_CATEGORIES, ...extras];
+  filters.innerHTML = categories.map((cat, i) => `<button class="gallery-filter ${i===0 ? 'active':''}" data-filter="${escapeAttr(cat)}">${escapeHTML(cat)}</button>`).join('');
 
   const draw = category => {
     const list = category === 'All' ? items : items.filter(x => x.category === category);
+    if (!list.length) {
+      grid.innerHTML = `<div class="gallery-empty">No ${escapeHTML(category === 'All' ? '' : category)} photos added yet.</div>`;
+      return;
+    }
     grid.innerHTML = list.map(item => `
       <figure class="gallery-item reveal" data-title="${escapeAttr(item.title || '')}" data-category="${escapeAttr(item.category || '')}" data-image="${escapeAttr(assetUrl(item.image || ''))}">
         <img src="${escapeAttr(assetUrl(item.image || 'assets/uploads/gallery-placeholder-1.svg'))}" alt="${escapeAttr(item.alt || item.title || 'Honey Bee Cakes design')}" loading="lazy" />
@@ -135,26 +222,10 @@ function initLightbox() {
 function renderFlavours(data = {}) {
   const grid = qs('#flavour-grid');
   if (!grid) return;
-
-  // Backward compatibility with the original preset-flavour list.
-  if (Array.isArray(data)) {
-    grid.innerHTML = data.map((item, i) => `
-      <article class="flavour-card reveal">
-        <div class="flavour-number">${String(i+1).padStart(2,'0')}</div>
-        <div>
-          <h3>${escapeHTML(item.name || '')}</h3>
-          <p>${escapeHTML(item.description || '')}</p>
-          ${item.tag ? `<span class="flavour-tag">${escapeHTML(item.tag)}</span>` : ''}
-        </div>
-      </article>`).join('');
-    initReveal();
-    return;
-  }
-
   const groups = [
     { key: 'sponges', number: '01', title: 'Choose your sponge' },
     { key: 'frostings', number: '02', title: 'Choose your frosting' },
-    { key: 'fillings', number: '03', title: 'Choose your filling' },
+    { key: 'fillings', number: '03', title: 'Choose your filling', optional: true },
     { key: 'add_ins', number: '04', title: 'Choose an add-in', optional: true }
   ];
 
@@ -220,6 +291,16 @@ function renderFAQ(items = []) {
   }));
 }
 
+function renderPolicies(data = {}) {
+  if (!qs('#policies-body')) return;
+  setText('#policies-title', data.title, 'Policies');
+  setOptionalText('#policies-intro', data.intro, 'Please review these policies before placing your order.');
+  const body = String(data.body || '').trim();
+  qs('#policies-body').innerHTML = body
+    ? body.split(/\n\s*\n/).map(p => `<p>${escapeHTML(p).replace(/\n/g, '<br>')}</p>`).join('')
+    : '<p>Add your policies in Pages CMS → Policies.</p>';
+}
+
 function escapeHTML(v='') { return String(v).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c])); }
 function escapeAttr(v='') { return escapeHTML(v); }
 
@@ -227,17 +308,19 @@ function escapeAttr(v='') { return escapeHTML(v); }
   initMobileNav();
   initLightbox();
   qs('#year') && (qs('#year').textContent = new Date().getFullYear());
-  const [site, gallery, flavours, pricing, faq] = await Promise.all([
+  const [site, gallery, flavours, pricing, faq, policies] = await Promise.all([
     getJSON(DATA.site, {}),
     getJSON(DATA.gallery, []),
-    getJSON(DATA.flavours, []),
+    getJSON(DATA.flavours, {}),
     getJSON(DATA.pricing, []),
-    getJSON(DATA.faq, [])
+    getJSON(DATA.faq, []),
+    getJSON(DATA.policies, {})
   ]);
   renderSite(site);
   renderGallery(gallery);
   renderFlavours(flavours);
   renderPricing(pricing);
   renderFAQ(faq);
+  renderPolicies(policies);
   initReveal();
 })();

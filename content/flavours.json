@@ -1,8 +1,36 @@
-[
-  {
-    "name": "Vanilla sponge"
-  },
-  {
-    "name": "Chocolate Buttercream"
-  }
-]
+{
+  "sponges": [
+    {"name": "Soft Vanilla", "note": ""},
+    {"name": "Vanilla Funfetti", "note": ""},
+    {"name": "Rich Chocolate", "note": ""},
+    {"name": "Tangy Red Velvet", "note": ""},
+    {"name": "Warm Brown Sugar Cinnamon", "note": ""},
+    {"name": "Black Velvet (Oreo-like)", "note": ""}
+  ],
+  "frostings": [
+    {"name": "Classic Vanilla Bean", "note": ""},
+    {"name": "Silky Milk Chocolate", "note": ""},
+    {"name": "Rich Dark Chocolate", "note": ""},
+    {"name": "Decadent Nutella", "note": ""},
+    {"name": "Crushed Oreo", "note": ""},
+    {"name": "Sweet Caramel", "note": ""},
+    {"name": "Earthy Matcha", "note": ""},
+    {"name": "Smooth Coffee", "note": ""}
+  ],
+  "fillings": [
+    {"name": "Strawberry Jam", "note": ""},
+    {"name": "Raspberry Jam", "note": ""},
+    {"name": "Dulce de Leche", "note": ""},
+    {"name": "Salted Caramel", "note": ""},
+    {"name": "Nutella", "note": ""},
+    {"name": "Biscoff Spread", "note": ""}
+  ],
+  "add_ins": [
+    {"name": "Toasted Hazelnut", "note": ""},
+    {"name": "Salted Peanut", "note": ""},
+    {"name": "Candied Walnut", "note": ""},
+    {"name": "Crushed Oreos", "note": ""},
+    {"name": "Crushed Biscoff", "note": ""},
+    {"name": "Banana Slices", "note": ""}
+  ]
+}
