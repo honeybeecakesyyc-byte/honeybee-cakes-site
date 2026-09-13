@@ -1,12 +1,102 @@
-[
-  {"name":"Vanilla Bean","description":"Soft vanilla sponge layered with fragrant vanilla buttercream.","tag":"Classic"},
-  {"name":"Strawberry Vanilla","description":"Vanilla sponge with vanilla buttercream and bright strawberry preserve.","tag":"Classic"},
-  {"name":"Strawberry Matcha","description":"Vanilla sponge with velvety matcha buttercream and strawberry preserve.","tag":"Signature"},
-  {"name":"Raspberry Velvet","description":"Red velvet sponge layered with vanilla buttercream and tart raspberry preserve.","tag":"Signature"},
-  {"name":"Almond Raspberry","description":"Delicate almond sponge layered with lemon buttercream and tart raspberry preserve.","tag":"Signature"},
-  {"name":"Caramel Latte","description":"Brown sugar sponge with smooth coffee buttercream and dulce de leche.","tag":"Signature"},
-  {"name":"Snickers","description":"Chocolate sponge with caramel buttercream, caramel-peanut filling and roasted peanut crunch.","tag":"Signature"},
-  {"name":"Chocolate Hazelnut","description":"Chocolate sponge with chocolate-hazelnut buttercream, Nutella and roasted hazelnut crunch.","tag":"Signature"},
-  {"name":"Biscoff Spice","description":"Brown sugar sponge with cinnamon buttercream, Biscoff spread and biscuit crunch.","tag":"Signature"},
-  {"name":"Milk Chocolate","description":"Chocolate sponge layered with silky milk chocolate buttercream.","tag":"Classic"}
-]
+{
+  "sponges": [
+    {
+      "name": "Vanilla Bean",
+      "note": "Soft vanilla sponge"
+    },
+    {
+      "name": "Chocolate",
+      "note": "Rich chocolate sponge"
+    },
+    {
+      "name": "Brown Sugar",
+      "note": "Warm caramel notes"
+    },
+    {
+      "name": "Red Velvet",
+      "note": "Classic cocoa-red velvet sponge"
+    },
+    {
+      "name": "Almond",
+      "note": "Delicate almond sponge"
+    }
+  ],
+  "frostings": [
+    {
+      "name": "Vanilla Bean",
+      "note": "Smooth vanilla buttercream"
+    },
+    {
+      "name": "Milk Chocolate",
+      "note": "Silky milk chocolate buttercream"
+    },
+    {
+      "name": "Coffee",
+      "note": "Smooth coffee buttercream"
+    },
+    {
+      "name": "Caramel",
+      "note": "Buttery caramel buttercream"
+    },
+    {
+      "name": "Matcha",
+      "note": "Velvety matcha buttercream"
+    },
+    {
+      "name": "Lemon",
+      "note": "Bright lemon buttercream"
+    },
+    {
+      "name": "Cinnamon",
+      "note": "Warm cinnamon buttercream"
+    },
+    {
+      "name": "Chocolate Hazelnut",
+      "note": "Chocolate-hazelnut buttercream"
+    }
+  ],
+  "fillings": [
+    {
+      "name": "Strawberry Preserve",
+      "note": "Bright strawberry fruit filling"
+    },
+    {
+      "name": "Raspberry Preserve",
+      "note": "Tart raspberry fruit filling"
+    },
+    {
+      "name": "Dulce de Leche",
+      "note": "Creamy caramelized milk filling"
+    },
+    {
+      "name": "Nutella",
+      "note": "Chocolate-hazelnut spread"
+    },
+    {
+      "name": "Caramel Peanut",
+      "note": "Caramel with roasted peanuts"
+    },
+    {
+      "name": "Biscoff",
+      "note": "Spiced caramelized biscuit spread"
+    }
+  ],
+  "add_ins": [
+    {
+      "name": "Roasted Peanut Crunch",
+      "note": "Crunchy roasted peanuts"
+    },
+    {
+      "name": "Roasted Hazelnut Crunch",
+      "note": "Toasted hazelnut pieces"
+    },
+    {
+      "name": "Biscoff Biscuit Crunch",
+      "note": "Crushed caramelized biscuits"
+    },
+    {
+      "name": "Oreo Crunch",
+      "note": "Crushed chocolate sandwich cookies"
+    }
+  ]
+}

@@ -122,18 +122,52 @@ function initLightbox() {
   d.addEventListener('click', e => { if (e.target === d) d.close(); });
 }
 
-function renderFlavours(items = []) {
+function renderFlavours(data = {}) {
   const grid = qs('#flavour-grid');
   if (!grid) return;
-  grid.innerHTML = items.map((item, i) => `
-    <article class="flavour-card reveal">
-      <div class="flavour-number">${String(i+1).padStart(2,'0')}</div>
-      <div>
-        <h3>${escapeHTML(item.name || '')}</h3>
-        <p>${escapeHTML(item.description || '')}</p>
-        ${item.tag ? `<span class="flavour-tag">${escapeHTML(item.tag)}</span>` : ''}
-      </div>
-    </article>`).join('');
+
+  // Backward compatibility with the original preset-flavour list.
+  if (Array.isArray(data)) {
+    grid.innerHTML = data.map((item, i) => `
+      <article class="flavour-card reveal">
+        <div class="flavour-number">${String(i+1).padStart(2,'0')}</div>
+        <div>
+          <h3>${escapeHTML(item.name || '')}</h3>
+          <p>${escapeHTML(item.description || '')}</p>
+          ${item.tag ? `<span class="flavour-tag">${escapeHTML(item.tag)}</span>` : ''}
+        </div>
+      </article>`).join('');
+    initReveal();
+    return;
+  }
+
+  const groups = [
+    { key: 'sponges', number: '01', title: 'Choose your sponge' },
+    { key: 'frostings', number: '02', title: 'Choose your frosting' },
+    { key: 'fillings', number: '03', title: 'Choose your filling' },
+    { key: 'add_ins', number: '04', title: 'Choose an add-in', optional: true }
+  ];
+
+  grid.innerHTML = groups.map(group => {
+    const items = Array.isArray(data[group.key]) ? data[group.key] : [];
+    return `
+      <article class="builder-group reveal">
+        <div class="builder-heading">
+          <span class="builder-number">${group.number}</span>
+          <div>
+            <h3>${group.title}</h3>
+            ${group.optional ? '<span class="builder-optional">optional</span>' : ''}
+          </div>
+        </div>
+        <div class="builder-options">
+          ${items.map(item => `
+            <div class="builder-option">
+              <strong>${escapeHTML(item.name || '')}</strong>
+              ${item.note ? `<span>${escapeHTML(item.note)}</span>` : ''}
+            </div>`).join('') || '<p class="builder-empty">Options coming soon.</p>'}
+        </div>
+      </article>`;
+  }).join('');
   initReveal();
 }
 
