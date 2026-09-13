@@ -2,62 +2,146 @@ media:
   - name: site_images
     label: Site images
     input: assets/uploads
-    output: /assets/uploads
+    output: assets/uploads
     rename: safe
     categories: [image]
 
 content:
-  - name: site
-    label: Site settings
+  - name: website_text
+    label: "Website text — VERIFIED V5"
     type: file
-    path: content/site.json
+    path: content/text.json
     format: json
-    operations:
-      delete: false
+    operations: { delete: false }
     fields:
-      - name: logo
-        label: Logo
-        type: image
-        options:
-          media: site_images
-        description: Upload a replacement logo here if you change it later.
-      - name: hero_image
-        label: Landing page image
-        type: image
-        options:
-          media: site_images
-        description: This is the large first image visitors see.
-      - name: hero_heading
-        label: Hero headline
-        type: string
-      - name: hero_subheading
-        label: Hero subheading
-        type: text
-      - name: intro_heading
-        label: Intro headline
-        type: string
-      - name: intro_copy
-        label: Intro copy
-        type: text
-      - name: pricing_intro
-        label: Price guide note
-        type: text
-      - name: email
-        label: Contact email
-        type: string
-      - name: location
-        label: Pickup location text
-        type: string
-      - name: instagram_handle
-        label: Instagram handle
-        type: string
-      - name: instagram_url
-        label: Instagram URL
-        type: string
-      - name: youform_embed_url
-        label: Youform embed URL
-        type: string
-        description: Paste the public EMBED URL from Youform here, not the editor URL.
+      - { name: brand_name, label: "NAV — Brand name", type: string }
+      - { name: mobile_menu_text, label: "NAV — Mobile menu button", type: string }
+      - { name: nav_home, label: "NAV — Home", type: string }
+      - { name: nav_gallery, label: "NAV — Gallery", type: string }
+      - { name: nav_flavours, label: "NAV — Flavours", type: string }
+      - { name: nav_pricing, label: "NAV — Price + Size", type: string }
+      - { name: nav_faq, label: "NAV — FAQ", type: string }
+      - { name: nav_order, label: "NAV — Order", type: string }
+      - { name: nav_policies, label: "NAV — Policies", type: string }
+      - { name: nav_contact, label: "NAV — Contact", type: string }
+      - { name: side_meta_1, label: "NAV — Bottom line 1", type: string }
+      - { name: side_meta_2, label: "NAV — Bottom line 2", type: string }
+      - { name: hero_eyebrow, label: "HOME — Small line", type: string }
+      - { name: hero_heading, label: "HOME — Main headline", type: string }
+      - { name: hero_subheading, label: "HOME — Paragraph", type: text }
+      - { name: hero_cta, label: "HOME — Order button", type: string }
+      - { name: hero_cta_arrow, label: "HOME — Order button symbol", type: string }
+      - { name: intro_eyebrow, label: "INTRO — Small label", type: string }
+      - { name: intro_heading, label: "INTRO — Heading", type: string }
+      - { name: intro_copy, label: "INTRO — Paragraph", type: text }
+      - { name: gallery_eyebrow, label: "GALLERY — Small label", type: string }
+      - { name: gallery_heading, label: "GALLERY — Heading", type: string }
+      - { name: gallery_copy, label: "GALLERY — Paragraph", type: text }
+      - { name: gallery_all_label, label: "GALLERY — All filter", type: string }
+      - { name: gallery_categories, label: "GALLERY — Categories (comma separated)", type: string }
+      - { name: gallery_empty_text, label: "GALLERY — Empty message", type: string }
+      - { name: flavours_eyebrow, label: "FLAVOURS — Small label", type: string }
+      - { name: flavours_heading, label: "FLAVOURS — Heading", type: string }
+      - { name: flavours_copy, label: "FLAVOURS — Paragraph", type: text }
+      - { name: pricing_eyebrow, label: "PRICE GUIDE — Small label", type: string }
+      - { name: pricing_heading, label: "PRICE GUIDE — Heading", type: string }
+      - { name: pricing_intro, label: "PRICE GUIDE — Paragraph", type: text }
+      - { name: pricing_serves_label, label: "PRICE GUIDE — Servings label", type: string }
+      - { name: pricing_price_label, label: "PRICE GUIDE — Price label", type: string }
+      - { name: pricing_footnote, label: "PRICE GUIDE — Footnote", type: text }
+      - { name: faq_eyebrow, label: "FAQ — Small label", type: string }
+      - { name: faq_heading, label: "FAQ — Heading", type: string }
+      - { name: faq_intro, label: "FAQ — Intro", type: text }
+      - { name: faq_cta_eyebrow, label: "FAQ — CTA small label", type: string }
+      - { name: faq_cta_heading, label: "FAQ — CTA heading", type: string }
+      - { name: faq_cta_button, label: "FAQ — CTA button", type: string }
+      - { name: faq_cta_arrow, label: "FAQ — CTA symbol", type: string }
+      - { name: order_eyebrow, label: "ORDER — Small label", type: string }
+      - { name: order_heading, label: "ORDER — Heading", type: string }
+      - { name: order_copy, label: "ORDER — Paragraph", type: text }
+      - { name: order_meta_1, label: "ORDER — Detail 1", type: string }
+      - { name: order_meta_2, label: "ORDER — Detail 2", type: string }
+      - { name: order_meta_3, label: "ORDER — Detail 3", type: string }
+      - { name: form_placeholder_heading, label: "ORDER — Empty form heading", type: string }
+      - { name: form_placeholder_copy, label: "ORDER — Empty form text", type: text }
+      - { name: youform_embed_url, label: "ORDER — Youform embed URL", type: string }
+      - { name: policies_eyebrow, label: "POLICIES — Small label", type: string }
+      - { name: policies_cta_eyebrow, label: "POLICIES — CTA small label", type: string }
+      - { name: policies_cta_heading, label: "POLICIES — CTA heading", type: string }
+      - { name: policies_cta_button, label: "POLICIES — CTA button", type: string }
+      - { name: policies_cta_arrow, label: "POLICIES — CTA symbol", type: string }
+      - { name: contact_eyebrow, label: "CONTACT — Small label", type: string }
+      - { name: contact_heading, label: "CONTACT — Heading", type: string }
+      - { name: contact_location_label, label: "CONTACT — Location label", type: string }
+      - { name: location, label: "CONTACT — Location", type: string }
+      - { name: contact_instagram_label, label: "CONTACT — Instagram label", type: string }
+      - { name: instagram_handle, label: "CONTACT — Instagram handle", type: string }
+      - { name: instagram_url, label: "CONTACT — Instagram URL", type: string }
+      - { name: contact_google_label, label: "CONTACT — Google label", type: string }
+      - { name: contact_orders_label, label: "CONTACT — Orders label", type: string }
+      - { name: contact_orders, label: "CONTACT — Orders text", type: string }
+      - { name: email, label: "CONTACT — Email", type: string }
+      - { name: reviews_eyebrow, label: "REVIEWS — Small label", type: string }
+      - { name: reviews_heading, label: "REVIEWS — Heading", type: string }
+      - { name: reviews_copy, label: "REVIEWS — Paragraph", type: text }
+      - { name: reviews_button_text, label: "REVIEWS — Google link text", type: string }
+      - { name: reviews_button_arrow, label: "REVIEWS — Google link symbol", type: string }
+      - { name: footer_brand, label: "FOOTER — Brand", type: string }
+      - { name: footer_gallery, label: "FOOTER — Gallery", type: string }
+      - { name: footer_flavours, label: "FOOTER — Flavours", type: string }
+      - { name: footer_pricing, label: "FOOTER — Pricing", type: string }
+      - { name: footer_faq, label: "FOOTER — FAQ", type: string }
+      - { name: footer_policies, label: "FOOTER — Policies", type: string }
+      - { name: footer_copyright, label: "FOOTER — Copyright (use {year})", type: string }
+
+  - name: website_design
+    label: "Colours + fonts — VERIFIED V5"
+    type: file
+    path: content/design.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - name: heading_font
+        label: "FONT — Headings"
+        type: select
+        options: { values: [Bodoni Moda, Cormorant Garamond, DM Serif Display, Playfair Display, Libre Baskerville, EB Garamond, Lora] }
+      - name: body_font
+        label: "FONT — Body text"
+        type: select
+        options: { values: [Cormorant Garamond, EB Garamond, Lora, Libre Baskerville, Playfair Display, DM Sans, Montserrat] }
+      - name: ui_font
+        label: "FONT — Small labels/buttons"
+        type: select
+        options: { values: [DM Sans, Montserrat, Cormorant Garamond, EB Garamond] }
+      - { name: color_heading, label: "COLOUR — Headings", type: string, description: "Hex e.g. #4A403C" }
+      - { name: color_body, label: "COLOUR — Body text", type: string }
+      - { name: color_muted, label: "COLOUR — Secondary text", type: string }
+      - { name: color_accent, label: "COLOUR — Accent", type: string }
+      - { name: color_line, label: "COLOUR — Divider lines", type: string }
+      - { name: order_text_color, label: "COLOUR — Order text (blank = automatic)", type: string }
+      - { name: bg_navigation, label: "BACKGROUND — Navigation", type: string }
+      - { name: bg_hero, label: "BACKGROUND — Home text side", type: string }
+      - { name: bg_intro, label: "BACKGROUND — Intro", type: string }
+      - { name: bg_gallery, label: "BACKGROUND — Gallery", type: string }
+      - { name: bg_flavours, label: "BACKGROUND — Flavours", type: string }
+      - { name: bg_pricing, label: "BACKGROUND — Price + size", type: string }
+      - { name: bg_faq, label: "BACKGROUND — FAQ", type: string }
+      - { name: bg_order, label: "BACKGROUND — Order", type: string }
+      - { name: bg_policies, label: "BACKGROUND — Policies", type: string }
+      - { name: bg_contact, label: "BACKGROUND — Contact + reviews", type: string }
+      - { name: bg_footer, label: "BACKGROUND — Footer", type: string }
+
+  - name: website_images
+    label: "Website images — VERIFIED V5"
+    type: file
+    path: content/images.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: logo, label: "HOME — Logo image", type: image, options: { media: site_images } }
+      - { name: logo_alt, label: "HOME — Logo description", type: string }
+      - { name: hero_image, label: "HOME — Landing image", type: image, options: { media: site_images } }
+      - { name: hero_image_alt, label: "HOME — Landing image description", type: string }
 
   - name: gallery
     label: Gallery
@@ -65,51 +149,79 @@ content:
     path: content/gallery.json
     format: json
     list: true
-    operations:
-      delete: false
     fields:
-      - name: title
-        label: Cake title
-        type: string
-        required: true
+      - { name: title, label: Cake title, type: string, required: true }
       - name: category
         label: Category
         type: select
-        options:
-          values: [Vintage, Floral, Minimal, Kids, Wedding, Cupcakes, Other]
-      - name: image
-        label: Photo
-        type: image
-        required: true
-        options:
-          media: site_images
-          rename: safe
-      - name: alt
-        label: Image description
-        type: string
-        description: Short description for accessibility and Google Images.
+        options: { values: [Vintage, Floral, Minimal, Kids, Wedding, Cupcakes, Bento Box, Other] }
+      - { name: image, label: Photo, type: image, options: { media: site_images }, required: true }
+      - { name: alt, label: Image description, type: string }
 
   - name: flavours
-    label: Flavours
+    label: Flavour builder
     type: file
     path: content/flavours.json
     format: json
-    list: true
     operations:
       delete: false
     fields:
-      - name: name
-        label: Flavour name
-        type: string
-        required: true
-      - name: description
-        label: Description
-        type: text
-      - name: tag
-        label: Tag
-        type: select
-        options:
-          values: [Classic, Signature, Seasonal]
+      - name: sponges
+        label: "1. Sponge"
+        type: object
+        fields:
+          - { name: number, label: Number, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: optional_label, label: Optional label, type: string }
+          - name: items
+            label: Sponge options
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string, required: true }
+              - { name: note, label: Optional note, type: string }
+      - name: frostings
+        label: "2. Frosting"
+        type: object
+        fields:
+          - { name: number, label: Number, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: optional_label, label: Optional label, type: string }
+          - name: items
+            label: Frosting options
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string, required: true }
+              - { name: note, label: Optional note, type: string }
+      - name: fillings
+        label: "3. Filling"
+        type: object
+        fields:
+          - { name: number, label: Number, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: optional_label, label: Optional label, type: string }
+          - name: items
+            label: Filling options
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string, required: true }
+              - { name: note, label: Optional note, type: string }
+      - name: add_ins
+        label: "4. Add-in"
+        type: object
+        fields:
+          - { name: number, label: Number, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: optional_label, label: Optional label, type: string }
+          - name: items
+            label: Add-in options
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string, required: true }
+              - { name: note, label: Optional note, type: string }
 
   - name: pricing
     label: Price + size guide
@@ -117,46 +229,51 @@ content:
     path: content/pricing.json
     format: json
     list: true
-    operations:
-      delete: false
     fields:
-      - name: size
-        label: Size label
-        type: string
-      - name: diameter
-        label: Diameter in inches
-        type: number
-      - name: servings
-        label: Approximate servings
-        type: string
-      - name: price
-        label: Starting price
-        type: string
+      - { name: size, label: Size label, type: string }
+      - { name: diameter, label: Diameter in inches, type: number }
+      - { name: servings, label: Approximate servings, type: string }
+      - { name: price, label: Starting price, type: string }
+      - { name: image, label: "Custom size illustration (optional — replaces cylinder)", type: image, options: { media: site_images } }
+      - { name: image_alt, label: Illustration description, type: string }
 
   - name: faq
-    label: FAQ
+    label: FAQ questions
     type: file
     path: content/faq.json
     format: json
     list: true
-    operations:
-      delete: false
     fields:
-      - name: question
-        label: Question
-        type: string
-        required: true
-      - name: answer
-        label: Answer
-        type: text
-        required: true
+      - { name: question, label: Question, type: string, required: true }
+      - { name: answer, label: Answer, type: text, required: true }
 
-settings:
-  content:
-    merge: true
-  commit:
-    templates:
-      create: "Create {path} via Honey Bee Cakes CMS"
-      update: "Update {path} via Honey Bee Cakes CMS"
-      delete: "Delete {path} via Honey Bee Cakes CMS"
-      rename: "Rename {oldPath} to {newPath} via Honey Bee Cakes CMS"
+  - name: policies
+    label: Policies
+    type: file
+    path: content/policies.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: title, label: Heading, type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: body, label: Full policies, type: text, description: "Long text is fine. Blank line = new paragraph." }
+
+  - name: reviews
+    label: Google reviews
+    type: file
+    path: content/reviews.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: google_url, label: Google Business / reviews link, type: string }
+      - { name: rating, label: Overall rating, type: string }
+      - { name: review_count, label: Review count text, type: string }
+      - name: items
+        label: Reviews shown on website
+        type: object
+        list: true
+        fields:
+          - { name: author, label: Customer name, type: string }
+          - { name: stars, label: Stars, type: number }
+          - { name: date, label: Date / relative date, type: string }
+          - { name: text, label: Review text, type: text }
