@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-build="HBC_VERIFIED_V5_CONTACT_FORM_V1">
+<html lang="en" data-build="HBC_VERIFIED_V5_HERO_ANIM_V1">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Honey Bee Cakes — custom cakes in Calgary."><title>Honey Bee Cakes | Calgary Custom Cakes</title>
@@ -442,9 +442,152 @@ body { overflow-x: hidden; }
 @media(max-width:760px){ .contact-form-head,.contact-form{grid-template-columns:1fr;} .contact-field.full,.contact-form-actions{grid-column:1;} .contact-form-wrap{margin-top:60px;padding-top:42px;} }
 
 
+
+/* ===== Compact animated photographic hero ===== */
+.hero.hero-cinematic {
+  position: relative;
+  display: block;
+  min-height: var(--hero-height-desktop, 430px);
+  height: var(--hero-height-desktop, 430px);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #241f1c;
+  isolation: isolate;
+}
+.hero.hero-cinematic .hero-image-wrap {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #241f1c;
+  z-index: 0;
+}
+.hero.hero-cinematic .hero-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1f1917;
+  opacity: 0;
+  pointer-events: none;
+  animation: heroShadeIn 1.35s ease .12s forwards;
+}
+.hero.hero-cinematic .hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-image-position, center center);
+  transform: scale(1.055);
+  animation: heroPhotoSettle 2.5s cubic-bezier(.2,.72,.24,1) forwards;
+}
+.hero.hero-cinematic .hero-copy {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  height: 100%;
+  padding: 42px clamp(26px, 5vw, 76px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+  color: var(--hero-text-color, #f3f1ea);
+}
+.hero.hero-cinematic .hero-logo-wrap {
+  width: min(var(--hero-logo-width, 390px), 64vw);
+  margin: 0 0 12px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroElementIn .9s cubic-bezier(.2,.7,.2,1) .28s forwards;
+}
+.hero.hero-cinematic .hero-logo {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: normal;
+  filter: none;
+}
+.hero.hero-cinematic .eyebrow {
+  color: color-mix(in srgb, var(--hero-text-color, #f3f1ea) 78%, transparent);
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: heroElementIn .8s ease .48s forwards;
+}
+.hero.hero-cinematic h1 {
+  color: inherit;
+  font-size: clamp(22px, 2.1vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -.015em;
+  max-width: 820px;
+  opacity: 0;
+  transform: translateY(9px);
+  animation: heroElementIn .85s ease .55s forwards;
+}
+.hero.hero-cinematic .hero-subheading {
+  max-width: 620px;
+  margin: 12px 0 18px;
+  color: color-mix(in srgb, var(--hero-text-color, #f3f1ea) 83%, transparent);
+  font-size: clamp(12px, 1.05vw, 14px);
+  opacity: 0;
+  transform: translateY(7px);
+  animation: heroElementIn .8s ease .68s forwards;
+}
+.hero.hero-cinematic .text-link {
+  color: inherit;
+  border-color: color-mix(in srgb, var(--hero-text-color, #f3f1ea) 80%, transparent);
+  opacity: 0;
+  transform: translateY(7px);
+  animation: heroElementIn .8s ease .78s forwards;
+}
+@keyframes heroPhotoSettle { to { transform: scale(1); } }
+@keyframes heroShadeIn { to { opacity: var(--hero-overlay-opacity, .54); } }
+@keyframes heroElementIn { to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 900px) {
+  .hero.hero-cinematic {
+    min-height: var(--hero-height-mobile, 340px);
+    height: var(--hero-height-mobile, 340px);
+  }
+  .hero.hero-cinematic .hero-copy {
+    min-height: 100%;
+    height: 100%;
+    padding: 48px 24px 34px;
+  }
+  .hero.hero-cinematic .hero-logo-wrap {
+    width: min(var(--hero-logo-width-mobile, 285px), 72vw);
+    margin-bottom: 10px;
+  }
+  .hero.hero-cinematic h1 { font-size: clamp(18px, 5.6vw, 26px); }
+  .hero.hero-cinematic .hero-subheading { font-size: 12px; max-width: 92vw; }
+}
+@media (max-width: 520px) {
+  .hero.hero-cinematic {
+    min-height: var(--hero-height-mobile, 320px);
+    height: var(--hero-height-mobile, 320px);
+  }
+  .hero.hero-cinematic .hero-copy { padding: 52px 20px 28px; }
+  .hero.hero-cinematic .hero-logo-wrap { width: min(var(--hero-logo-width-mobile, 245px), 74vw); }
+  .hero.hero-cinematic .hero-subheading { margin: 9px 0 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero.hero-cinematic .hero-image,
+  .hero.hero-cinematic .hero-image-wrap::after,
+  .hero.hero-cinematic .hero-logo-wrap,
+  .hero.hero-cinematic .eyebrow,
+  .hero.hero-cinematic h1,
+  .hero.hero-cinematic .hero-subheading,
+  .hero.hero-cinematic .text-link {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero.hero-cinematic .hero-image-wrap::after { opacity: var(--hero-overlay-opacity, .54) !important; }
+}
+
 </style>
 </head>
-<body data-build="HBC_VERIFIED_V5_CONTACT_FORM_V1">
+<body data-build="HBC_VERIFIED_V5_HERO_ANIM_V1">
 <button id="mobile-menu-text" class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">MENU</button>
 <aside class="side-nav" aria-label="Primary navigation">
   <a class="side-brand" href="#home" aria-label="Honey Bee Cakes home"><span id="brand-name">HONEY BEE CAKES</span></a>
@@ -459,7 +602,16 @@ body { overflow-x: hidden; }
   <a data-nav="home" href="#home">Home</a><a data-nav="gallery" href="#gallery">Gallery</a><a data-nav="flavours" href="#flavours">Flavours</a><a data-nav="pricing" href="#pricing">Price + Size</a><a data-nav="faq" href="#faq">FAQ</a><a data-nav="order" href="#order">Order</a><a data-nav="policies" href="#policies">Policies</a><a data-nav="contact" href="#contact">Contact</a>
 </nav></div>
 <main>
-<section class="hero" id="home"><div class="hero-copy reveal"><div class="hero-logo-wrap"><img id="site-logo" src="assets/uploads/honeybee-logo.png" alt="Honey Bee Cakes Calgary" class="hero-logo"></div><p id="hero-eyebrow" class="eyebrow"></p><h1 id="hero-heading">Cakes designed to feel as special as the celebration.</h1><p id="hero-subheading" class="hero-subheading">Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.</p><a id="hero-cta" class="text-link" href="#order"><span id="hero-cta-text">ORDER A CAKE</span> <span id="hero-cta-arrow">↘</span></a></div><div class="hero-image-wrap reveal"><img id="hero-image" src="assets/uploads/hero-placeholder.svg" alt="Honey Bee Cakes featured cake" class="hero-image"></div></section>
+<section class="hero hero-cinematic" id="home">
+  <div class="hero-image-wrap" aria-hidden="true"><img id="hero-image" src="assets/uploads/hero-dummy.png" alt="Honey Bee Cakes featured cake" class="hero-image"></div>
+  <div class="hero-copy">
+    <div class="hero-logo-wrap"><img id="site-logo" src="assets/uploads/hero-logo-light.png" alt="Honey Bee Cakes Calgary" class="hero-logo"></div>
+    <p id="hero-eyebrow" class="eyebrow"></p>
+    <h1 id="hero-heading">Cakes designed to feel as special as the celebration.</h1>
+    <p id="hero-subheading" class="hero-subheading">Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.</p>
+    <a id="hero-cta" class="text-link" href="#order"><span id="hero-cta-text">ORDER A CAKE</span> <span id="hero-cta-arrow">↘</span></a>
+  </div>
+</section>
 <section class="intro section-pad reveal"><p id="intro-eyebrow" class="eyebrow">HONEY BEE CAKES</p><h2 id="intro-heading">Custom cakes, thoughtfully designed for beautiful celebrations.</h2><p id="intro-copy">Romantic, design-led cakes with an editorial eye — made to be memorable from the first look to the last slice.</p></section>
 <section class="gallery-section section-pad" id="gallery"><div class="section-heading reveal"><p id="gallery-eyebrow" class="eyebrow"></p><h2 id="gallery-heading">Gallery</h2><p id="gallery-copy"></p></div><div id="gallery-filters" class="gallery-filters reveal" aria-label="Gallery filters"></div><div id="gallery-grid" class="gallery-grid"></div></section>
 <section class="flavours-section section-pad" id="flavours"><div class="section-heading split-heading reveal"><div><p id="flavours-eyebrow" class="eyebrow">THE MENU</p><h2 id="flavours-heading">Build your flavour</h2></div><p id="flavours-copy">Make it yours. Choose one sponge, one frosting and one filling, then add a little texture if you like.</p></div><div id="flavour-grid" class="flavour-grid"></div></section>
@@ -467,7 +619,7 @@ body { overflow-x: hidden; }
 <section class="faq-flow section-pad" id="faq"><div class="section-heading reveal"><p id="faq-eyebrow" class="eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading">Frequently asked questions</h2><p id="faq-intro">Everything you need to know about ordering, pickup, storage and allergens.</p></div><div id="faq-list" class="faq-list reveal"></div><div class="flow-cta reveal"><p id="faq-cta-eyebrow" class="eyebrow">READY?</p><h3 id="faq-cta-heading">Start your cake inquiry.</h3><a id="faq-order-link" class="text-link" href="#order"><span id="faq-cta-button">ORDER A CAKE</span> <span id="faq-cta-arrow">↗</span></a></div></section>
 <section class="order-section section-pad" id="order"><div class="order-copy reveal"><p id="order-eyebrow" class="eyebrow">START YOUR ORDER</p><h2 id="order-heading">Tell me what you’re celebrating.</h2><p id="order-copy">Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.</p><div class="order-meta"><span id="order-meta-1">Pickup near Stampede Park</span><span id="order-meta-2">Licensed home bakery</span><span id="order-meta-3">Pickup only</span></div></div><div class="form-shell reveal"><iframe id="youform-frame" title="Honey Bee Cakes order form" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="form-placeholder" class="form-placeholder"><h3 id="form-placeholder-heading">Your Youform goes here</h3><p id="form-placeholder-copy">Paste your Youform embed URL into Website text and it appears here automatically.</p></div></div></section>
 <section class="policies-flow section-pad" id="policies"><div class="section-heading reveal"><p id="policies-eyebrow" class="eyebrow">HONEY BEE CAKES</p><h2 id="policies-title">Policies</h2><p id="policies-intro">Please review these policies before placing your order.</p></div><div id="policies-body" class="policies-body reveal"></div><div class="flow-cta reveal"><p id="policies-cta-eyebrow" class="eyebrow">QUESTIONS?</p><h3 id="policies-cta-heading">Get in touch before ordering.</h3><a id="policies-contact-link" class="text-link" href="#contact"><span id="policies-cta-button">CONTACT</span> <span id="policies-cta-arrow">↗</span></a></div></section>
-<section class="contact-section section-pad" id="contact"><div class="contact-top"><div class="contact-main reveal"><p id="contact-eyebrow" class="eyebrow">CONTACT</p><h2 id="contact-heading">Let’s make something beautiful.</h2><a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a></div><div class="contact-details reveal"><div><span id="contact-location-label">LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div><div><span id="contact-instagram-label">INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div><div><span id="contact-google-label">GOOGLE</span><p class="contact-google-line"><a id="google-reviews-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener"><span id="reviews-button-text">SEE GOOGLE REVIEWS</span> <span id="reviews-button-arrow">↗</span></a></p></div><div><span id="contact-orders-label">ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div></div></div><div class="contact-form-wrap reveal" id="contact-form-wrap"><div class="contact-form-head"><div><p id="contact-form-eyebrow" class="eyebrow">SEND A MESSAGE</p><h3 id="contact-form-heading">Have a question?</h3></div><div class="contact-form-note"><p id="contact-form-note">For cake orders, please use the Order form so I have all the details I need.</p><a id="contact-form-order-link" href="#order">GO TO ORDER FORM ↗</a></div></div><form id="contact-form" class="contact-form" action="https://formspree.io/f/xyeyqpjn" method="POST"><div class="contact-field"><label id="contact-form-name-label" for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="contact-field"><label id="contact-form-email-label" for="contact-form-email">Email</label><input id="contact-form-email" name="email" type="email" autocomplete="email" required></div><div class="contact-field full"><label id="contact-form-topic-label" for="contact-topic">Topic</label><select id="contact-topic" name="topic" required><option value="General question">General question</option><option value="Existing order">Existing order</option><option value="Collaboration">Collaboration</option><option value="Other">Other</option></select></div><div class="contact-field full"><label id="contact-form-message-label" for="contact-message">Message</label><textarea id="contact-message" name="message" required></textarea></div><div class="contact-honeypot" aria-hidden="true"><label>Leave this field empty</label></div><input type="hidden" name="_subject" value="Honey Bee Cakes website message"><div class="contact-form-actions"><button id="contact-form-submit" class="contact-submit" type="submit">SEND MESSAGE</button><p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p></div></form></div><div class="contact-reviews"><div class="contact-reviews-head reveal"><div><p id="contact-reviews-eyebrow" class="eyebrow">KIND WORDS</p><h2 id="contact-reviews-heading">Google reviews</h2></div><div><p id="contact-reviews-copy">Read what customers have shared about their Honey Bee Cakes orders.</p><div id="reviews-summary" class="reviews-summary" hidden><strong id="reviews-rating"></strong><span id="reviews-count"></span></div></div></div><div id="contact-reviews-grid" class="contact-reviews-grid"></div></div></section>
+<section class="contact-section section-pad" id="contact"><div class="contact-top"><div class="contact-main reveal"><p id="contact-eyebrow" class="eyebrow">CONTACT</p><h2 id="contact-heading">Let’s make something beautiful.</h2><a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a></div><div class="contact-details reveal"><div><span id="contact-location-label">LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div><div><span id="contact-instagram-label">INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div><div><span id="contact-google-label">GOOGLE</span><p class="contact-google-line"><a id="google-reviews-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener"><span id="reviews-button-text">SEE GOOGLE REVIEWS</span> <span id="reviews-button-arrow">↗</span></a></p></div><div><span id="contact-orders-label">ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div></div></div><div class="contact-form-wrap reveal" id="contact-form-wrap"><div class="contact-form-head"><div><p id="contact-form-eyebrow" class="eyebrow">SEND A MESSAGE</p><h3 id="contact-form-heading">Have a question?</h3></div><div class="contact-form-note"><p id="contact-form-note">For cake orders, please use the Order form so I have all the details I need.</p><a id="contact-form-order-link" href="#order">GO TO ORDER FORM ↗</a></div></div><form id="contact-form" class="contact-form" action="https://formspree.io/f/xyeyqpjn" method="POST"><div class="contact-field"><label id="contact-form-name-label" for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="contact-field"><label id="contact-form-email-label" for="contact-form-email">Email</label><input id="contact-form-email" name="email" type="email" autocomplete="email" required></div><div class="contact-field full"><label id="contact-form-topic-label" for="contact-topic">Topic</label><select id="contact-topic" name="topic" required><option value="General question">General question</option><option value="Existing order">Existing order</option><option value="Collaboration">Collaboration</option><option value="Other">Other</option></select></div><div class="contact-field full"><label id="contact-form-message-label" for="contact-message">Message</label><textarea id="contact-message" name="message" required></textarea></div><input type="hidden" name="_subject" value="Honey Bee Cakes website message"><div class="contact-form-actions"><button id="contact-form-submit" class="contact-submit" type="submit">SEND MESSAGE</button><p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p></div></form></div><div class="contact-reviews"><div class="contact-reviews-head reveal"><div><p id="contact-reviews-eyebrow" class="eyebrow">KIND WORDS</p><h2 id="contact-reviews-heading">Google reviews</h2></div><div><p id="contact-reviews-copy">Read what customers have shared about their Honey Bee Cakes orders.</p><div id="reviews-summary" class="reviews-summary" hidden><strong id="reviews-rating"></strong><span id="reviews-count"></span></div></div></div><div id="contact-reviews-grid" class="contact-reviews-grid"></div></div></section>
 <footer><div id="footer-brand" class="footer-mark">HONEY BEE CAKES</div><div class="footer-links"><a id="footer-gallery" href="#gallery">Gallery</a><a id="footer-flavours" href="#flavours">Flavours</a><a id="footer-pricing" href="#pricing">Pricing</a><a id="footer-faq" href="#faq">FAQ</a><a id="footer-policies" href="#policies">Policies</a></div><div id="footer-copyright" class="footer-small">© 2026 Honey Bee Cakes Calgary</div></footer>
 </main>
 <dialog id="lightbox" class="lightbox"><button class="lightbox-close" aria-label="Close image">×</button><img id="lightbox-image" alt=""><div class="lightbox-caption"><span id="lightbox-title"></span><span id="lightbox-category"></span></div></dialog>
@@ -512,6 +664,13 @@ function applyDesign(site={}){
   if(site.ui_font) document.documentElement.style.setProperty('--ui-font',fontStack(site.ui_font,', Arial, sans-serif'));
   if(validColour(site.bg_order)) document.documentElement.style.setProperty('--order-text', site.order_text_color && validColour(site.order_text_color) ? site.order_text_color : contrastText(site.bg_order));
   else if(validColour(site.order_text_color)) document.documentElement.style.setProperty('--order-text', site.order_text_color);
+  if(validColour(site.hero_text_color)) document.documentElement.style.setProperty('--hero-text-color', site.hero_text_color.trim());
+  const overlay=parseFloat(site.hero_overlay_opacity); if(Number.isFinite(overlay)) document.documentElement.style.setProperty('--hero-overlay-opacity', Math.min(0.9,Math.max(0,overlay)));
+  if(site.hero_height_desktop) document.documentElement.style.setProperty('--hero-height-desktop', String(site.hero_height_desktop).trim());
+  if(site.hero_height_mobile) document.documentElement.style.setProperty('--hero-height-mobile', String(site.hero_height_mobile).trim());
+  if(site.hero_logo_width) document.documentElement.style.setProperty('--hero-logo-width', String(site.hero_logo_width).trim());
+  if(site.hero_logo_width_mobile) document.documentElement.style.setProperty('--hero-logo-width-mobile', String(site.hero_logo_width_mobile).trim());
+  if(site.hero_image_position) document.documentElement.style.setProperty('--hero-image-position', String(site.hero_image_position).trim());
 }
 
 function navValues(site={}){
@@ -556,8 +715,8 @@ function renderSite(site={}){
   setOptionalText('#faq-cta-eyebrow',site.faq_cta_eyebrow,'READY?'); setText('#faq-cta-heading',site.faq_cta_heading,'Start your cake inquiry.'); setText('#faq-cta-button',site.faq_cta_button,'ORDER A CAKE'); if(qs('#faq-cta-arrow')) setText('#faq-cta-arrow',site.faq_cta_arrow,'↗');
   setOptionalText('#policies-eyebrow',site.policies_eyebrow,'HONEY BEE CAKES'); setOptionalText('#policies-cta-eyebrow',site.policies_cta_eyebrow,'QUESTIONS?'); setText('#policies-cta-heading',site.policies_cta_heading,'Get in touch before ordering.'); setText('#policies-cta-button',site.policies_cta_button,'CONTACT'); if(qs('#policies-cta-arrow')) setText('#policies-cta-arrow',site.policies_cta_arrow,'↗');
 
-  if(site.logo && qs('#site-logo')) { qs('#site-logo').src=assetUrl(site.logo); qs('#site-logo').alt=site.logo_alt||'Honey Bee Cakes Calgary'; }
-  if(site.hero_image && qs('#hero-image')) { qs('#hero-image').src=assetUrl(site.hero_image); qs('#hero-image').alt=site.hero_image_alt||'Honey Bee Cakes featured cake'; }
+  if(qs('#site-logo')) { qs('#site-logo').src=assetUrl(site.hero_overlay_logo||'assets/uploads/hero-logo-light.png'); qs('#site-logo').alt=site.hero_overlay_logo_alt||'Honey Bee Cakes Calgary'; }
+  if(qs('#hero-image')) { qs('#hero-image').src=assetUrl(site.hero_image||'assets/uploads/hero-dummy.png'); qs('#hero-image').alt=site.hero_image_alt||'Honey Bee Cakes featured cake'; }
   if(site.email && qs('#contact-email')) { qs('#contact-email').textContent=site.email; qs('#contact-email').href=`mailto:${site.email}`; }
   if(site.location && qs('#contact-location')) qs('#contact-location').textContent=site.location;
   if(qs('#instagram-link')) { if(site.instagram_url) qs('#instagram-link').href=site.instagram_url; qs('#instagram-link').textContent=site.instagram_handle||'@honeybeecakesyyc'; }

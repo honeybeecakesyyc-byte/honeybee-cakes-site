@@ -134,7 +134,13 @@ content:
       - { name: color_line, label: "COLOUR — Divider lines", type: string }
       - { name: order_text_color, label: "COLOUR — Order text (blank = automatic)", type: string }
       - { name: bg_navigation, label: "BACKGROUND — Navigation", type: string }
-      - { name: bg_hero, label: "BACKGROUND — Home text side", type: string }
+      - { name: bg_hero, label: "BACKGROUND — Hero fallback colour", type: string }
+      - { name: hero_text_color, label: "HERO — Text/logo colour reference", type: string, description: "Used for the text layered over the hero photo. Example: #F3F1EA" }
+      - { name: hero_overlay_opacity, label: "HERO — Dark overlay strength", type: string, description: "Use a number from 0 to 0.9. Recommended: 0.54" }
+      - { name: hero_height_desktop, label: "HERO — Desktop height", type: string, description: "Example: 430px" }
+      - { name: hero_height_mobile, label: "HERO — Mobile height", type: string, description: "Example: 320px" }
+      - { name: hero_logo_width, label: "HERO — Logo width desktop", type: string, description: "Example: 390px" }
+      - { name: hero_logo_width_mobile, label: "HERO — Logo width mobile", type: string, description: "Example: 245px" }
       - { name: bg_intro, label: "BACKGROUND — Intro", type: string }
       - { name: bg_gallery, label: "BACKGROUND — Gallery", type: string }
       - { name: bg_flavours, label: "BACKGROUND — Flavours", type: string }
@@ -156,6 +162,7 @@ content:
       - { name: logo_alt, label: "HOME — Logo description", type: string }
       - { name: hero_image, label: "HOME — Landing image", type: image, options: { media: site_images } }
       - { name: hero_image_alt, label: "HOME — Landing image description", type: string }
+      - { name: hero_image_position, label: "HERO — Image crop position", type: string, description: "Examples: center center, 60% center, center 30%" }
 
   - name: gallery
     label: Gallery
