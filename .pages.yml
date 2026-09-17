@@ -178,6 +178,7 @@ content:
         options: { values: [Vintage, Floral, Minimal, Kids, Wedding, Cupcakes, Bento Box, Other] }
       - { name: image, label: Photo, type: image, options: { media: site_images }, required: true }
       - { name: alt, label: Image description, type: string }
+      - { name: featured_home, label: Featured on homepage conveyor, type: boolean, default: false }
 
   - name: flavours
     label: Flavour builder
