@@ -1,0 +1,134 @@
+{
+  "sponges": {
+    "number": "01",
+    "title": "Válassz piskótát",
+    "optional_label": "",
+    "items": [
+      {
+        "name": "Puha vanília",
+        "note": ""
+      },
+      {
+        "name": "Vaníliás funfetti",
+        "note": ""
+      },
+      {
+        "name": "Gazdag csokoládé",
+        "note": ""
+      },
+      {
+        "name": "Red Velvet",
+        "note": ""
+      },
+      {
+        "name": "Barna cukros-fahéjas",
+        "note": ""
+      },
+      {
+        "name": "Black Velvet (Oreós)",
+        "note": ""
+      }
+    ]
+  },
+  "frostings": {
+    "number": "02",
+    "title": "Válassz krémet",
+    "optional_label": "",
+    "items": [
+      {
+        "name": "Klasszikus vaníliabab",
+        "note": ""
+      },
+      {
+        "name": "Selymes tejcsokoládé",
+        "note": ""
+      },
+      {
+        "name": "Gazdag étcsokoládé",
+        "note": ""
+      },
+      {
+        "name": "Nutella",
+        "note": ""
+      },
+      {
+        "name": "Oreo",
+        "note": ""
+      },
+      {
+        "name": "Karamell",
+        "note": ""
+      },
+      {
+        "name": "Matcha",
+        "note": ""
+      },
+      {
+        "name": "Kávé",
+        "note": ""
+      }
+    ]
+  },
+  "fillings": {
+    "number": "03",
+    "title": "Választható töltelék",
+    "optional_label": "opcionális",
+    "items": [
+      {
+        "name": "Eperlekvár",
+        "note": ""
+      },
+      {
+        "name": "Málnalekvár",
+        "note": ""
+      },
+      {
+        "name": "Dulce de leche",
+        "note": ""
+      },
+      {
+        "name": "Sós karamell",
+        "note": ""
+      },
+      {
+        "name": "Nutella",
+        "note": ""
+      },
+      {
+        "name": "Biscoff krém",
+        "note": ""
+      }
+    ]
+  },
+  "add_ins": {
+    "number": "04",
+    "title": "Választható extra",
+    "optional_label": "opcionális",
+    "items": [
+      {
+        "name": "Pirított mogyoró",
+        "note": ""
+      },
+      {
+        "name": "Sós földimogyoró",
+        "note": ""
+      },
+      {
+        "name": "Kandírozott dió",
+        "note": ""
+      },
+      {
+        "name": "Tört Oreo",
+        "note": ""
+      },
+      {
+        "name": "Tört Biscoff",
+        "note": ""
+      },
+      {
+        "name": "Banánszeletek",
+        "note": ""
+      }
+    ]
+  }
+}

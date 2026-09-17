@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-build="HBC_VERIFIED_V5_HOME_FLOW_V2">
+<html lang="en" data-build="HBC_BILINGUAL_V1">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Honey Bee Cakes — custom cakes in Calgary."><title>Honey Bee Cakes | Calgary Custom Cakes</title>
@@ -625,9 +625,53 @@ body { overflow-x: hidden; }
   .hero.hero-cinematic .hero-image-wrap::after { opacity: var(--hero-overlay-opacity, .54) !important; }
 }
 
+
+/* English / Hungarian language switch */
+.language-switcher {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--line-color, var(--line));
+  background: color-mix(in srgb, var(--bg-nav, var(--cream)) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(45,37,34,.06);
+}
+.language-button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--body-color, var(--cocoa));
+  border-radius: 999px;
+  padding: 7px 9px;
+  font-family: var(--ui-font, var(--sans));
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  cursor: pointer;
+  line-height: 1;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.language-button:hover { transform: translateY(-1px); }
+.language-button[aria-pressed="true"] {
+  background: var(--heading-color, var(--cocoa));
+  color: var(--bg-nav, var(--cream));
+}
+.language-button .flag { font-size: 13px; margin-right: 4px; vertical-align: -1px; }
+@media (max-width: 760px) {
+  .language-switcher { top: 12px; right: 12px; padding: 4px; gap: 3px; }
+  .language-button { padding: 6px 7px; font-size: 8px; }
+  .language-button .flag { font-size: 12px; margin-right: 3px; }
+}
+
 </style>
 </head>
-<body data-build="HBC_VERIFIED_V5_HOME_FLOW_V2">
+<body data-build="HBC_BILINGUAL_V1">
 <button id="mobile-menu-text" class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">MENU</button>
 <aside class="side-nav" aria-label="Primary navigation">
   <a class="side-brand" href="#home" aria-label="Honey Bee Cakes home"><span id="brand-name">HONEY BEE CAKES</span></a>
@@ -641,6 +685,10 @@ body { overflow-x: hidden; }
 <div class="mobile-drawer" aria-hidden="true"><button class="mobile-close" aria-label="Close menu">×</button><a class="mobile-brand" href="#home"><span id="mobile-brand-name">HONEY BEE CAKES</span></a><nav>
   <a data-nav="home" href="#home">Home</a><a data-nav="pricing" href="#pricing">Price + Size</a><a data-nav="flavours" href="#flavours">Flavour</a><a data-nav="faq" href="#faq">FAQ</a><a data-nav="order" href="#order">Order</a><a data-nav="gallery" href="#gallery">Gallery</a><a data-nav="contact" href="#contact">Contact</a><a data-nav="policies" href="#policies">Policies</a>
 </nav></div>
+<div class="language-switcher" aria-label="Language / Nyelv">
+  <button class="language-button" type="button" data-language="en" aria-pressed="true" aria-label="English"><span class="flag" aria-hidden="true">🇨🇦</span>EN</button>
+  <button class="language-button" type="button" data-language="hu" aria-pressed="false" aria-label="Magyar"><span class="flag" aria-hidden="true">🇭🇺</span>HU</button>
+</div>
 <main>
 <section class="hero hero-cinematic" id="home">
   <div class="hero-image-wrap" aria-hidden="true"><img id="hero-image" src="assets/uploads/hero-dummy.png" alt="Honey Bee Cakes featured cake" class="hero-image"></div>
@@ -658,16 +706,16 @@ body { overflow-x: hidden; }
 <section class="faq-flow section-pad" id="faq"><div class="section-heading reveal"><p id="faq-eyebrow" class="eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading">Frequently asked questions</h2><p id="faq-intro">Everything you need to know about ordering, pickup, storage and allergens.</p></div><div id="faq-list" class="faq-list reveal"></div><div class="flow-cta reveal"><p id="faq-cta-eyebrow" class="eyebrow">READY?</p><h3 id="faq-cta-heading">Start your cake inquiry.</h3><a id="faq-order-link" class="text-link" href="#order"><span id="faq-cta-button">ORDER A CAKE</span> <span id="faq-cta-arrow">↗</span></a></div></section>
 <section class="order-section section-pad" id="order"><div class="order-copy reveal"><p id="order-eyebrow" class="eyebrow">START YOUR ORDER</p><h2 id="order-heading">Tell me what you’re celebrating.</h2><p id="order-copy">Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.</p><div class="order-meta"><span id="order-meta-1">Pickup near Stampede Park</span><span id="order-meta-2">Licensed home bakery</span><span id="order-meta-3">Pickup only</span></div></div><div class="form-shell reveal"><iframe id="youform-frame" title="Honey Bee Cakes order form" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="form-placeholder" class="form-placeholder"><h3 id="form-placeholder-heading">Your Youform goes here</h3><p id="form-placeholder-copy">Paste your Youform embed URL into Website text and it appears here automatically.</p></div></div></section>
 <section class="gallery-section section-pad" id="gallery"><div class="section-heading reveal"><p id="gallery-eyebrow" class="eyebrow"></p><h2 id="gallery-heading">Gallery</h2><p id="gallery-copy"></p></div><div id="gallery-filters" class="gallery-filters reveal" aria-label="Gallery filters"></div><div id="gallery-grid" class="gallery-grid"></div></section>
-<section class="contact-section section-pad" id="contact"><div class="contact-top"><div class="contact-main reveal"><p id="contact-eyebrow" class="eyebrow">CONTACT</p><h2 id="contact-heading">Let’s make something beautiful.</h2><a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a></div><div class="contact-details reveal"><div><span id="contact-location-label">LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div><div><span id="contact-instagram-label">INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div><div><span id="contact-google-label">GOOGLE</span><p class="contact-google-line"><a id="google-reviews-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener"><span id="reviews-button-text">SEE GOOGLE REVIEWS</span> <span id="reviews-button-arrow">↗</span></a></p></div><div><span id="contact-orders-label">ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div></div></div><div class="contact-form-wrap reveal" id="contact-form-wrap"><div class="contact-form-head"><div><p id="contact-form-eyebrow" class="eyebrow">SEND A MESSAGE</p><h3 id="contact-form-heading">Have a question?</h3></div><div class="contact-form-note"><p id="contact-form-note">For cake orders, please use the Order form so I have all the details I need.</p><a id="contact-form-order-link" href="#order">GO TO ORDER FORM ↗</a></div></div><form id="contact-form" class="contact-form" action="https://formspree.io/f/xyeyqpjn" method="POST"><div class="contact-field"><label id="contact-form-name-label" for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="contact-field"><label id="contact-form-email-label" for="contact-form-email">Email</label><input id="contact-form-email" name="email" type="email" autocomplete="email" required></div><div class="contact-field full"><label id="contact-form-topic-label" for="contact-topic">Topic</label><select id="contact-topic" name="topic" required><option value="General question">General question</option><option value="Existing order">Existing order</option><option value="Collaboration">Collaboration</option><option value="Other">Other</option></select></div><div class="contact-field full"><label id="contact-form-message-label" for="contact-message">Message</label><textarea id="contact-message" name="message" required></textarea></div><input type="hidden" name="_subject" value="Honey Bee Cakes website message"><div class="contact-form-actions"><button id="contact-form-submit" class="contact-submit" type="submit">SEND MESSAGE</button><p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p></div></form></div><div class="contact-reviews"><div class="contact-reviews-head reveal"><div><p id="contact-reviews-eyebrow" class="eyebrow">KIND WORDS</p><h2 id="contact-reviews-heading">Google reviews</h2></div><div><p id="contact-reviews-copy">Read what customers have shared about their Honey Bee Cakes orders.</p><div id="reviews-summary" class="reviews-summary" hidden><strong id="reviews-rating"></strong><span id="reviews-count"></span></div></div></div><div id="contact-reviews-grid" class="contact-reviews-grid"></div></div></section>
+<section class="contact-section section-pad" id="contact"><div class="contact-top"><div class="contact-main reveal"><p id="contact-eyebrow" class="eyebrow">CONTACT</p><h2 id="contact-heading">Let’s make something beautiful.</h2><a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a></div><div class="contact-details reveal"><div><span id="contact-location-label">LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div><div><span id="contact-instagram-label">INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div><div><span id="contact-google-label">GOOGLE</span><p class="contact-google-line"><a id="google-reviews-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener"><span id="reviews-button-text">SEE GOOGLE REVIEWS</span> <span id="reviews-button-arrow">↗</span></a></p></div><div><span id="contact-orders-label">ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div></div></div><div class="contact-form-wrap reveal" id="contact-form-wrap"><div class="contact-form-head"><div><p id="contact-form-eyebrow" class="eyebrow">SEND A MESSAGE</p><h3 id="contact-form-heading">Have a question?</h3></div><div class="contact-form-note"><p id="contact-form-note">For cake orders, please use the Order form so I have all the details I need.</p><a id="contact-form-order-link" href="#order">GO TO ORDER FORM ↗</a></div></div><form id="contact-form" class="contact-form" action="https://formspree.io/f/xyeyqpjn" method="POST"><div class="contact-field"><label id="contact-form-name-label" for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="contact-field"><label id="contact-form-email-label" for="contact-form-email">Email</label><input id="contact-form-email" name="email" type="email" autocomplete="email" required></div><div class="contact-field full"><label id="contact-form-topic-label" for="contact-topic">Topic</label><select id="contact-topic" name="topic" required><option value="General question">General question</option><option value="Existing order">Existing order</option><option value="Collaboration">Collaboration</option><option value="Other">Other</option></select></div><div class="contact-field full"><label id="contact-form-message-label" for="contact-message">Message</label><textarea id="contact-message" name="message" required></textarea></div><input id="contact-form-subject" type="hidden" name="_subject" value="Honey Bee Cakes website message"><div class="contact-form-actions"><button id="contact-form-submit" class="contact-submit" type="submit">SEND MESSAGE</button><p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p></div></form></div><div class="contact-reviews"><div class="contact-reviews-head reveal"><div><p id="contact-reviews-eyebrow" class="eyebrow">KIND WORDS</p><h2 id="contact-reviews-heading">Google reviews</h2></div><div><p id="contact-reviews-copy">Read what customers have shared about their Honey Bee Cakes orders.</p><div id="reviews-summary" class="reviews-summary" hidden><strong id="reviews-rating"></strong><span id="reviews-count"></span></div></div></div><div id="contact-reviews-grid" class="contact-reviews-grid"></div></div></section>
 <section class="policies-flow section-pad" id="policies"><div class="section-heading reveal"><p id="policies-eyebrow" class="eyebrow">HONEY BEE CAKES</p><h2 id="policies-title">Policies</h2><p id="policies-intro">Please review these policies before placing your order.</p></div><div id="policies-body" class="policies-body reveal"></div><div class="flow-cta reveal"><p id="policies-cta-eyebrow" class="eyebrow">QUESTIONS?</p><h3 id="policies-cta-heading">Get in touch before ordering.</h3><a id="policies-contact-link" class="text-link" href="#contact"><span id="policies-cta-button">CONTACT</span> <span id="policies-cta-arrow">↗</span></a></div></section>
 <footer><div id="footer-brand" class="footer-mark">HONEY BEE CAKES</div><div class="footer-links"><a id="footer-gallery" href="#gallery">Gallery</a><a id="footer-flavours" href="#flavours">Flavours</a><a id="footer-pricing" href="#pricing">Pricing</a><a id="footer-faq" href="#faq">FAQ</a><a id="footer-policies" href="#policies">Policies</a></div><div id="footer-copyright" class="footer-small">© 2026 Honey Bee Cakes Calgary</div></footer>
 </main>
 <dialog id="lightbox" class="lightbox"><button class="lightbox-close" aria-label="Close image">×</button><img id="lightbox-image" alt=""><div class="lightbox-caption"><span id="lightbox-title"></span><span id="lightbox-category"></span></div></dialog>
 <script>
 const DATA = {
-  legacySite: 'content/site.json', text: 'content/text.json', design: 'content/design.json', images: 'content/images.json',
-  gallery: 'content/gallery.json', reviews: 'content/reviews.json', flavours: 'content/flavours.json',
-  pricing: 'content/pricing.json', faq: 'content/faq.json', policies: 'content/policies.json'
+  legacySite: 'content/site.json', text: 'content/text.json', textHu: 'content/text_hu.json', design: 'content/design.json', images: 'content/images.json',
+  gallery: 'content/gallery.json', reviews: 'content/reviews.json', flavours: 'content/flavours.json', flavoursHu: 'content/flavours_hu.json',
+  pricing: 'content/pricing.json', faq: 'content/faq.json', faqHu: 'content/faq_hu.json', policies: 'content/policies.json', policiesHu: 'content/policies_hu.json'
 };
 
 async function getJSON(path, fallback) {
@@ -723,6 +771,29 @@ function navValues(site={}){
 
 function nonEmpty(obj={}){ const out={}; Object.entries(obj||{}).forEach(([k,v])=>{ if(v!==undefined && v!==null && v!=='' ) out[k]=v; }); return out; }
 function mergeSite(legacy={}, text={}, design={}, images={}){ return {...legacy, ...nonEmpty(text), ...nonEmpty(design), ...nonEmpty(images)}; }
+function mergeLocalizedObject(base={}, localized={}) { return {...(base||{}), ...nonEmpty(localized||{})}; }
+function hasItems(group){ return !!group && ((Array.isArray(group) && group.length) || (Array.isArray(group.items) && group.items.length)); }
+function mergeFlavourLanguage(base={}, localized={}){
+  const out={...(base||{})};
+  ['sponges','frostings','fillings','add_ins'].forEach(key=>{
+    const b=base?.[key]; const l=localized?.[key];
+    if(!l){ out[key]=b; return; }
+    if(Array.isArray(l)){ out[key]=l.length?l:b; return; }
+    const bObj=(b && !Array.isArray(b) && typeof b==='object')?b:{};
+    const bItems=Array.isArray(b)?b:(Array.isArray(bObj.items)?bObj.items:[]);
+    const lItems=Array.isArray(l.items)?l.items:[];
+    out[key]={...bObj,...nonEmpty(l),items:lItems.length?lItems:bItems};
+  });
+  return out;
+}
+function categoryLabels(site={}){
+  const map={};
+  String(site.gallery_category_labels||'').split(',').map(x=>x.trim()).filter(Boolean).forEach(pair=>{
+    const i=pair.indexOf('='); if(i>0) map[pair.slice(0,i).trim()]=pair.slice(i+1).trim();
+  });
+  return map;
+}
+
 function renderShared(site={}){
   applyDesign(site);
   const nav=navValues(site);
@@ -773,6 +844,7 @@ function renderSite(site={}){
   const orderLink=qs('#contact-form-order-link'); if(orderLink) orderLink.textContent=site.contact_form_order_link||'GO TO ORDER FORM ↗';
   const topicSelect=qs('#contact-topic'); if(topicSelect){ const topics=String(site.contact_form_topics||'General question, Existing order, Collaboration, Other').split(',').map(x=>x.trim()).filter(Boolean); topicSelect.innerHTML=topics.map(t=>`<option value="${escapeAttr(t)}">${escapeHTML(t)}</option>`).join(''); }
   const contactForm=qs('#contact-form'); if(contactForm) contactForm.action=site.formspree_endpoint||'https://formspree.io/f/xyeyqpjn';
+  const subject=qs('#contact-form-subject'); if(subject) subject.value=site.contact_form_subject||'Honey Bee Cakes website message';
 }
 
 const DEFAULT_CATEGORIES=['Vintage','Floral','Minimal','Kids','Wedding','Cupcakes','Bento Box','Other'];
@@ -790,9 +862,9 @@ function renderFeatured(items=[]){
 function renderGallery(items=[],site={}){
   const grid=qs('#gallery-grid'), filters=qs('#gallery-filters'); if(!grid||!filters) return;
   const preferred=String(site.gallery_categories||DEFAULT_CATEGORIES.join(',')).split(',').map(x=>x.trim()).filter(Boolean); const extras=[...new Set(items.map(x=>x.category).filter(Boolean))].filter(x=>!preferred.includes(x)); const categories=[site.gallery_all_label||'All',...preferred,...extras]; const allLabel=categories[0];
-  filters.innerHTML=categories.map((cat,i)=>`<button class="gallery-filter ${i===0?'active':''}" data-filter="${escapeAttr(cat)}">${escapeHTML(cat)}</button>`).join('');
+  const labelMap=categoryLabels(site); filters.innerHTML=categories.map((cat,i)=>`<button class="gallery-filter ${i===0?'active':''}" data-filter="${escapeAttr(cat)}">${escapeHTML(i===0?cat:(labelMap[cat]||cat))}</button>`).join('');
   const draw=category=>{ const list=category===allLabel?items:items.filter(x=>x.category===category); if(!list.length){ grid.innerHTML=`<div class="gallery-empty">${escapeHTML(site.gallery_empty_text||'No photos added yet.')}</div>`; return; }
-    grid.innerHTML=list.map(item=>`<figure class="gallery-item reveal" data-title="${escapeAttr(item.title||'')}" data-category="${escapeAttr(item.category||'')}" data-image="${escapeAttr(assetUrl(item.image||''))}"><img src="${escapeAttr(assetUrl(item.image||''))}" alt="${escapeAttr(item.alt||item.title||'Honey Bee Cakes design')}" loading="lazy"/><figcaption class="gallery-overlay"><strong>${escapeHTML(item.title||'')}</strong><span>${escapeHTML(item.category||'')}</span></figcaption></figure>`).join(''); initReveal(); grid.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>openLightbox(item))); };
+    grid.innerHTML=list.map(item=>{ const shownCategory=labelMap[item.category]||item.category||''; return `<figure class="gallery-item reveal" data-title="${escapeAttr(item.title||'')}" data-category="${escapeAttr(item.category||'')}" data-category-label="${escapeAttr(shownCategory)}" data-image="${escapeAttr(assetUrl(item.image||''))}"><img src="${escapeAttr(assetUrl(item.image||''))}" alt="${escapeAttr(item.alt||item.title||'Honey Bee Cakes design')}" loading="lazy"/><figcaption class="gallery-overlay"><strong>${escapeHTML(item.title||'')}</strong><span>${escapeHTML(shownCategory)}</span></figcaption></figure>`; }).join(''); initReveal(); grid.querySelectorAll('.gallery-item').forEach(item=>item.addEventListener('click',()=>openLightbox(item))); };
   draw(allLabel); filters.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{filters.querySelectorAll('button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');draw(btn.dataset.filter);}));
 }
 
@@ -829,30 +901,52 @@ function initContactForm(site={}){
   const status=qs('#contact-form-status'), button=qs('#contact-form-submit');
   form.addEventListener('submit',async e=>{
     e.preventDefault();
-    if(button){ button.disabled=true; button.textContent=site.contact_form_sending||'SENDING…'; }
+    const activeSite=window.HBC_CURRENT_SITE||site;
+    if(button){ button.disabled=true; button.textContent=activeSite.contact_form_sending||'SENDING…'; }
     if(status){ status.textContent=''; status.className='contact-form-status'; }
     try{
       const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(response.ok){ form.reset(); if(status){ status.textContent=site.contact_form_success||'Thank you — your message has been sent.'; status.className='contact-form-status success'; } }
+      if(response.ok){ form.reset(); if(status){ status.textContent=activeSite.contact_form_success||'Thank you — your message has been sent.'; status.className='contact-form-status success'; } }
       else { throw new Error('Form submission failed'); }
-    }catch(err){ if(status){ status.textContent=site.contact_form_error||'Something went wrong. Please email me directly instead.'; status.className='contact-form-status error'; } }
-    finally { if(button){ button.disabled=false; button.textContent=site.contact_form_submit||'SEND MESSAGE'; } }
+    }catch(err){ if(status){ status.textContent=activeSite.contact_form_error||'Something went wrong. Please email me directly instead.'; status.className='contact-form-status error'; } }
+    finally { if(button){ button.disabled=false; button.textContent=activeSite.contact_form_submit||'SEND MESSAGE'; } }
   });
 }
 
 function initMobileNav(){ const button=qs('.mobile-menu-button'),drawer=qs('.mobile-drawer'),close=qs('.mobile-close'); if(!button||!drawer)return; const shut=()=>{drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');button.setAttribute('aria-expanded','false');};button.addEventListener('click',()=>{drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');button.setAttribute('aria-expanded','true');});close?.addEventListener('click',shut);drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',shut)); }
 function initReveal(){ const items=qsa('.reveal'); if(!('IntersectionObserver'in window))return items.forEach(x=>x.classList.add('visible'));const obs=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}}),{threshold:.08});items.forEach(el=>obs.observe(el)); }
-function openLightbox(item){ const dialog=qs('#lightbox'); if(!dialog)return;qs('#lightbox-image').src=item.dataset.image;qs('#lightbox-image').alt=item.dataset.title||'Cake design';qs('#lightbox-title').textContent=item.dataset.title;qs('#lightbox-category').textContent=item.dataset.category;dialog.showModal(); }
+function openLightbox(item){ const dialog=qs('#lightbox'); if(!dialog)return;qs('#lightbox-image').src=item.dataset.image;qs('#lightbox-image').alt=item.dataset.title||'Cake design';qs('#lightbox-title').textContent=item.dataset.title;qs('#lightbox-category').textContent=item.dataset.categoryLabel||item.dataset.category;dialog.showModal(); }
 function initLightbox(){ const d=qs('#lightbox');if(!d)return;qs('.lightbox-close')?.addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d)d.close();}); }
 
 (async function init(){
   initMobileNav(); initLightbox();
-  const [legacySite,text,design,images,gallery,reviews,flavours,pricing,faq,policies]=await Promise.all([
-    getJSON(DATA.legacySite,{}),getJSON(DATA.text,{}),getJSON(DATA.design,{}),getJSON(DATA.images,{}),
-    getJSON(DATA.gallery,[]),getJSON(DATA.reviews,{}),getJSON(DATA.flavours,{}),getJSON(DATA.pricing,[]),getJSON(DATA.faq,[]),getJSON(DATA.policies,{})
+  const [legacySite,text,textHu,design,images,gallery,reviews,flavours,flavoursHu,pricing,faq,faqHu,policies,policiesHu]=await Promise.all([
+    getJSON(DATA.legacySite,{}),getJSON(DATA.text,{}),getJSON(DATA.textHu,{}),getJSON(DATA.design,{}),getJSON(DATA.images,{}),
+    getJSON(DATA.gallery,[]),getJSON(DATA.reviews,{}),getJSON(DATA.flavours,{}),getJSON(DATA.flavoursHu,{}),getJSON(DATA.pricing,[]),
+    getJSON(DATA.faq,[]),getJSON(DATA.faqHu,[]),getJSON(DATA.policies,{}),getJSON(DATA.policiesHu,{})
   ]);
-  const site=mergeSite(legacySite,text,design,images);
-  renderSite(site); renderFeatured(gallery); renderGallery(gallery,site); renderReviews(reviews,site); renderFlavours(flavours); renderPricing(pricing,site); renderFAQ(faq); renderPolicies(policies); initContactForm(site); initReveal();
+  const englishSite=mergeSite(legacySite,text,design,images);
+  const hungarianSite={...englishSite,...nonEmpty(textHu)};
+  const localized={
+    en:{site:englishSite,flavours,faq,policies},
+    hu:{site:hungarianSite,flavours:mergeFlavourLanguage(flavours,flavoursHu),faq:(Array.isArray(faqHu)&&faqHu.length)?faqHu:faq,policies:mergeLocalizedObject(policies,policiesHu)}
+  };
+
+  function renderLanguage(lang){
+    const chosen=lang==='hu'?'hu':'en';
+    const pack=localized[chosen];
+    window.HBC_CURRENT_SITE=pack.site;
+    document.documentElement.lang=chosen;
+    try { localStorage.setItem('hbc_language',chosen); } catch(e){}
+    const u=new URL(location.href); u.searchParams.set('lang',chosen); history.replaceState(null,'',u.pathname+u.search+u.hash);
+    qsa('[data-language]').forEach(btn=>btn.setAttribute('aria-pressed',btn.dataset.language===chosen?'true':'false'));
+    renderSite(pack.site); renderFeatured(gallery); renderGallery(gallery,pack.site); renderReviews(reviews,pack.site); renderFlavours(pack.flavours); renderPricing(pricing,pack.site); renderFAQ(pack.faq); renderPolicies(pack.policies); initContactForm(pack.site); initReveal();
+  }
+
+  qsa('[data-language]').forEach(btn=>btn.addEventListener('click',()=>renderLanguage(btn.dataset.language)));
+  const queryLang=new URLSearchParams(location.search).get('lang');
+  let saved=''; try { saved=localStorage.getItem('hbc_language')||''; } catch(e){}
+  renderLanguage(queryLang==='hu'||queryLang==='en'?queryLang:(saved==='hu'?'hu':'en'));
 })();
 
 </script>
