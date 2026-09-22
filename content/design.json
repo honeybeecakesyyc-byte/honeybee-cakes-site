@@ -1,5 +1,5 @@
 {
-  "heading_font": "Bodoni Moda",
+  "heading_font": "Cormorant Garamond",
   "body_font": "Cormorant Garamond",
   "ui_font": "DM Sans",
   "color_heading": "#4A403C",
@@ -7,7 +7,6 @@
   "color_muted": "#6D5F59",
   "color_accent": "#B29A70",
   "color_line": "rgba(74,64,60,.24)",
-  "order_text_color": "",
   "bg_navigation": "#F3F1EA",
   "bg_hero": "#F3F1EA",
   "bg_intro": "#F3F1EA",
