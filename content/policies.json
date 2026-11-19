@@ -1,5 +1,54 @@
 {
-  "title": "Policies",
-  "intro": "By placing an order, you acknowledge that you have read and agreed to the policies below.",
-  "body": "Pickup is in Erlton, Calgary SW near Stampede Park. Delivery is not available.\n\nPickup windows are Wed–Fri between 11am–1pm and 4–6pm, and Sat–Sun between 10am–1pm. Please plan pickup in advance; availability outside scheduled pickup times cannot be guaranteed.\n\nIf your party is at a venue, please confirm that the venue accepts cakes from a home bakery. Honey Bee Cakes does not operate from an AHS-inspected commercial kitchen.\n\nPricing is firm and final; discounts are not offered.\n\nA 50% deposit is required within 24 hours to reserve your date. The remaining balance is due at pickup.\n\nChanges, rescheduling or cancellations must be requested at least 4 days before pickup. If you cancel more than 4 days before pickup, your deposit will be refunded. If you cancel within 4 days of pickup, the deposit is normally non-refundable, although a refund may be considered in rare and exceptional circumstances. A change of plans does not automatically qualify.\n\nIf a cake is not picked up on the scheduled date, it is kept for a maximum of 2 days and then discarded.\n\nAll products are prepared in a home kitchen that handles common allergens including eggs, dairy, gluten, nuts, honey, berries, cinnamon and others. Cross-contact may occur. Products are not intended for individuals with severe allergies.\n\nIt is the customer’s responsibility to review flavour descriptions, cake sizes and serving suggestions before ordering. Refunds are not issued for misunderstandings regarding size or flavour after pickup.\n\nCakes should be refrigerated and removed approximately 1–3 hours before serving. Keep cakes flat, refrigerated and away from heat or direct sunlight. Refunds are not issued for damage after pickup, including dropping, tilting, melting or improper storage.\n\nIf I am unable to fulfil your order because of illness, emergency or circumstances beyond my control, all payments will be fully refunded. When possible, I will provide advance notice and may offer a rescheduled date.\n\nFor questions, concerns or order changes, contact hello@honeybeecakesyyc.ca or @honeybeecakesyyc on Instagram."
+  "sections": [
+    {
+      "title": "Agreement & Acceptance",
+      "paragraphs": [
+        "By placing an order, you acknowledge that you have read and agreed to all policies listed below. Once payment is received, this forms a binding agreement between you and Honey Bee Cakes."
+      ]
+    },
+    {
+      "title": "Pickup Time & Late Policy",
+      "paragraphs": [
+        "Pickup is in Erlton, Calgary SW near Stampede Park. Delivery is not available.",
+        "Pickup windows: Wed–Fri between 11am–1pm and 4–6pm. Sat–Sun between 10am–1pm only. Closed Mondays and most Tuesdays.",
+        "Please plan your pickup in advance! I cannot guarantee availability outside of scheduled pickup times. Orders not picked up within the agreed window may not be accommodated."
+      ]
+    },
+    {
+      "title": "Deposit & Cancellations",
+      "paragraphs": [
+        "If your party is at a venue, make sure to confirm if they accept cakes from a home-bakery. I do not work out of an AHS kitchen.",
+        "A 50% deposit is required within 24 hours to reserve your date, otherwise your spot may be given to someone else. The remaining balance is due at pickup. Please note that pricing is firm and final; discounts are not offered.",
+        "Changes, rescheduling, or cancellation to your order must be made minimum 4 days in advance. In case of a cancellation the deposit is non-refundable within 4 days of pickup. Deposit refunds are only considered in rare and exceptional circumstances. Change of plans does not qualify.",
+        "If a cake is not picked up on the original scheduled date, it is kept for maximum 2 days, then discarded.",
+        "In the unlikely event that I am unable to fulfill your order due to illness, emergency, or circumstances beyond my control, a full refund of all payments made will be issued. If possible, I will provide as much notice as I can and may offer a rescheduled date."
+      ]
+    },
+    {
+      "title": "Allergies & Dietary Info",
+      "paragraphs": [
+        "All products are prepared in a home kitchen that handles common allergens including eggs, dairy, gluten, nuts, honey, berries, cinnamon, and more. While care is taken, cross-contact may occur. These products are not intended for individuals with severe allergies."
+      ]
+    },
+    {
+      "title": "Cake Sizes, Flavours & Servings",
+      "paragraphs": [
+        "It is your responsibility to review flavour descriptions, cake sizes, and serving suggestions prior to ordering. Refunds will not be issued for misunderstandings regarding size or flavour after pickup."
+      ]
+    },
+    {
+      "title": "Cake Handling & Storage",
+      "paragraphs": [
+        "Cakes should be refrigerated and removed 1–3 hours before serving for best quality. Buttercream is hard when cold, please bring the cake to room temperature before serving!",
+        "It is the customer’s responsibility to transport and store the cake correctly (keep flat, refrigerated, and away from heat or direct sunlight). Refunds will not be issued for any damage occurring after pickup, including dropping, tilting, melting, or improper storage."
+      ]
+    },
+    {
+      "title": "Quality Guarantee",
+      "paragraphs": [
+        "I am a food-safety certified baker operating under a valid City of Calgary home-based business license. All cakes are made fresh using sanitized tools and food-safe practices and are provided in perfect condition at the time of pickup.",
+        "If there is a fundamental issue with your order (e.g. incorrect flavour or physical contaminant), please contact me immediately. Refunds may only be issued in these rare cases."
+      ]
+    }
+  ]
 }
