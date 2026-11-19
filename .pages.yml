@@ -8,463 +8,185 @@ media:
 
 content:
   - name: website_text
-    label: "Website text — VERIFIED V5"
+    label: Website text
     type: file
     path: content/text.json
     format: json
     operations: { delete: false }
     fields:
-      - { name: brand_name, label: "NAV — Brand name", type: string }
-      - { name: announcement_text, label: "HOME — Announcement bar", type: string }
-      - { name: mobile_menu_text, label: "NAV — Mobile menu button", type: string }
-      - { name: nav_home, label: "NAV — Home", type: string }
-      - { name: nav_gallery, label: "NAV — Gallery", type: string }
+      - { name: nav_about, label: "NAV — About", type: string }
+      - { name: nav_portfolio, label: "NAV — Portfolio", type: string }
+      - { name: nav_pricing, label: "NAV — Pricing", type: string }
       - { name: nav_flavours, label: "NAV — Flavours", type: string }
-      - { name: nav_pricing, label: "NAV — Price + Size", type: string }
       - { name: nav_faq, label: "NAV — FAQ", type: string }
-      - { name: nav_order, label: "NAV — Order", type: string }
       - { name: nav_policies, label: "NAV — Policies", type: string }
       - { name: nav_contact, label: "NAV — Contact", type: string }
-      - { name: side_meta_1, label: "NAV — Bottom line 1", type: string }
-      - { name: side_meta_2, label: "NAV — Bottom line 2", type: string }
-      - { name: hero_eyebrow, label: "HOME — Small line", type: string }
-      - { name: hero_heading, label: "HOME — Main headline", type: string }
-      - { name: hero_title_top, label: "HOME — Hero title top", type: string }
-      - { name: hero_title_script, label: "HOME — Hero script line", type: string }
-      - { name: hero_title_bottom, label: "HOME — Hero title bottom", type: string }
-      - { name: hero_subheading, label: "HOME — Paragraph", type: text }
-      - { name: hero_cta, label: "HOME — Order button", type: string }
-      - { name: hero_cta_arrow, label: "HOME — Order button symbol", type: string }
-      - { name: intro_eyebrow, label: "INTRO — Small label", type: string }
-      - { name: intro_heading, label: "INTRO — Heading", type: string }
-      - { name: intro_title_top, label: "ABOUT — Heading beginning", type: string }
-      - { name: intro_title_script, label: "ABOUT — Script word", type: string }
-      - { name: intro_title_bottom, label: "ABOUT — Heading ending", type: string }
-      - { name: intro_copy_2, label: "ABOUT — Second paragraph", type: text }
-      - { name: values_eyebrow, label: "VALUES — Small label", type: string }
-      - { name: values_heading, label: "VALUES — Heading", type: string }
-      - { name: values_copy, label: "VALUES — Paragraph", type: text }
-      - { name: value_card_title, label: "VALUES — Card heading", type: string }
-      - { name: value_card_copy, label: "VALUES — Card paragraph", type: text }
-      - { name: intro_copy, label: "INTRO — Paragraph", type: text }
-      - { name: gallery_eyebrow, label: "GALLERY — Small label", type: string }
-      - { name: gallery_heading, label: "GALLERY — Heading", type: string }
-      - { name: gallery_copy, label: "GALLERY — Paragraph", type: text }\n      - { name: gallery_button_text, label: "GALLERY — Button text", type: string }
-      - { name: gallery_all_label, label: "GALLERY — All filter", type: string }
-      - { name: gallery_categories, label: "GALLERY — Categories (comma separated)", type: string }
-      - { name: gallery_category_labels, label: "GALLERY — Optional category display labels", type: string, description: "Keep the real category before = and the displayed label after it. Example: Floral=Floral,Kids=Kids" }
-      - { name: gallery_empty_text, label: "GALLERY — Empty message", type: string }
-      - { name: flavours_eyebrow, label: "FLAVOURS — Small label", type: string }
-      - { name: flavours_heading, label: "FLAVOURS — Heading", type: string }\n      - { name: flavours_title_top, label: "FLAVOURS — Heading first part", type: string }\n      - { name: flavours_title_script, label: "FLAVOURS — Script word", type: string }
-      - { name: flavours_copy, label: "FLAVOURS — Paragraph", type: text }
-      - { name: pricing_eyebrow, label: "PRICE GUIDE — Small label", type: string }
-      - { name: pricing_heading, label: "PRICE GUIDE — Heading", type: string }
-      - { name: pricing_intro, label: "PRICE GUIDE — Paragraph", type: text }
-      - { name: pricing_serves_label, label: "PRICE GUIDE — Servings label", type: string }
-      - { name: pricing_price_label, label: "PRICE GUIDE — Price label", type: string }
-      - { name: pricing_footnote, label: "PRICE GUIDE — Footnote", type: text }\n      - { name: pricing_button_text, label: "PRICE GUIDE — Button text", type: string }
-      - { name: faq_eyebrow, label: "FAQ — Small label", type: string }
-      - { name: faq_heading, label: "FAQ — Heading", type: string }\n      - { name: faq_title_top, label: "FAQ — Heading first part", type: string }\n      - { name: faq_title_script, label: "FAQ — Script word", type: string }
-      - { name: faq_intro, label: "FAQ — Intro", type: text }
-      - { name: faq_cta_eyebrow, label: "FAQ — CTA small label", type: string }
-      - { name: faq_cta_heading, label: "FAQ — CTA heading", type: string }
-      - { name: faq_cta_button, label: "FAQ — CTA button", type: string }
-      - { name: faq_cta_arrow, label: "FAQ — CTA symbol", type: string }
-      - { name: order_eyebrow, label: "ORDER — Small label", type: string }
-      - { name: order_heading, label: "ORDER — Heading", type: string }
-      - { name: order_copy, label: "ORDER — Paragraph", type: text }
-      - { name: order_meta_1, label: "ORDER — Detail 1", type: string }
-      - { name: order_meta_2, label: "ORDER — Detail 2", type: string }
-      - { name: order_meta_3, label: "ORDER — Detail 3", type: string }
-      - { name: form_placeholder_heading, label: "ORDER — Empty form heading", type: string }
-      - { name: form_placeholder_copy, label: "ORDER — Empty form text", type: text }
-      - { name: youform_embed_url, label: "ORDER — Youform embed URL", type: string }
-      - { name: policies_eyebrow, label: "POLICIES — Small label", type: string }
-      - { name: policies_cta_eyebrow, label: "POLICIES — CTA small label", type: string }
-      - { name: policies_cta_heading, label: "POLICIES — CTA heading", type: string }
-      - { name: policies_cta_button, label: "POLICIES — CTA button", type: string }
-      - { name: policies_cta_arrow, label: "POLICIES — CTA symbol", type: string }
-      - { name: contact_eyebrow, label: "CONTACT — Small label", type: string }
-      - { name: contact_heading, label: "CONTACT — Heading", type: string }
-      - { name: contact_location_label, label: "CONTACT — Location label", type: string }
-      - { name: location, label: "CONTACT — Location", type: string }
-      - { name: contact_instagram_label, label: "CONTACT — Instagram label", type: string }
-      - { name: instagram_handle, label: "CONTACT — Instagram handle", type: string }
-      - { name: instagram_url, label: "CONTACT — Instagram URL", type: string }
-      - { name: contact_google_label, label: "CONTACT — Google label", type: string }
-      - { name: contact_orders_label, label: "CONTACT — Orders label", type: string }
-      - { name: contact_orders, label: "CONTACT — Orders text", type: string }
-      - { name: email, label: "CONTACT — Email", type: string }
-      - { name: formspree_endpoint, label: "CONTACT FORM — Formspree endpoint", type: string, description: "Already connected. Only change this if you create a new Formspree form." }
-      - { name: contact_form_subject, label: "CONTACT FORM — Email subject", type: string }
-      - { name: contact_form_eyebrow, label: "CONTACT FORM — Small label", type: string }
-      - { name: contact_form_heading, label: "CONTACT FORM — Heading", type: string }
-      - { name: contact_form_note, label: "CONTACT FORM — Note above form", type: text }
-      - { name: contact_form_order_link, label: "CONTACT FORM — Order link text", type: string }
-      - { name: contact_form_name_label, label: "CONTACT FORM — Name label", type: string }
-      - { name: contact_form_email_label, label: "CONTACT FORM — Email label", type: string }
-      - { name: contact_form_topic_label, label: "CONTACT FORM — Topic label", type: string }
-      - { name: contact_form_topics, label: "CONTACT FORM — Topics (comma separated)", type: string }
-      - { name: contact_form_message_label, label: "CONTACT FORM — Message label", type: string }
-      - { name: contact_form_submit, label: "CONTACT FORM — Send button", type: string }
-      - { name: contact_form_sending, label: "CONTACT FORM — Sending text", type: string }
-      - { name: contact_form_success, label: "CONTACT FORM — Success message", type: string }
-      - { name: contact_form_error, label: "CONTACT FORM — Error message", type: text }
-      - { name: reviews_eyebrow, label: "REVIEWS — Small label", type: string }
-      - { name: reviews_heading, label: "REVIEWS — Heading", type: string }
-      - { name: reviews_copy, label: "REVIEWS — Paragraph", type: text }
-      - { name: reviews_button_text, label: "REVIEWS — Google link text", type: string }
-      - { name: reviews_button_arrow, label: "REVIEWS — Google link symbol", type: string }
-      - { name: footer_brand, label: "FOOTER — Brand", type: string }
-      - { name: footer_gallery, label: "FOOTER — Gallery", type: string }
-      - { name: footer_flavours, label: "FOOTER — Flavours", type: string }
-      - { name: footer_pricing, label: "FOOTER — Pricing", type: string }
-      - { name: footer_faq, label: "FOOTER — FAQ", type: string }
-      - { name: footer_policies, label: "FOOTER — Policies", type: string }
-      - { name: footer_copyright, label: "FOOTER — Copyright (use {year})", type: string }
-
-  - name: website_text_hu
-    label: "Hungarian website text — HU"
-    type: file
-    path: content/text_hu.json
-    format: json
-    operations: { delete: false }
-    fields:
-      - { name: brand_name, label: "NAV — Brand name", type: string }
-      - { name: mobile_menu_text, label: "NAV — Mobile menu button", type: string }
-      - { name: nav_home, label: "NAV — Home", type: string }
-      - { name: nav_gallery, label: "NAV — Gallery", type: string }
-      - { name: nav_flavours, label: "NAV — Flavours", type: string }
-      - { name: nav_pricing, label: "NAV — Price + Size", type: string }
-      - { name: nav_faq, label: "NAV — FAQ", type: string }
       - { name: nav_order, label: "NAV — Order", type: string }
-      - { name: nav_policies, label: "NAV — Policies", type: string }
-      - { name: nav_contact, label: "NAV — Contact", type: string }
-      - { name: side_meta_1, label: "NAV — Bottom line 1", type: string }
-      - { name: side_meta_2, label: "NAV — Bottom line 2", type: string }
-      - { name: hero_eyebrow, label: "HOME — Small line", type: string }
-      - { name: hero_heading, label: "HOME — Main headline", type: string }
-      - { name: hero_subheading, label: "HOME — Paragraph", type: text }
-      - { name: hero_cta, label: "HOME — Order button", type: string }
-      - { name: hero_cta_arrow, label: "HOME — Order button symbol", type: string }
-      - { name: intro_eyebrow, label: "INTRO — Small label", type: string }
-      - { name: intro_heading, label: "INTRO — Heading", type: string }
-      - { name: intro_copy, label: "INTRO — Paragraph", type: text }
-      - { name: gallery_eyebrow, label: "GALLERY — Small label", type: string }
-      - { name: gallery_heading, label: "GALLERY — Heading", type: string }
-      - { name: gallery_copy, label: "GALLERY — Paragraph", type: text }
-      - { name: gallery_all_label, label: "GALLERY — All filter", type: string }
-      - { name: gallery_categories, label: "GALLERY — Categories (comma separated)", type: string }
-      - { name: gallery_category_labels, label: "GALLERY — Optional category display labels", type: string, description: "Keep the real category before = and the displayed label after it. Example: Floral=Floral,Kids=Kids" }
-      - { name: gallery_empty_text, label: "GALLERY — Empty message", type: string }
+      - { name: hero_heading, label: "HERO — Heading", type: string }
+      - { name: hero_accent, label: "HERO — Script/accent line", type: string }
+      - { name: hero_copy, label: "HERO — Paragraph", type: text }
+      - { name: hero_primary_cta, label: "HERO — Primary button", type: string }
+      - { name: hero_secondary_cta, label: "HERO — Secondary button", type: string }
+      - { name: announcement, label: "ANNOUNCEMENT — Text", type: string }
+      - { name: about_eyebrow, label: "ABOUT — Small label", type: string }
+      - { name: about_heading, label: "ABOUT — Heading first part", type: string }
+      - { name: about_accent, label: "ABOUT — Script word", type: string }
+      - { name: about_heading_end, label: "ABOUT — Heading ending", type: string }
+      - { name: about_copy_1, label: "ABOUT — Paragraph 1", type: text }
+      - { name: about_copy_2, label: "ABOUT — Paragraph 2", type: text }
+      - { name: services_eyebrow, label: "WHAT I MAKE — Small label", type: string }
+      - { name: services_heading, label: "WHAT I MAKE — Heading first part", type: string }
+      - { name: services_accent, label: "WHAT I MAKE — Script word", type: string }
+      - { name: services_heading_end, label: "WHAT I MAKE — Heading ending", type: string }
+      - { name: services_copy, label: "WHAT I MAKE — Paragraph", type: text }
+      - { name: portfolio_eyebrow, label: "PORTFOLIO — Small label", type: string }
+      - { name: portfolio_heading, label: "PORTFOLIO — Heading first part", type: string }
+      - { name: portfolio_accent, label: "PORTFOLIO — Script word", type: string }
+      - { name: portfolio_heading_end, label: "PORTFOLIO — Heading ending", type: string }
+      - { name: portfolio_copy, label: "PORTFOLIO — Paragraph", type: text }
+      - { name: portfolio_button, label: "PORTFOLIO — Button", type: string }
+      - { name: pricing_eyebrow, label: "PRICING — Small label", type: string }
+      - { name: pricing_heading, label: "PRICING — Heading first part", type: string }
+      - { name: pricing_accent, label: "PRICING — Script word", type: string }
+      - { name: pricing_heading_end, label: "PRICING — Heading ending", type: string }
+      - { name: pricing_copy, label: "PRICING — Intro", type: text }
+      - { name: pricing_note, label: "PRICING — Footnote", type: text }
+      - { name: pricing_button, label: "PRICING — Button", type: string }
       - { name: flavours_eyebrow, label: "FLAVOURS — Small label", type: string }
-      - { name: flavours_heading, label: "FLAVOURS — Heading", type: string }
+      - { name: flavours_heading, label: "FLAVOURS — Heading first part", type: string }
+      - { name: flavours_accent, label: "FLAVOURS — Script word", type: string }
+      - { name: flavours_heading_end, label: "FLAVOURS — Heading ending", type: string }
       - { name: flavours_copy, label: "FLAVOURS — Paragraph", type: text }
-      - { name: pricing_eyebrow, label: "PRICE GUIDE — Small label", type: string }
-      - { name: pricing_heading, label: "PRICE GUIDE — Heading", type: string }
-      - { name: pricing_intro, label: "PRICE GUIDE — Paragraph", type: text }
-      - { name: pricing_serves_label, label: "PRICE GUIDE — Servings label", type: string }
-      - { name: pricing_price_label, label: "PRICE GUIDE — Price label", type: string }
-      - { name: pricing_footnote, label: "PRICE GUIDE — Footnote", type: text }
+      - { name: testimonials_eyebrow, label: "REVIEWS — Small label", type: string }
+      - { name: testimonials_heading, label: "REVIEWS — Heading first part", type: string }
+      - { name: testimonials_accent, label: "REVIEWS — Script word", type: string }
+      - { name: testimonials_heading_end, label: "REVIEWS — Heading ending", type: string }
+      - { name: testimonials_copy, label: "REVIEWS — Paragraph", type: text }
       - { name: faq_eyebrow, label: "FAQ — Small label", type: string }
-      - { name: faq_heading, label: "FAQ — Heading", type: string }
-      - { name: faq_intro, label: "FAQ — Intro", type: text }
-      - { name: faq_cta_eyebrow, label: "FAQ — CTA small label", type: string }
-      - { name: faq_cta_heading, label: "FAQ — CTA heading", type: string }
-      - { name: faq_cta_button, label: "FAQ — CTA button", type: string }
-      - { name: faq_cta_arrow, label: "FAQ — CTA symbol", type: string }
-      - { name: order_eyebrow, label: "ORDER — Small label", type: string }
-      - { name: order_heading, label: "ORDER — Heading", type: string }
-      - { name: order_copy, label: "ORDER — Paragraph", type: text }
-      - { name: order_meta_1, label: "ORDER — Detail 1", type: string }
-      - { name: order_meta_2, label: "ORDER — Detail 2", type: string }
-      - { name: order_meta_3, label: "ORDER — Detail 3", type: string }
-      - { name: form_placeholder_heading, label: "ORDER — Empty form heading", type: string }
-      - { name: form_placeholder_copy, label: "ORDER — Empty form text", type: text }
-      - { name: youform_embed_url, label: "ORDER — Youform embed URL", type: string }
+      - { name: faq_heading, label: "FAQ — Heading first part", type: string }
+      - { name: faq_accent, label: "FAQ — Script word", type: string }
+      - { name: faq_heading_end, label: "FAQ — Heading ending", type: string }
+      - { name: faq_copy, label: "FAQ — Paragraph", type: text }
       - { name: policies_eyebrow, label: "POLICIES — Small label", type: string }
-      - { name: policies_cta_eyebrow, label: "POLICIES — CTA small label", type: string }
-      - { name: policies_cta_heading, label: "POLICIES — CTA heading", type: string }
-      - { name: policies_cta_button, label: "POLICIES — CTA button", type: string }
-      - { name: policies_cta_arrow, label: "POLICIES — CTA symbol", type: string }
+      - { name: policies_heading, label: "POLICIES — Heading first part", type: string }
+      - { name: policies_accent, label: "POLICIES — Script word", type: string }
+      - { name: policies_heading_end, label: "POLICIES — Heading ending", type: string }
+      - { name: policies_copy, label: "POLICIES — Paragraph", type: text }
       - { name: contact_eyebrow, label: "CONTACT — Small label", type: string }
-      - { name: contact_heading, label: "CONTACT — Heading", type: string }
-      - { name: contact_location_label, label: "CONTACT — Location label", type: string }
-      - { name: location, label: "CONTACT — Location", type: string }
-      - { name: contact_instagram_label, label: "CONTACT — Instagram label", type: string }
-      - { name: instagram_handle, label: "CONTACT — Instagram handle", type: string }
-      - { name: instagram_url, label: "CONTACT — Instagram URL", type: string }
-      - { name: contact_google_label, label: "CONTACT — Google label", type: string }
-      - { name: contact_orders_label, label: "CONTACT — Orders label", type: string }
-      - { name: contact_orders, label: "CONTACT — Orders text", type: string }
-      - { name: email, label: "CONTACT — Email", type: string }
-      - { name: formspree_endpoint, label: "CONTACT FORM — Formspree endpoint", type: string, description: "Already connected. Only change this if you create a new Formspree form." }
-      - { name: contact_form_subject, label: "CONTACT FORM — Email subject", type: string }
-      - { name: contact_form_eyebrow, label: "CONTACT FORM — Small label", type: string }
-      - { name: contact_form_heading, label: "CONTACT FORM — Heading", type: string }
-      - { name: contact_form_note, label: "CONTACT FORM — Note above form", type: text }
-      - { name: contact_form_order_link, label: "CONTACT FORM — Order link text", type: string }
-      - { name: contact_form_name_label, label: "CONTACT FORM — Name label", type: string }
-      - { name: contact_form_email_label, label: "CONTACT FORM — Email label", type: string }
-      - { name: contact_form_topic_label, label: "CONTACT FORM — Topic label", type: string }
-      - { name: contact_form_topics, label: "CONTACT FORM — Topics (comma separated)", type: string }
-      - { name: contact_form_message_label, label: "CONTACT FORM — Message label", type: string }
-      - { name: contact_form_submit, label: "CONTACT FORM — Send button", type: string }
-      - { name: contact_form_sending, label: "CONTACT FORM — Sending text", type: string }
-      - { name: contact_form_success, label: "CONTACT FORM — Success message", type: string }
-      - { name: contact_form_error, label: "CONTACT FORM — Error message", type: text }
-      - { name: reviews_eyebrow, label: "REVIEWS — Small label", type: string }
-      - { name: reviews_heading, label: "REVIEWS — Heading", type: string }
-      - { name: reviews_copy, label: "REVIEWS — Paragraph", type: text }
-      - { name: reviews_button_text, label: "REVIEWS — Google link text", type: string }
-      - { name: reviews_button_arrow, label: "REVIEWS — Google link symbol", type: string }
-      - { name: footer_brand, label: "FOOTER — Brand", type: string }
-      - { name: footer_gallery, label: "FOOTER — Gallery", type: string }
-      - { name: footer_flavours, label: "FOOTER — Flavours", type: string }
-      - { name: footer_pricing, label: "FOOTER — Pricing", type: string }
-      - { name: footer_faq, label: "FOOTER — FAQ", type: string }
-      - { name: footer_policies, label: "FOOTER — Policies", type: string }
-      - { name: footer_copyright, label: "FOOTER — Copyright (use {year})", type: string }
-
-  
-  - name: website_design
-    label: "Colours + fonts — VERIFIED V5"
-    type: file
-    path: content/design.json
-    format: json
-    operations: { delete: false }
-    fields:
-      - name: heading_font
-        label: "FONT — Headings"
-        type: select
-        options: { values: [Bodoni Moda, Cormorant Garamond, DM Serif Display, Playfair Display, Libre Baskerville, EB Garamond, Lora] }
-      - name: body_font
-        label: "FONT — Body text"
-        type: select
-        options: { values: [Cormorant Garamond, EB Garamond, Lora, Libre Baskerville, Playfair Display, DM Sans, Montserrat] }
-      - name: ui_font
-        label: "FONT — Small labels/buttons"
-        type: select
-        options: { values: [DM Sans, Montserrat, Cormorant Garamond, EB Garamond] }
-      - name: script_font
-        label: "FONT — Script accent"
-        type: select
-        options: { values: [Allura, Cormorant Garamond] }
-      - { name: color_heading, label: "COLOUR — Headings", type: string, description: "Hex e.g. #4A403C" }
-      - { name: color_body, label: "COLOUR — Body text", type: string }
-      - { name: color_muted, label: "COLOUR — Secondary text", type: string }
-      - { name: color_accent, label: "COLOUR — Accent", type: string }
-      - { name: color_line, label: "COLOUR — Divider lines", type: string }
-      - { name: order_text_color, label: "COLOUR — Order text (blank = automatic)", type: string }
-      - { name: bg_navigation, label: "BACKGROUND — Navigation", type: string }
-      - { name: bg_hero, label: "BACKGROUND — Hero fallback colour", type: string }
-      - { name: hero_text_color, label: "HERO — Text/logo colour reference", type: string, description: "Used for the text layered over the hero photo. Example: #F3F1EA" }
-      - { name: hero_overlay_opacity, label: "HERO — Dark overlay strength", type: string, description: "Use a number from 0 to 0.9. Recommended: 0.54" }
-      - { name: hero_height_desktop, label: "HERO — Desktop height", type: string, description: "Example: 430px" }
-      - { name: hero_height_mobile, label: "HERO — Mobile height", type: string, description: "Example: 320px" }
-      - { name: hero_logo_width, label: "HERO — Logo width desktop", type: string, description: "Example: 390px" }
-      - { name: hero_logo_width_mobile, label: "HERO — Logo width mobile", type: string, description: "Example: 245px" }
-      - { name: bg_intro, label: "BACKGROUND — Intro", type: string }
-      - { name: bg_gallery, label: "BACKGROUND — Gallery", type: string }
-      - { name: bg_flavours, label: "BACKGROUND — Flavours", type: string }
-      - { name: bg_pricing, label: "BACKGROUND — Price + size", type: string }
-      - { name: bg_faq, label: "BACKGROUND — FAQ", type: string }
-      - { name: bg_order, label: "BACKGROUND — Order", type: string }
-      - { name: bg_policies, label: "BACKGROUND — Policies", type: string }
-      - { name: bg_contact, label: "BACKGROUND — Contact + reviews", type: string }
-      - { name: bg_footer, label: "BACKGROUND — Footer", type: string }
+      - { name: contact_heading, label: "CONTACT — Heading first part", type: string }
+      - { name: contact_accent, label: "CONTACT — Script word", type: string }
+      - { name: contact_heading_end, label: "CONTACT — Heading ending", type: string }
+      - { name: contact_copy, label: "CONTACT — Paragraph", type: text }
+      - { name: contact_email, label: "CONTACT — Email", type: string }
+      - { name: contact_location, label: "CONTACT — Location", type: text }
+      - { name: pickup_weekdays_label, label: "CONTACT — Weekday label", type: string }
+      - { name: pickup_weekdays, label: "CONTACT — Weekday hours", type: string }
+      - { name: pickup_weekends_label, label: "CONTACT — Weekend label", type: string }
+      - { name: pickup_weekends, label: "CONTACT — Weekend hours", type: string }
+      - { name: pickup_closed, label: "CONTACT — Closed days", type: string }
+      - { name: order_category_label, label: "ORDER — Category heading", type: string }
+      - { name: order_note, label: "ORDER — Note", type: text }
+      - { name: instagram_url, label: Instagram URL, type: string }
+      - { name: tiktok_url, label: TikTok URL, type: string }
+      - { name: facebook_url, label: Facebook URL, type: string }
+      - { name: google_url, label: Google URL, type: string }
+      - { name: footer_copy, label: "FOOTER — Description", type: text }
+      - { name: footer_explore, label: "FOOTER — Explore heading", type: string }
+      - { name: footer_connect, label: "FOOTER — Connect heading", type: string }
+      - { name: footer_copyright, label: "FOOTER — Copyright", type: string }
 
   - name: website_images
-    label: "Website images — VERIFIED V5"
+    label: Website images
     type: file
     path: content/images.json
     format: json
     operations: { delete: false }
     fields:
-      - { name: logo, label: "HOME — Logo image", type: image, options: { media: site_images } }
-      - { name: logo_alt, label: "HOME — Logo description", type: string }
-      - { name: hero_image, label: "HOME — Landing image", type: image, options: { media: site_images } }
-      - { name: hero_image_alt, label: "HOME — Landing image description", type: string }
-      - { name: hero_image_position, label: "HERO — Image crop position", type: string, description: "Examples: center center, 60% center, center 30%" }
+      - { name: hero_image, label: "HERO — Background cake photo", type: image, options: { media: site_images } }
+      - { name: hero_image_alt, label: "HERO — Image description", type: string }
       - { name: about_image, label: "ABOUT — Cake photo", type: image, options: { media: site_images } }
-      - { name: about_image_alt, label: "ABOUT — Cake photo description", type: string }
+      - { name: about_image_alt, label: "ABOUT — Image description", type: string }
       - { name: flavour_background, label: "FLAVOURS — Background photo", type: image, options: { media: site_images } }
-      - { name: flavour_background_alt, label: "FLAVOURS — Background description", type: string }
+      - { name: flavour_background_alt, label: "FLAVOURS — Image description", type: string }
+
+  - name: services
+    label: What I Make
+    type: file
+    path: content/services.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Service title, type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: image, label: Hover photo, type: image, options: { media: site_images } }
+      - { name: form_title, label: Matching order form name, type: string, description: "Must match a title in Order forms." }
 
   - name: gallery
-    label: Gallery
+    label: Portfolio
     type: file
     path: content/gallery.json
     format: json
     list: true
     fields:
-      - { name: title, label: Cake title, type: string, required: true }
-      - name: category
-        label: Category
-        type: select
-        options: { values: [Vintage, Floral, Minimal, Kids, Wedding, Cupcakes, Bento Box, Other] }
+      - { name: title, label: Cake title, type: string }
+      - { name: category, label: Category, type: string }
       - { name: image, label: Photo, type: image, options: { media: site_images }, required: true }
       - { name: alt, label: Image description, type: string }
-      - { name: featured_home, label: Featured on homepage conveyor, type: boolean, default: false }
-
-  - name: flavours
-    label: Flavour builder
-    type: file
-    path: content/flavours.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: sponges
-        label: "1. Sponge"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Sponge options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-      - name: frostings
-        label: "2. Frosting"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Frosting options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-      - name: fillings
-        label: "3. Filling"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Filling options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-      - name: add_ins
-        label: "4. Add-in"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Add-in options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-
-  - name: flavours_hu
-    label: "Hungarian flavour builder — HU"
-    type: file
-    path: content/flavours_hu.json
-    format: json
-    operations:
-      delete: false
-    fields:
-      - name: sponges
-        label: "1. Sponge"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Sponge options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-      - name: frostings
-        label: "2. Frosting"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Frosting options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-      - name: fillings
-        label: "3. Filling"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Filling options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
-      - name: add_ins
-        label: "4. Add-in"
-        type: object
-        fields:
-          - { name: number, label: Number, type: string }
-          - { name: title, label: Heading, type: string }
-          - { name: optional_label, label: Optional label, type: string }
-          - name: items
-            label: Add-in options
-            type: object
-            list: true
-            fields:
-              - { name: name, label: Name, type: string, required: true }
-              - { name: note, label: Optional note, type: string }
 
   - name: pricing
-    label: Price + size guide
+    label: Pricing & Sizes
     type: file
     path: content/pricing.json
     format: json
     list: true
     fields:
-      - { name: size, label: Size label, type: string }
-      - { name: diameter, label: Diameter in inches, type: number }
-      - { name: servings, label: Approximate servings, type: string }
+      - { name: size, label: Size, type: string }
+      - { name: servings, label: Serves up to, type: string }
       - { name: price, label: Starting price, type: string }
-      - { name: image, label: "Custom size illustration (optional — replaces cylinder)", type: image, options: { media: site_images } }
-      - { name: image_alt, label: Illustration description, type: string }
+
+  - name: flavour_menu
+    label: Flavour Menu
+    type: file
+    path: content/flavour_menu.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: note, label: Bottom note, type: text }
+      - name: groups
+        label: Flavour groups
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Group heading, type: string }
+          - name: items
+            label: Flavours
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Flavour name, type: string }
+              - { name: description, label: Description, type: text }
+
+  - name: reviews
+    label: Customer reviews
+    type: file
+    path: content/reviews.json
+    format: json
+    operations: { delete: false }
+    fields:
+      - { name: google_url, label: Google reviews URL, type: string }
+      - name: items
+        label: Reviews shown on website
+        type: object
+        list: true
+        fields:
+          - { name: author, label: Customer name, type: string }
+          - { name: stars, label: Stars, type: number }
+          - { name: text, label: Review text, type: text }
 
   - name: faq
-    label: FAQ questions
+    label: FAQ
     type: file
     path: content/faq.json
-    format: json
-    list: true
-    fields:
-      - { name: question, label: Question, type: string, required: true }
-      - { name: answer, label: Answer, type: text, required: true }
-
-  - name: faq_hu
-    label: "Hungarian FAQ — HU"
-    type: file
-    path: content/faq_hu.json
     format: json
     list: true
     fields:
@@ -478,37 +200,24 @@ content:
     format: json
     operations: { delete: false }
     fields:
-      - { name: title, label: Heading, type: string }
-      - { name: intro, label: Intro, type: text }
-      - { name: body, label: Full policies, type: text, description: "Long text is fine. Blank line = new paragraph." }
-
-  - name: policies_hu
-    label: "Hungarian policies — HU"
-    type: file
-    path: content/policies_hu.json
-    format: json
-    operations: { delete: false }
-    fields:
-      - { name: title, label: Heading, type: string }
-      - { name: intro, label: Intro, type: text }
-      - { name: body, label: Full policies, type: text, description: "Long text is fine. Blank line = new paragraph." }
-
-  - name: reviews
-    label: Google reviews
-    type: file
-    path: content/reviews.json
-    format: json
-    operations: { delete: false }
-    fields:
-      - { name: google_url, label: Google Business / reviews link, type: string }
-      - { name: rating, label: Overall rating, type: string }
-      - { name: review_count, label: Review count text, type: string }
-      - name: items
-        label: Reviews shown on website
+      - name: sections
+        label: Policy sections
         type: object
         list: true
         fields:
-          - { name: author, label: Customer name, type: string }
-          - { name: stars, label: Stars, type: number }
-          - { name: date, label: Date / relative date, type: string }
-          - { name: text, label: Review text, type: text }
+          - { name: title, label: Policy heading, type: string }
+          - name: paragraphs
+            label: Paragraphs
+            type: string
+            list: true
+
+  - name: order_forms
+    label: Order forms
+    type: file
+    path: content/order_forms.json
+    format: json
+    list: true
+    fields:
+      - { name: title, label: Product / form name, type: string, required: true }
+      - { name: description, label: Short description, type: string }
+      - { name: url, label: YouForm embed URL, type: string }

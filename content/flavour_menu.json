@@ -1,0 +1,47 @@
+{
+  "note": "Flavour options and availability may vary. Please confirm your preferred flavour when submitting your order inquiry. Specialty flavours and additional fillings may affect the final price.",
+  "groups": [
+    {
+      "title": "Classic Flavours",
+      "items": [
+        {
+          "name": "Vanilla Bean",
+          "description": "Soft vanilla cake layered with silky vanilla buttercream. A timeless favourite for any celebration."
+        },
+        {
+          "name": "Rich Chocolate",
+          "description": "Moist chocolate cake paired with smooth chocolate buttercream for a rich, classic combination."
+        },
+        {
+          "name": "Red Velvet",
+          "description": "Soft red velvet cake with a delicate cocoa flavour and cream cheese frosting."
+        },
+        {
+          "name": "Lemon & Raspberry",
+          "description": "Light lemon cake paired with raspberry filling and smooth vanilla buttercream."
+        }
+      ]
+    },
+    {
+      "title": "Specialty Flavours",
+      "items": [
+        {
+          "name": "Strawberries & Cream",
+          "description": "Vanilla cake layered with strawberry filling and light vanilla buttercream."
+        },
+        {
+          "name": "Cookies & Cream",
+          "description": "Vanilla cake with crushed chocolate cookies folded into creamy buttercream."
+        },
+        {
+          "name": "Chocolate Raspberry",
+          "description": "Rich chocolate cake complemented by raspberry filling and chocolate buttercream."
+        },
+        {
+          "name": "Salted Caramel",
+          "description": "Vanilla cake layered with caramel filling and a delicate touch of sea salt."
+        }
+      ]
+    }
+  ]
+}

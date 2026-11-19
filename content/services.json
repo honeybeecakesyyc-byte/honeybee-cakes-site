@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Custom Celebration Cakes",
+    "description": "Custom celebration cakes for birthdays and special occasions, available in a range of sizes, flavours and personalized designs.",
+    "image": "/assets/uploads/2f88f55f-cb25-4e0a-83d4-69882c3e6a43.jpg",
+    "form_title": "Custom Cakes"
+  },
+  {
+    "title": "Bento Cakes",
+    "description": "Bento cakes for smaller celebrations and gifts.",
+    "image": "/assets/uploads/31c1a957-4594-4eee-b12f-29be080b906e.jpg",
+    "form_title": "Bento Cakes"
+  },
+  {
+    "title": "Custom Cupcakes",
+    "description": "Custom cupcakes, available in different flavours and designs.",
+    "image": "/assets/uploads/b925edf6-c69e-49e3-804e-1e5bb9ba1e97.jpg",
+    "form_title": "Cupcakes"
+  },
+  {
+    "title": "Traditional Hungarian & European Cakes and Pastries",
+    "description": "Traditional Hungarian and European-style cakes and pastries.",
+    "image": "/assets/uploads/04cfe66f-8127-46d0-a797-72494efcafa8.jpg",
+    "form_title": "Hungarian & European"
+  }
+]
