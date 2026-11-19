@@ -97,7 +97,7 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%} button{font:
   <div class="wrap">
     <div class="section-head"><p class="eyebrow" id="gallery-eyebrow">A LITTLE INSPIRATION</p><h2 id="gallery-heading">Recent creations.</h2><p id="gallery-copy">A selection of custom cakes made for birthdays, milestones and beautiful celebrations.</p></div>
     <div class="gallery-grid" id="gallery-grid"></div>
-    <div class="gallery-cta"><a class="btn dark" href="https://www.instagram.com/honeybeecakesyyc/" target="_blank" rel="noopener">View more on Instagram</a></div>
+    <div class="gallery-cta"><a class="btn dark" id="gallery-button" href="https://www.instagram.com/honeybeecakesyyc/" target="_blank" rel="noopener">View more on Instagram</a></div>
   </div>
 </section>
 
@@ -106,13 +106,13 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%} button{font:
     <div class="section-head"><p class="eyebrow" id="pricing-eyebrow">PLANNING YOUR CAKE</p><h2 id="pricing-heading">Sizes &amp; Servings.</h2><p id="pricing-intro">Starting prices are a guide. Final pricing depends on design, shape, decorations, fillings and other custom details.</p></div>
     <table class="pricing-table"><thead><tr><th>Size</th><th>Approx. serves</th><th>Starts at</th></tr></thead><tbody id="pricing-body"></tbody></table>
     <p class="pricing-note" id="pricing-note">Serving counts are estimates and may vary depending on how the cake is cut.</p>
-    <div class="pricing-cta"><a class="btn dark" href="#order">Order your cake</a></div>
+    <div class="pricing-cta"><a class="btn dark" id="pricing-button" href="#order">Order your cake</a></div>
   </div>
 </section>
 
 <section class="flavours" id="flavours">
   <div class="flavour-panel">
-    <div class="section-head"><p class="eyebrow" id="flavours-eyebrow">MAKE IT YOURS</p><h2 id="flavours-heading">Choose your <span class="script">flavour.</span></h2><p id="flavours-copy">Choose your sponge, frosting and filling, then add a little texture if you like.</p></div>
+    <div class="section-head"><p class="eyebrow" id="flavours-eyebrow">MAKE IT YOURS</p><h2 id="flavours-heading"><span id="flavours-title-top">Choose your</span> <span class="script" id="flavours-title-script">flavour.</span></h2><p id="flavours-copy">Choose your sponge, frosting and filling, then add a little texture if you like.</p></div>
     <div class="flavour-columns" id="flavour-columns"></div>
   </div>
 </section>
@@ -126,7 +126,7 @@ a{color:inherit;text-decoration:none} img{display:block;width:100%} button{font:
 
 <section class="faq" id="faq">
   <div class="wrap faq-wrap">
-    <div class="section-head"><p class="eyebrow" id="faq-eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading">Good to <span class="script">know.</span></h2><p id="faq-intro">A few important details about ordering, pickup, storage and changes.</p></div>
+    <div class="section-head"><p class="eyebrow" id="faq-eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading"><span id="faq-title-top">Good to</span> <span class="script" id="faq-title-script">know.</span></h2><p id="faq-intro">A few important details about ordering, pickup, storage and changes.</p></div>
     <div class="faq-list" id="faq-list"></div>
   </div>
 </section>
@@ -168,14 +168,15 @@ const set=(id,v)=>{const e=document.getElementById(id);if(e&&v!==undefined&&v!==
  if(design.ui_font)document.documentElement.style.setProperty("--ui",'"'+design.ui_font+'",Arial,sans-serif');
  if(design.script_font)document.documentElement.style.setProperty("--script",'"'+design.script_font+'",cursive');
  set("brand-name",text.brand_name||"Honey Bee Cakes");set("announcement-text",text.announcement_text);
+ set("nav-home",text.nav_home||"Home");set("nav-gallery",text.nav_gallery||"Cakes");set("nav-flavours",text.nav_flavours||"Menu");set("nav-contact",text.nav_contact||"Contact");set("nav-order",text.nav_order||"Order");
  set("hero-eyebrow",text.hero_eyebrow);set("hero-title-top",text.hero_title_top||"Custom cakes,");set("hero-title-script",text.hero_title_script||"made for your");set("hero-title-bottom",text.hero_title_bottom||"celebration");set("hero-copy",text.hero_subheading);set("hero-cta",text.hero_cta||"Order a cake");
  set("about-eyebrow",text.intro_eyebrow||"CUSTOM CAKES, YOUR WAY");set("about-title-top",text.intro_title_top||"Cakes with a");set("about-title-script",text.intro_title_script||"personal");set("about-title-bottom",text.intro_title_bottom||"touch.");set("about-copy-1",text.intro_copy);set("about-copy-2",text.intro_copy_2);
  set("values-eyebrow",text.values_eyebrow);set("values-heading",text.values_heading);set("values-copy",text.values_copy);set("value-card-title",text.value_card_title);set("value-card-copy",text.value_card_copy);
- set("gallery-eyebrow",text.gallery_eyebrow);set("gallery-heading",text.gallery_heading);set("gallery-copy",text.gallery_copy);
- set("pricing-eyebrow",text.pricing_eyebrow);set("pricing-heading",text.pricing_heading);set("pricing-intro",text.pricing_intro);set("pricing-note",text.pricing_footnote);
- set("flavours-eyebrow",text.flavours_eyebrow);set("flavours-copy",text.flavours_copy);
+ set("gallery-eyebrow",text.gallery_eyebrow);set("gallery-heading",text.gallery_heading);set("gallery-copy",text.gallery_copy);set("gallery-button",text.gallery_button_text||"View more on Instagram");
+ set("pricing-eyebrow",text.pricing_eyebrow);set("pricing-heading",text.pricing_heading);set("pricing-intro",text.pricing_intro);set("pricing-note",text.pricing_footnote);set("pricing-button",text.pricing_button_text||"Order your cake");
+ set("flavours-eyebrow",text.flavours_eyebrow);set("flavours-title-top",text.flavours_title_top||"Choose your");set("flavours-title-script",text.flavours_title_script||"flavour.");set("flavours-copy",text.flavours_copy);
  set("reviews-eyebrow",text.reviews_eyebrow);set("reviews-heading",text.reviews_heading);set("reviews-copy",text.reviews_copy);
- set("faq-eyebrow",text.faq_eyebrow);set("faq-intro",text.faq_intro);
+ set("faq-eyebrow",text.faq_eyebrow);set("faq-title-top",text.faq_title_top||"Good to");set("faq-title-script",text.faq_title_script||"know.");set("faq-intro",text.faq_intro);
  set("order-eyebrow",text.order_eyebrow);set("order-heading",text.order_heading);set("order-copy",text.order_copy);
  set("contact-eyebrow",text.contact_eyebrow);set("contact-heading",text.contact_heading);set("contact-copy",text.location);set("footer-brand",text.footer_brand||text.brand_name);set("footer-copyright",(text.footer_copyright||"© {year} Honey Bee Cakes Calgary").replace("{year}",new Date().getFullYear()));
  const hero=images.hero_image||"assets/uploads/15081.jpg";document.querySelector(".hero").style.backgroundImage='url("'+hero+'")';
