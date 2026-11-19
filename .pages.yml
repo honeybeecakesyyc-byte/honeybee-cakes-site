@@ -29,11 +29,23 @@ content:
       - { name: side_meta_2, label: "NAV — Bottom line 2", type: string }
       - { name: hero_eyebrow, label: "HOME — Small line", type: string }
       - { name: hero_heading, label: "HOME — Main headline", type: string }
+      - { name: hero_title_top, label: "HOME — Hero title top", type: string }
+      - { name: hero_title_script, label: "HOME — Hero script line", type: string }
+      - { name: hero_title_bottom, label: "HOME — Hero title bottom", type: string }
       - { name: hero_subheading, label: "HOME — Paragraph", type: text }
       - { name: hero_cta, label: "HOME — Order button", type: string }
       - { name: hero_cta_arrow, label: "HOME — Order button symbol", type: string }
       - { name: intro_eyebrow, label: "INTRO — Small label", type: string }
       - { name: intro_heading, label: "INTRO — Heading", type: string }
+      - { name: intro_title_top, label: "ABOUT — Heading beginning", type: string }
+      - { name: intro_title_script, label: "ABOUT — Script word", type: string }
+      - { name: intro_title_bottom, label: "ABOUT — Heading ending", type: string }
+      - { name: intro_copy_2, label: "ABOUT — Second paragraph", type: text }
+      - { name: values_eyebrow, label: "VALUES — Small label", type: string }
+      - { name: values_heading, label: "VALUES — Heading", type: string }
+      - { name: values_copy, label: "VALUES — Paragraph", type: text }
+      - { name: value_card_title, label: "VALUES — Card heading", type: string }
+      - { name: value_card_copy, label: "VALUES — Card paragraph", type: text }
       - { name: intro_copy, label: "INTRO — Paragraph", type: text }
       - { name: gallery_eyebrow, label: "GALLERY — Small label", type: string }
       - { name: gallery_heading, label: "GALLERY — Heading", type: string }
@@ -234,6 +246,10 @@ content:
         label: "FONT — Small labels/buttons"
         type: select
         options: { values: [DM Sans, Montserrat, Cormorant Garamond, EB Garamond] }
+      - name: script_font
+        label: "FONT — Script accent"
+        type: select
+        options: { values: [Allura, Cormorant Garamond] }
       - { name: color_heading, label: "COLOUR — Headings", type: string, description: "Hex e.g. #4A403C" }
       - { name: color_body, label: "COLOUR — Body text", type: string }
       - { name: color_muted, label: "COLOUR — Secondary text", type: string }
@@ -270,6 +286,10 @@ content:
       - { name: hero_image, label: "HOME — Landing image", type: image, options: { media: site_images } }
       - { name: hero_image_alt, label: "HOME — Landing image description", type: string }
       - { name: hero_image_position, label: "HERO — Image crop position", type: string, description: "Examples: center center, 60% center, center 30%" }
+      - { name: about_image, label: "ABOUT — Cake photo", type: image, options: { media: site_images } }
+      - { name: about_image_alt, label: "ABOUT — Cake photo description", type: string }
+      - { name: flavour_background, label: "FLAVOURS — Background photo", type: image, options: { media: site_images } }
+      - { name: flavour_background_alt, label: "FLAVOURS — Background description", type: string }
 
   - name: gallery
     label: Gallery
