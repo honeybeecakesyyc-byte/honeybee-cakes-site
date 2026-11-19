@@ -2,8 +2,8 @@
   "brand_name": "Honey Bee Cakes",
   "mobile_menu_text": "MENU",
   "nav_home": "Home",
-  "nav_gallery": "Gallery",
-  "nav_flavours": "Flavours",
+  "nav_gallery": "Cakes",
+  "nav_flavours": "Menu",
   "nav_pricing": "Price + Size",
   "nav_faq": "FAQ",
   "nav_order": "Order",
@@ -88,5 +88,11 @@
   "value_card_copy": "Freshly prepared in small batches and decorated specifically for your order.",
   "gallery_eyebrow": "A LITTLE INSPIRATION",
   "gallery_copy": "A selection of custom cakes made for birthdays, milestones and beautiful celebrations.",
-  "instagram_url": "https://www.instagram.com/honeybeecakesyyc/"
+  "instagram_url": "https://www.instagram.com/honeybeecakesyyc/",
+  "gallery_button_text": "View more on Instagram",
+  "pricing_button_text": "Order your cake",
+  "flavours_title_top": "Choose your",
+  "flavours_title_script": "flavour.",
+  "faq_title_top": "Good to",
+  "faq_title_script": "know."
 }
