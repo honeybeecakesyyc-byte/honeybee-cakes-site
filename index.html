@@ -3,199 +3,178 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Honey Bee Cakes — custom cakes in Calgary.">
-<title>Honey Bee Cakes | Calgary Custom Cakes</title>
+<meta name="theme-color" content="#F3F1EA">
+<title>Honey Bee Cakes YYC — Custom Cakes in Calgary</title>
+<meta name="description" content="Licensed home-based custom cake business in Calgary. Modern, personalized celebration cakes, bento cakes, cupcakes and Hungarian & European cakes. Pickup in Erlton, Calgary SW.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Questrial&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#f7f3eb;--cream2:#efe9df;--ink:#382e2a;--muted:#766a63;--rose:#a66f75;--taupe:#8b7b70;--line:#d8d0c6;
-  --heading:"Cormorant Garamond",Georgia,serif;--body:"Cormorant Garamond",Georgia,serif;--ui:"Montserrat",Arial,sans-serif;--script:"Allura",cursive;
+ --background:47 27.3% 93.5%;--foreground:18 10% 30%;--card:47 30% 97%;--primary:18 10.1% 38.8%;
+ --primary-foreground:47 26% 96%;--secondary:45 20% 90%;--muted:45 18% 89%;--muted-foreground:18 8% 40%;
+ --accent:347.8 31.8% 66.7%;--heading-accent:347 18% 40%;--border:40 14% 84%;--noir:18 11% 27%;
+ --noir-soft:18 9% 36%;--brass:348 34% 67%;--brass-light:348 42% 80%;--cream:var(--background);
+ --font-display:"Cormorant Garamond",serif;--font-body:"Questrial",sans-serif;--font-accent:"Pinyon Script",cursive;
+ --shadow-soft:0 4px 24px -8px hsl(var(--noir)/.14);--shadow-noir:0 24px 60px -20px hsl(var(--noir)/.4);
 }
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
-a{color:inherit;text-decoration:none} img{display:block;width:100%} button{font:inherit;color:inherit} .wrap{width:min(1180px,calc(100% - 48px));margin:auto}
-.eyebrow{font-family:var(--ui);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin:0 0 16px}
-.script{font-family:var(--script);font-weight:400;color:var(--rose);font-size:1.26em;line-height:.75}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:15px 27px;border:1px solid currentColor;background:transparent;font-family:var(--ui);font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:.2s}
-.btn:hover{transform:translateY(-1px)} .btn.light{background:#f7f3eb;color:#4b3e38;border-color:#f7f3eb}.btn.dark{background:#6f6059;color:#fff;border-color:#6f6059}
-.site-header{position:absolute;z-index:20;left:0;top:0;width:100%;color:#fff;padding:26px 0}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{font-family:var(--heading);font-size:23px;letter-spacing:.04em}.desktop-nav{display:flex;gap:30px;align-items:center;font-family:var(--ui);font-size:9px;letter-spacing:.15em;text-transform:uppercase}.mobile-toggle{display:none;border:0;background:transparent;color:#fff;font-family:var(--ui);font-size:11px;letter-spacing:.18em}
-.hero{position:relative;min-height:720px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;background:#6d5c52 center/cover no-repeat;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:rgba(62,48,43,.53)}.hero-inner{position:relative;z-index:2;width:min(760px,calc(100% - 42px));padding-top:55px}
-.hero .eyebrow{color:#fff;margin-bottom:22px}.hero-title{font-family:var(--heading);font-size:clamp(54px,6vw,88px);line-height:.82;font-weight:500;letter-spacing:-.025em;margin:0}.hero-title .script{display:block;margin:11px 0 18px;color:#d6a4a8;font-size:.92em}.hero-copy{max-width:610px;margin:32px auto 34px;font-size:17px;line-height:1.6;color:rgba(255,255,255,.92)}
-.scroll-note{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;font-family:var(--script);font-size:25px;color:#fff}
-.marquee{background:#f0ebe1;border-bottom:1px solid var(--line);padding:14px 0;text-align:center;font-family:var(--ui);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.about{padding:104px 0;background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:82px}.about-photo{aspect-ratio:1/1;object-fit:cover}.about-copy h2,.section-head h2{font-family:var(--heading);font-size:clamp(42px,4.8vw,68px);line-height:.95;font-weight:500;margin:0 0 28px;letter-spacing:-.025em}.about-copy p{font-size:18px;max-width:520px;color:#4d433e}.about-copy p+p{margin-top:18px}
-.values{padding:100px 0;background:#f3eee6;text-align:center}.values h2{font-family:var(--heading);font-size:clamp(43px,4.5vw,64px);line-height:.94;margin:0 auto 18px;font-weight:500}.values-copy{max-width:620px;margin:0 auto 38px;color:var(--muted)}.value-card{width:min(440px,100%);margin:auto;background:#faf7f0;padding:44px 50px;border:1px solid #ece4d8}.value-card .icon{font-size:25px;margin-bottom:16px}.value-card h3{font-family:var(--heading);font-size:28px;margin:0 0 12px}.value-card p{margin:0;color:var(--muted)}
-.gallery-section{padding:100px 0;background:#f7f3eb}.section-head{text-align:center;max-width:760px;margin:0 auto 48px}.section-head p:last-child{margin:0;color:var(--muted)}.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery-item{aspect-ratio:1/1;overflow:hidden;background:#e7e0d6}.gallery-item img{height:100%;object-fit:cover;transition:.35s}.gallery-item:hover img{transform:scale(1.02)}.gallery-cta{text-align:center;margin-top:34px}
-.pricing{padding:104px 0;background:#f1ece3}.price-card{width:min(850px,100%);margin:0 auto}.pricing-table{width:100%;border-collapse:collapse;margin-top:38px;font-family:var(--ui);font-size:12px}.pricing-table th,.pricing-table td{padding:16px 10px;border-bottom:1px solid #cfc5b9;text-align:left}.pricing-table th{font-size:9px;letter-spacing:.15em;text-transform:uppercase;font-weight:500}.pricing-table td:last-child,.pricing-table th:last-child{text-align:right}.pricing-note{margin:24px auto 0;text-align:center;color:var(--muted);font-size:14px}.pricing-cta{text-align:center;margin-top:30px}
-.flavours{position:relative;padding:120px 0;background:#9b8e85 center/cover no-repeat}.flavours:before{content:"";position:absolute;inset:0;background:rgba(101,88,81,.44)}.flavour-panel{position:relative;z-index:2;width:min(1050px,calc(100% - 48px));margin:auto;background:rgba(247,243,235,.91);padding:58px 64px}.flavour-panel .section-head{margin-bottom:38px}.flavour-columns{display:grid;grid-template-columns:repeat(4,1fr);gap:36px}.flavour-group h3{font-family:var(--heading);font-size:27px;margin:0 0 16px}.flavour-group ul{list-style:none;margin:0;padding:0}.flavour-group li{padding:7px 0;border-bottom:1px solid rgba(56,46,42,.12);font-size:15px}.flavour-note{font-family:var(--ui);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
-.reviews{padding:100px 0;background:#f7f3eb}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.review-card{background:#fffdf8;border:1px solid #e4ddd4;padding:34px;min-height:230px}.stars{font-family:var(--ui);color:#a9824c;letter-spacing:.15em;font-size:12px}.review-card blockquote{margin:22px 0 30px;font-size:19px;line-height:1.45}.review-card footer{font-family:var(--ui);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-.faq{padding:100px 0;background:#f2ede5}.faq-wrap{width:min(850px,100%);margin:auto}.faq-list{border-top:1px solid #cec3b7}.faq-item{border-bottom:1px solid #cec3b7}.faq-q{width:100%;border:0;background:none;display:flex;justify-content:space-between;text-align:left;padding:21px 0;cursor:pointer;font-family:var(--heading);font-size:24px}.faq-a{display:none;padding:0 40px 22px 0;color:var(--muted)}.faq-item.open .faq-a{display:block}.faq-item.open .plus{transform:rotate(45deg)}.plus{transition:.2s}
-.order{padding:100px 0;background:#e7ded5}.order-head{text-align:center;max-width:700px;margin:0 auto 36px}.order-head h2{font-family:var(--heading);font-size:clamp(42px,4.8vw,66px);line-height:.95;margin:0 0 18px}.order-selector{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px}.order-selector button{border:1px solid #88786e;background:transparent;padding:11px 17px;font-family:var(--ui);font-size:9px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}.order-selector button.active{background:#6f6059;color:#fff}.order-selector button:disabled{opacity:.38;cursor:not-allowed}.form-shell{width:min(920px,100%);margin:auto;background:#fff;min-height:700px}.form-shell iframe{display:none;width:100%;height:850px;border:0}.form-placeholder{min-height:700px;display:grid;place-items:center;padding:40px;text-align:center;color:var(--muted)}
-.contact{padding:82px 0;background:#f7f3eb;text-align:center}.contact h2{font-family:var(--heading);font-size:50px;margin:0 0 12px}.contact-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:22px;font-family:var(--ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-.site-footer{background:#3f3430;color:#f7f3eb;padding:36px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.footer-brand{font-family:var(--heading);font-size:22px}.footer-small{font-family:var(--ui);font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
-@media(max-width:900px){.desktop-nav{display:none}.mobile-toggle{display:block}.site-header.open .desktop-nav{display:flex;position:absolute;top:70px;left:24px;right:24px;background:#f7f3eb;color:#382e2a;padding:26px;flex-direction:column;align-items:flex-start}.about-grid{grid-template-columns:1fr;gap:44px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.flavour-columns{grid-template-columns:repeat(2,1fr)}.review-grid{grid-template-columns:1fr}.hero{min-height:680px}.footer-inner{flex-direction:column;text-align:center}}
-@media(max-width:560px){body{font-size:16px}.wrap{width:min(100% - 32px,1180px)}.site-header{padding:20px 0}.brand{font-size:20px}.hero{min-height:680px}.hero-title{font-size:52px}.hero-copy{font-size:15px}.about,.values,.gallery-section,.pricing,.reviews,.faq,.order{padding:72px 0}.about-grid{gap:34px}.about-copy h2,.section-head h2,.values h2{font-size:44px}.gallery-grid{gap:8px}.flavour-panel{width:calc(100% - 28px);padding:42px 24px}.flavour-columns{grid-template-columns:1fr}.pricing-table{font-size:11px}.pricing-table th,.pricing-table td{padding:13px 5px}.faq-q{font-size:21px}.contact h2{font-size:42px}.footer-inner{gap:12px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:hsl(var(--background));color:hsl(var(--foreground));font-family:var(--font-body);font-size:16px;line-height:1.5}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{color:inherit}.container-wide{width:100%;max-width:80rem;margin:auto;padding-left:1.5rem;padding-right:1.5rem}
+.font-display{font-family:var(--font-display)}.font-body{font-family:var(--font-body)}.eyebrow{font-family:var(--font-body);font-size:.75rem;line-height:1rem;font-weight:500;text-transform:uppercase;letter-spacing:.32em}
+h1,h2,h3,h4,p{margin-top:0}h1 em,h2 em{font-family:var(--font-accent)!important;font-style:normal!important;font-weight:400;font-size:1.12em;letter-spacing:0}h2 em{color:hsl(var(--heading-accent))}
+.brass-rule{display:block;height:1px;width:3rem;background:hsl(var(--accent))}.section{scroll-margin-top:6rem}.section-pad{padding:5rem 0}.bg-card{background:hsl(var(--card))}.bg-background{background:hsl(var(--background))}.surface-noir{background:hsl(var(--noir));color:hsl(var(--cream))}
+.text-primary{color:hsl(var(--primary))}.muted{color:hsl(var(--muted-foreground))}.border-top{border-top:1px solid hsl(var(--border))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;height:3.5rem;padding:0 2.25rem;border-radius:.375rem;font-family:var(--font-body);font-size:.875rem;font-weight:500;border:1px solid transparent;transition:.3s ease;cursor:pointer}
+.btn-primary{background:hsl(var(--primary));color:hsl(var(--primary-foreground));box-shadow:0 2px 0 0 hsl(var(--primary)/.35)}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px -10px hsl(var(--primary)/.7)}
+.btn-cream{background:hsl(var(--cream));color:hsl(var(--noir))}.btn-outline-light{background:transparent;border-color:hsl(var(--cream)/.4);color:hsl(var(--cream))}
+.clone-header{position:fixed;z-index:50;inset:0 0 auto;height:4rem;transition:.5s;border-bottom:1px solid transparent;color:hsl(var(--cream))}
+.clone-header.scrolled{background:hsl(var(--background)/.95);backdrop-filter:blur(16px);border-color:hsl(var(--border));color:hsl(var(--foreground))}
+.clone-nav{height:4rem;display:flex;align-items:center;justify-content:space-between}.wordmark{font-family:var(--font-display);font-size:1.25rem;letter-spacing:.04em;white-space:nowrap}.desktop-nav{display:none;align-items:center;gap:1.25rem;margin-left:auto}
+.nav-link{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}.menu-btn{display:grid;width:2.75rem;height:2.75rem;place-items:center;border:0;background:none;color:inherit;cursor:pointer}.mobile-panel{display:none;position:absolute;top:4rem;left:0;right:0;padding:1.5rem;background:hsl(var(--background)/.98);color:hsl(var(--foreground));border-bottom:1px solid hsl(var(--border))}.mobile-panel.open{display:grid;gap:1rem}.mobile-panel a{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase}
+.hero{position:relative;display:flex;align-items:flex-end;width:100%;overflow:hidden;min-height:100svh;background:hsl(var(--noir))}.hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}.hero-overlay-a{position:absolute;inset:0;background:hsl(var(--noir)/.2)}.hero-overlay-b{position:absolute;inset:0;background:linear-gradient(90deg,hsl(var(--noir)/.75),hsl(var(--noir)/.3),hsl(var(--noir)/.4))}.hero-overlay-c{position:absolute;inset:0;background:linear-gradient(0deg,hsl(var(--noir)),hsl(var(--noir)/.2),transparent)}
+.hero-inner{position:relative;z-index:2;width:100%;padding:6rem 0 3.5rem}.hero-copybox{max-width:56rem;text-align:center}.hero h1{font-family:var(--font-display);color:hsl(var(--cream));font-size:2.5rem;line-height:1.22;letter-spacing:-.015em;font-weight:400;margin-bottom:0}.hero h1 em{display:block;color:hsl(var(--brass-light))}
+.hero p{max-width:36rem;margin:1.5rem auto 0;color:hsl(var(--cream)/.85);font-size:1rem;line-height:1.7}.hero-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}.hero-actions .btn{width:100%}
+.announcement{background:hsl(var(--secondary));border-bottom:1px solid hsl(var(--border))}.announcement-inner{padding:1rem 0;display:flex;justify-content:center;text-align:center}.announcement p{margin:0;font-size:.8125rem;color:hsl(var(--foreground)/.8)}
+.about-grid{display:grid;gap:2.5rem;align-items:stretch}.about-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:hsl(var(--secondary))}.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.about-copy{display:flex;flex-direction:column;justify-content:center}.section-label{display:block;color:hsl(var(--primary))}.section-title{font-family:var(--font-display);font-weight:400;font-size:2.25rem;line-height:1.05;margin:.75rem 0 0}.body-copy{color:hsl(var(--muted-foreground));font-size:1rem;line-height:1.75}.body-copy p+p{margin-top:1.25rem}
+.center-head{max-width:48rem;margin:0 auto 3rem;text-align:center}.center-head .section-label{margin-bottom:1rem}.center-head .section-title{margin:0}.center-head p{margin:1.5rem auto 0;color:hsl(var(--muted-foreground));font-weight:300;line-height:1.75}
+.scroller-wrap{position:relative}.scroller{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -.5rem}.scroller::-webkit-scrollbar{display:none}.slide{flex:0 0 100%;padding:0 .5rem;scroll-snap-align:start}
+.service-card{position:relative;overflow:hidden;height:100%;min-height:22.5rem;display:flex;flex-direction:column;align-items:center;text-align:center;border:1px solid hsl(var(--border));background:hsl(var(--secondary)/.4);padding:2rem}.service-bg{position:absolute;inset:0;opacity:0;transition:.4s}.service-bg img{width:100%;height:100%;object-fit:cover}.service-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,hsl(var(--noir)/.7),hsl(var(--noir)/.3),hsl(var(--noir)/.4))}
+.service-card:hover .service-bg{opacity:1}.service-content{position:relative;z-index:1;display:flex;flex:1;flex-direction:column;align-items:center;width:100%}.service-icon{font-size:2rem;color:hsl(var(--primary))}.service-card:hover .service-content{color:hsl(var(--cream))}.service-card h3{font-family:var(--font-display);font-size:1.75rem;line-height:1.15;margin:2rem 0 0}.service-card p{max-width:28ch;margin:1rem auto 0;color:hsl(var(--muted-foreground));font-size:.9375rem;line-height:1.7}.service-card:hover p{color:hsl(var(--cream)/.9)}.service-order{margin-top:auto;padding-top:2rem;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:hsl(var(--primary))}
+.carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:2rem}.dots{display:flex;gap:.5rem}.dot{width:.5rem;height:.5rem;border-radius:999px;background:hsl(var(--border));border:0;padding:0}.dot.active{background:hsl(var(--primary))}.arrow-btn{width:2.75rem;height:2.75rem;border:1px solid hsl(var(--border));background:transparent;cursor:pointer}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}.portfolio-card{position:relative;aspect-ratio:4/5;overflow:hidden;background:hsl(var(--secondary));border:1px solid hsl(var(--border));box-shadow:var(--shadow-soft)}.portfolio-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.7s}.portfolio-card:hover img{transform:scale(1.05)}
+.pricing-box{max-width:42rem;margin:2.5rem auto 0;border-top:1px solid hsl(var(--border))}.pricing-row{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;padding:1rem 0;border-bottom:1px solid hsl(var(--border))}.pricing-head{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:hsl(var(--muted-foreground))}.pricing-row span:nth-child(2){text-align:center}.pricing-row span:nth-child(3){text-align:right}.pricing-size{font-family:var(--font-display);font-size:1.5rem}.pricing-price{color:hsl(var(--primary));font-size:1.125rem}
+.flavour-section{position:relative;overflow:hidden}.flavour-bg{position:absolute;inset:0}.flavour-bg img{width:100%;height:100%;object-fit:cover}.flavour-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,hsl(var(--background)/.76),hsl(var(--background)/.52),hsl(var(--background)/.78))}
+.flavour-content{position:relative}.flavour-boxes{max-width:48rem;margin:auto;display:flex;flex-direction:column;gap:1.5rem}.flavour-box{border:1px solid hsl(var(--border)/.7);background:hsl(var(--background)/.45);backdrop-filter:blur(12px);padding:1.5rem 1.25rem}.flavour-box h3{font-family:var(--font-display);font-size:1.875rem;color:hsl(var(--primary));margin:0}.flavour-box ul{list-style:none;margin:.75rem 0 0;padding:0}.flavour-box li{padding:.75rem 0;border-bottom:1px solid hsl(var(--border)/.7)}.flavour-box li:last-child{border-bottom:0;padding-bottom:0}.flavour-box h4{font-family:var(--font-display);font-size:1.5rem;line-height:1.1;margin:0}.flavour-box p{margin:.25rem 0 0;font-size:.875rem;line-height:1.6;color:hsl(var(--muted-foreground))}
+.flavour-note{max-width:48rem;margin:1.5rem auto 0;border:1px solid hsl(var(--border)/.6);background:hsl(var(--background)/.45);backdrop-filter:blur(12px);padding:1rem 1.25rem;font-size:.875rem;line-height:1.6;color:hsl(var(--muted-foreground))}
+.review-card{height:100%;background:hsl(var(--card));border:1px solid hsl(var(--border));padding:2rem;display:flex;flex-direction:column}.quote-mark{font-family:var(--font-display);font-size:3.25rem;line-height:1;color:hsl(var(--primary)/.6)}.review-card blockquote{margin:1rem 0 0;color:hsl(var(--foreground)/.85);line-height:1.75;font-size:.9375rem;flex:1}.review-author{margin-top:2rem;padding-top:1.5rem;border-top:1px solid hsl(var(--border));font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:hsl(var(--muted-foreground))}
+.details-list{border-top:1px solid hsl(var(--border))}.details-list details{border-bottom:1px solid hsl(var(--border))}.details-list summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.25rem 0;cursor:pointer;list-style:none;font-family:var(--font-display);font-size:1.125rem}.details-list summary::-webkit-details-marker{display:none}.details-list .plus{font-family:var(--font-body);color:hsl(var(--primary));transition:.3s}.details-list details[open] .plus{transform:rotate(45deg)}.details-answer{padding:0 2rem 1.5rem 0;color:hsl(var(--muted-foreground));font-weight:300;line-height:1.7;font-size:.9375rem}.details-answer p{margin:0 0 .75rem}.details-answer p:last-child{margin-bottom:0}
+.faq-layout,.policies-layout{max-width:48rem;margin:auto}.contact-grid{display:grid;gap:3rem}.contact-title{font-family:var(--font-display);font-size:2.25rem;line-height:1.05;color:hsl(var(--cream));margin:.75rem 0 0}.contact-copy{margin:1.25rem 0 0;color:hsl(var(--cream)/.8);line-height:1.7;max-width:28rem}
+.contact-lines{margin-top:1.75rem;display:grid;gap:1rem}.contact-line{display:flex;align-items:flex-start;gap:1rem;color:hsl(var(--cream)/.9);font-size:.875rem}.contact-icon{width:2.75rem;height:2.75rem;flex:0 0 auto;border:1px solid hsl(var(--noir-soft));display:grid;place-items:center;color:hsl(var(--brass-light))}
+.order-panel{border:1px solid hsl(var(--cream)/.2);padding:1.25rem}.order-panel .eyebrow{color:hsl(var(--brass-light));margin-bottom:1rem}.order-buttons{border-top:1px solid hsl(var(--cream)/.15);border-bottom:1px solid hsl(var(--cream)/.15)}.order-choice{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.875rem 0;border:0;border-bottom:1px solid hsl(var(--cream)/.15);background:none;color:hsl(var(--cream));font-family:var(--font-display);font-size:1.25rem;text-align:left;cursor:pointer}.order-choice:last-child{border-bottom:0}.order-choice:hover,.order-choice.active{color:hsl(var(--brass-light))}.order-frame-wrap{margin-top:1.25rem;background:hsl(var(--background));min-height:0}.order-frame{display:none;width:100%;height:780px;border:0}.order-placeholder{display:none;padding:1.5rem;color:hsl(var(--muted-foreground));background:hsl(var(--background))}
+.footer{background:hsl(var(--secondary));border-top:1px solid hsl(var(--border));padding:4rem 0 2rem}.footer-grid{display:grid;gap:3rem}.footer-brand{font-family:var(--font-display);font-size:1.75rem}.footer h4{font-size:.6875rem;letter-spacing:.28em;text-transform:uppercase;color:hsl(var(--primary));margin:0 0 1.5rem}.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}.footer li,.footer p,.footer a{font-size:.9375rem;color:hsl(var(--foreground)/.85)}.footer-copy{max-width:24rem;margin-top:1.5rem;color:hsl(var(--muted-foreground))!important;line-height:1.7}.footer-bottom{margin-top:4rem;padding-top:2rem;border-top:1px solid hsl(var(--border)/.7);font-size:.8125rem;color:hsl(var(--muted-foreground))}
+@media(min-width:640px){.hero-copybox{text-align:left}.hero p{margin-left:0;margin-right:0}.hero-actions{flex-direction:row;flex-wrap:wrap}.hero-actions .btn{width:auto}.hero h1{font-size:3.25rem}}
+@media(min-width:768px){.clone-header,.clone-nav{height:5rem}.mobile-panel{top:5rem}.section-pad{padding:7rem 0}.hero-inner{padding-bottom:5rem}.hero h1{font-size:4.5rem}.hero p{font-size:1.125rem}.about-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem;min-height:35rem}.about-photo{aspect-ratio:auto;height:100%}.about-copy{padding:2rem 0}.section-title{font-size:3rem}.slide{flex-basis:50%;padding:0 .75rem}.service-card{min-height:25rem;padding:2.5rem}.portfolio-grid{gap:1.25rem}.pricing-size{font-size:1.875rem}.flavour-box{padding:2rem 1.75rem}.review-card{padding:2.5rem}.details-list summary{padding:1.5rem 0;font-size:1.25rem}.contact-title{font-size:3rem}.order-panel{padding:2rem}.footer{padding-top:5rem}.footer-grid{grid-template-columns:repeat(12,1fr);gap:4rem}.footer-about{grid-column:span 5}.footer-nav{grid-column:span 3}.footer-connect{grid-column:span 4}}
+@media(min-width:1024px){.hero{min-height:max(720px,100svh)}.hero-inner{padding-bottom:6rem}.hero h1{font-size:5.25rem}.desktop-nav{display:flex}.menu-btn{display:none}.slide{flex-basis:33.3333%}.service-card{min-height:25rem}.portfolio-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}.contact-grid{grid-template-columns:5fr 7fr;align-items:start}.order-choice{font-size:1.5rem}}
+@media(min-width:1100px){.desktop-nav{display:flex}}
 </style>
 </head>
 <body>
-<header class="site-header" id="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="#home" id="brand-name">Honey Bee Cakes</a>
+<header class="clone-header" id="site-header">
+  <div class="container-wide clone-nav">
+    <a href="#top" class="wordmark">Honey Bee Cakes</a>
     <nav class="desktop-nav">
-      <a href="#home" id="nav-home">Home</a>
-      <a href="#about">About</a>
-      <a href="#gallery" id="nav-gallery">Cakes</a>
-      <a href="#flavours" id="nav-flavours">Menu</a>
-      <a href="#contact" id="nav-contact">Contact</a>
-      <a href="#order" id="nav-order">Order</a>
+      <a class="nav-link" href="#about" data-nav="about">About</a><a class="nav-link" href="#portfolio" data-nav="portfolio">Portfolio</a><a class="nav-link" href="#pricing" data-nav="pricing">Pricing</a><a class="nav-link" href="#flavours" data-nav="flavours">Flavours</a><a class="nav-link" href="#faq" data-nav="faq">FAQ</a><a class="nav-link" href="#policies" data-nav="policies">Policies</a><a class="nav-link" href="#contact" data-nav="contact">Contact</a><a class="btn btn-primary" style="height:2.5rem;padding:0 1rem;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase" href="#contact" data-nav="order">Order</a>
     </nav>
-    <button class="mobile-toggle" id="mobile-toggle" type="button">MENU</button>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu">☰</button>
+    <div class="mobile-panel" id="mobile-panel">
+      <a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#pricing">Pricing</a><a href="#flavours">Flavours</a><a href="#faq">FAQ</a><a href="#policies">Policies</a><a href="#contact">Contact & Order</a>
+    </div>
   </div>
 </header>
-
-<main>
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <p class="eyebrow" id="hero-eyebrow">HONEY BEE CAKES · CALGARY</p>
-    <h1 class="hero-title"><span id="hero-title-top">Custom cakes,</span><span class="script" id="hero-title-script">made for your</span><span id="hero-title-bottom">celebration</span></h1>
-    <p class="hero-copy" id="hero-copy">Thoughtfully designed custom cakes, made in small batches for Calgary celebrations.</p>
-    <a class="btn light" href="#order" id="hero-cta">Order a cake</a>
-  </div>
-  <div class="scroll-note">scroll</div>
+<main id="top">
+<section class="hero">
+  <img id="hero-image" class="hero-image" src="/assets/uploads/2f88f55f-cb25-4e0a-83d4-69882c3e6a43.jpg" alt="Honey Bee Cakes custom cake">
+  <div class="hero-overlay-a"></div><div class="hero-overlay-b"></div><div class="hero-overlay-c"></div>
+  <div class="hero-inner"><div class="container-wide"><div class="hero-copybox">
+    <h1><span id="hero-heading">Custom cakes,</span><em id="hero-accent">made for your celebration.</em></h1>
+    <p id="hero-copy">Modern, personalized cakes for birthdays and other celebrations, from a licensed home-based cake business in Calgary.</p>
+    <div class="hero-actions"><a class="btn btn-cream" id="hero-primary" href="#contact">Order Inquiry</a><a class="btn btn-outline-light" id="hero-secondary" href="#portfolio">View Portfolio</a></div>
+  </div></div></div>
 </section>
-<div class="marquee" id="announcement-text">CUSTOM CAKES IN CALGARY · PICKUP IN ERLTON · MADE TO ORDER</div>
+<div class="announcement"><div class="container-wide announcement-inner"><p id="announcement">Custom cakes made with care in Calgary. Order inquiries are welcome.</p></div></div>
 
-<section class="about" id="about">
-  <div class="wrap about-grid">
-    <img class="about-photo" id="about-image" src="assets/uploads/b925edf6-c69e-49e3-804e-1e5bb9ba1e97.jpg" alt="Custom Honey Bee Cakes design">
-    <div class="about-copy">
-      <p class="eyebrow" id="about-eyebrow">CUSTOM CAKES, YOUR WAY</p>
-      <h2><span id="about-title-top">Cakes with a</span> <span class="script" id="about-title-script">personal</span> <span id="about-title-bottom">touch.</span></h2>
-      <p id="about-copy-1">Every cake is made to order and designed around your celebration, from the flavour and size to the colours and finishing details.</p>
-      <p id="about-copy-2">I focus on thoughtful buttercream designs that feel personal, beautiful and completely yours.</p>
+<section class="section section-pad bg-background" id="about"><div class="container-wide"><div class="about-grid">
+  <div class="about-photo"><img id="about-image" src="/assets/uploads/b925edf6-c69e-49e3-804e-1e5bb9ba1e97.jpg" alt="Honey Bee Cakes custom cake"></div>
+  <div class="about-copy"><span class="eyebrow section-label" id="about-eyebrow">About Honey Bee Cakes</span><h2 class="section-title"><span id="about-heading">Cakes with a</span> <em id="about-accent">personal</em> <span id="about-heading-end">touch.</span></h2><span class="brass-rule" style="margin:2rem 0"></span><div class="body-copy"><p id="about-copy-1"></p><p id="about-copy-2"></p></div></div>
+</div></div></section>
+
+<section class="section section-pad bg-card border-top" id="services"><div class="container-wide">
+  <div class="center-head"><span class="eyebrow section-label" id="services-eyebrow">What I Make</span><h2 class="section-title"><span id="services-heading">Made for every</span> <em id="services-accent">celebration</em><span id="services-heading-end">.</span></h2><p id="services-copy"></p></div>
+  <div class="scroller-wrap"><div class="scroller" id="services-scroller"></div><div class="carousel-controls"><div class="dots" id="services-dots"></div><div><button class="arrow-btn" data-carousel="services" data-dir="-1" aria-label="Previous">←</button><button class="arrow-btn" data-carousel="services" data-dir="1" aria-label="Next">→</button></div></div></div>
+</div></section>
+
+<section class="section section-pad bg-background border-top" id="portfolio"><div class="container-wide">
+  <div class="center-head"><span class="eyebrow section-label" id="portfolio-eyebrow">Portfolio</span><h2 class="section-title"><span id="portfolio-heading">Recent</span> <em id="portfolio-accent">creations</em><span id="portfolio-heading-end">.</span></h2><p id="portfolio-copy"></p></div>
+  <div class="portfolio-grid" id="portfolio-grid"></div><div style="text-align:center;margin-top:2.5rem"><a id="portfolio-button" class="btn btn-primary" target="_blank" rel="noopener">See More on Instagram</a></div>
+</div></section>
+
+<section class="section section-pad bg-card border-top" id="pricing"><div class="container-wide">
+  <div class="center-head"><span class="eyebrow section-label" id="pricing-eyebrow">Pricing & Sizes</span><h2 class="section-title"><span id="pricing-heading">Sizes &</span> <em id="pricing-accent">pricing</em><span id="pricing-heading-end">.</span></h2><p id="pricing-copy"></p></div>
+  <div class="pricing-box"><div class="pricing-row pricing-head"><span>Size</span><span>Serves up to</span><span>From (USD)</span></div><div id="pricing-rows"></div></div>
+  <div class="center-head" style="margin-top:2rem;margin-bottom:0"><p id="pricing-note"></p><div style="margin-top:2.5rem"><a class="btn btn-primary" id="pricing-button" href="#contact">Order Inquiry</a></div></div>
+</div></section>
+
+<section class="section section-pad bg-card border-top flavour-section" id="flavours"><div class="flavour-bg"><img id="flavour-bg-image" src="/assets/uploads/04cfe66f-8127-46d0-a797-72494efcafa8.jpg" alt=""></div><div class="container-wide flavour-content">
+  <div class="center-head"><span class="eyebrow section-label" id="flavours-eyebrow">Flavours</span><h2 class="section-title"><span id="flavours-heading">Choose your</span> <em id="flavours-accent">flavours</em><span id="flavours-heading-end">.</span></h2><p id="flavours-copy"></p></div>
+  <div class="flavour-boxes" id="flavour-boxes"></div><p class="flavour-note" id="flavour-note"></p>
+</div></section>
+
+<section class="section section-pad bg-background border-top" id="testimonials"><div class="container-wide">
+  <div class="center-head"><span class="eyebrow section-label" id="testimonials-eyebrow">Kind Words</span><h2 class="section-title"><span id="testimonials-heading">Kind words from</span> <em id="testimonials-accent">customers</em><span id="testimonials-heading-end">.</span></h2><p id="testimonials-copy"></p></div>
+  <div class="scroller-wrap"><div class="scroller" id="reviews-scroller"></div><div class="carousel-controls"><div class="dots" id="reviews-dots"></div><div><button class="arrow-btn" data-carousel="reviews" data-dir="-1" aria-label="Previous">←</button><button class="arrow-btn" data-carousel="reviews" data-dir="1" aria-label="Next">→</button></div></div></div>
+</div></section>
+
+<section class="section section-pad bg-card border-top" id="faq"><div class="container-wide"><div class="faq-layout">
+  <div class="center-head"><span class="eyebrow section-label" id="faq-eyebrow">FAQ</span><h2 class="section-title"><span id="faq-heading">Good to</span> <em id="faq-accent">know</em><span id="faq-heading-end">.</span></h2><p id="faq-copy"></p></div><div class="details-list" id="faq-list"></div>
+</div></div></section>
+
+<section class="section section-pad bg-background border-top" id="policies"><div class="container-wide"><div class="policies-layout">
+  <div class="center-head"><span class="eyebrow section-label" id="policies-eyebrow">Policies</span><h2 class="section-title"><span id="policies-heading">Store</span> <em id="policies-accent">policies</em><span id="policies-heading-end">.</span></h2><p id="policies-copy"></p></div><div class="details-list" id="policies-list"></div>
+</div></div></section>
+
+<section class="section section-pad surface-noir border-top" id="contact"><div class="container-wide"><div class="contact-grid">
+  <div><span class="eyebrow" style="color:hsl(var(--brass-light))" id="contact-eyebrow">Contact & Ordering</span><h2 class="contact-title"><span id="contact-heading">Let's plan your</span> <em id="contact-accent" style="color:hsl(var(--brass-light))">order</em><span id="contact-heading-end">.</span></h2><p class="contact-copy" id="contact-copy"></p>
+    <div class="contact-lines">
+      <a class="contact-line" id="email-link"><span class="contact-icon">✉</span><span id="contact-email"></span></a>
+      <div class="contact-line"><span class="contact-icon">⌖</span><span id="contact-location"></span></div>
+      <div class="contact-line"><span class="contact-icon">◷</span><div><div><strong id="pickup-weekdays-label"></strong> <span id="pickup-weekdays"></span></div><div><strong id="pickup-weekends-label"></strong> <span id="pickup-weekends"></span></div><div id="pickup-closed"></div></div></div>
     </div>
   </div>
-</section>
-
-<section class="values">
-  <div class="wrap">
-    <p class="eyebrow" id="values-eyebrow">WHAT MATTERS MOST</p>
-    <h2 id="values-heading">More than just a pretty cake.</h2>
-    <p class="values-copy" id="values-copy">Made carefully in small batches with attention to flavour, finish and the details that make your celebration feel special.</p>
-    <div class="value-card">
-      <div class="icon">♧</div>
-      <h3 id="value-card-title">Made with care</h3>
-      <p id="value-card-copy">Freshly prepared, thoughtfully decorated and made specifically for your order.</p>
-    </div>
-  </div>
-</section>
-
-<section class="gallery-section" id="gallery">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow" id="gallery-eyebrow">A LITTLE INSPIRATION</p><h2 id="gallery-heading">Recent creations.</h2><p id="gallery-copy">A selection of custom cakes made for birthdays, milestones and beautiful celebrations.</p></div>
-    <div class="gallery-grid" id="gallery-grid"></div>
-    <div class="gallery-cta"><a class="btn dark" id="gallery-button" href="https://www.instagram.com/honeybeecakesyyc/" target="_blank" rel="noopener">View more on Instagram</a></div>
-  </div>
-</section>
-
-<section class="pricing" id="pricing">
-  <div class="wrap price-card">
-    <div class="section-head"><p class="eyebrow" id="pricing-eyebrow">PLANNING YOUR CAKE</p><h2 id="pricing-heading">Sizes &amp; Servings.</h2><p id="pricing-intro">Starting prices are a guide. Final pricing depends on design, shape, decorations, fillings and other custom details.</p></div>
-    <table class="pricing-table"><thead><tr><th>Size</th><th>Approx. serves</th><th>Starts at</th></tr></thead><tbody id="pricing-body"></tbody></table>
-    <p class="pricing-note" id="pricing-note">Serving counts are estimates and may vary depending on how the cake is cut.</p>
-    <div class="pricing-cta"><a class="btn dark" id="pricing-button" href="#order">Order your cake</a></div>
-  </div>
-</section>
-
-<section class="flavours" id="flavours">
-  <div class="flavour-panel">
-    <div class="section-head"><p class="eyebrow" id="flavours-eyebrow">MAKE IT YOURS</p><h2 id="flavours-heading"><span id="flavours-title-top">Choose your</span> <span class="script" id="flavours-title-script">flavour.</span></h2><p id="flavours-copy">Choose your sponge, frosting and filling, then add a little texture if you like.</p></div>
-    <div class="flavour-columns" id="flavour-columns"></div>
-  </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow" id="reviews-eyebrow">KIND WORDS</p><h2 id="reviews-heading">Kind words from customers.</h2><p id="reviews-copy">A few lovely words shared by Honey Bee Cakes customers.</p></div>
-    <div class="review-grid" id="review-grid"></div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="wrap faq-wrap">
-    <div class="section-head"><p class="eyebrow" id="faq-eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading"><span id="faq-title-top">Good to</span> <span class="script" id="faq-title-script">know.</span></h2><p id="faq-intro">A few important details about ordering, pickup, storage and changes.</p></div>
-    <div class="faq-list" id="faq-list"></div>
-  </div>
-</section>
-
-<section class="order" id="order">
-  <div class="wrap">
-    <div class="order-head"><p class="eyebrow" id="order-eyebrow">ORDER ONLINE</p><h2 id="order-heading">Ready to order?</h2><p id="order-copy">Choose the product you want and complete the matching order form below.</p></div>
-    <div class="order-selector" id="order-selector"></div>
-    <div class="form-shell"><iframe id="order-frame" title="Honey Bee Cakes order form" loading="lazy"></iframe><div class="form-placeholder" id="form-placeholder">Choose an available order form above.</div></div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <p class="eyebrow" id="contact-eyebrow">HONEY BEE CAKES · CALGARY</p>
-    <h2 id="contact-heading">Let’s make something beautiful.</h2>
-    <p id="contact-copy">Pickup in Erlton, Calgary SW near Stampede Park.</p>
-    <div class="contact-links"><a id="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a><a id="instagram-link" href="https://www.instagram.com/honeybeecakesyyc/" target="_blank" rel="noopener">@honeybeecakesyyc</a><a id="google-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener">Google Reviews</a></div>
-  </div>
-</section>
+  <div class="order-panel"><span class="eyebrow" id="order-category-label">Order by Category</span><div class="order-buttons" id="order-buttons"></div><p style="margin:1.25rem 0 0;color:hsl(var(--cream)/.85);font-size:.875rem;line-height:1.6" id="order-note"></p><div class="order-frame-wrap"><iframe class="order-frame" id="order-frame" title="Honey Bee Cakes order form" loading="lazy"></iframe><div class="order-placeholder" id="order-placeholder">This order form is not connected yet.</div></div></div>
+</div></div></section>
 </main>
 
-<footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand" id="footer-brand">Honey Bee Cakes</div><div class="footer-small" id="footer-copyright">© 2026 Honey Bee Cakes Calgary</div></div></footer>
+<footer class="footer"><div class="container-wide"><div class="footer-grid">
+  <div class="footer-about"><div class="footer-brand">Honey Bee Cakes</div><p class="footer-copy" id="footer-copy"></p></div>
+  <nav class="footer-nav"><h4 id="footer-explore">Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">What I Make</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ & Policies</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+  <div class="footer-connect"><h4 id="footer-connect">Connect</h4><ul><li><a id="footer-email"></a></li><li><a id="footer-instagram" target="_blank" rel="noopener">Instagram</a></li><li><a id="footer-tiktok" target="_blank" rel="noopener">TikTok</a></li><li><a id="footer-facebook" target="_blank" rel="noopener">Facebook</a></li><li><a id="footer-google" target="_blank" rel="noopener">Google Business</a></li></ul></div>
+</div><div class="footer-bottom" id="footer-copyright">© 2026 Honey Bee Cakes YYC</div></div></footer>
 
 <script>
-const j=async(path,fallback)=>{try{const r=await fetch(path,{cache:"no-store"});return r.ok?await r.json():fallback}catch(e){return fallback}};
+const getJSON=async(p,f)=>{try{const r=await fetch(p,{cache:"no-store"});return r.ok?await r.json():f}catch{return f}};
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const set=(id,v)=>{const e=document.getElementById(id);if(e&&v!==undefined&&v!==null)e.textContent=v};
+const paragraphs=s=>String(s??"").split(/\n\s*\n/).filter(Boolean).map(p=>"<p>"+esc(p)+"</p>").join("");
 (async()=>{
- const [text,design,images,gallery,pricing,flavours,reviews,faq,forms]=await Promise.all([
-   j("content/text.json",{}),j("content/design.json",{}),j("content/images.json",{}),j("content/gallery.json",[]),j("content/pricing.json",[]),j("content/flavours.json",{}),j("content/reviews.json",{}),j("content/faq.json",[]),j("content/order_forms.json",[])
+ const [text,images,services,gallery,pricing,menu,reviews,faq,policies,forms]=await Promise.all([
+  getJSON("content/text.json",{}),getJSON("content/images.json",{}),getJSON("content/services.json",[]),getJSON("content/gallery.json",[]),getJSON("content/pricing.json",[]),getJSON("content/flavour_menu.json",{groups:[]}),getJSON("content/reviews.json",{items:[]}),getJSON("content/faq.json",[]),getJSON("content/policies.json",{sections:[]}),getJSON("content/order_forms.json",[])
  ]);
- if(design.color_heading)document.documentElement.style.setProperty("--ink",design.color_heading);
- if(design.color_muted)document.documentElement.style.setProperty("--muted",design.color_muted);
- if(design.color_accent)document.documentElement.style.setProperty("--rose",design.color_accent);
- if(design.bg_hero)document.documentElement.style.setProperty("--cream",design.bg_hero);
- if(design.heading_font)document.documentElement.style.setProperty("--heading",'"'+design.heading_font+'",Georgia,serif');
- if(design.body_font)document.documentElement.style.setProperty("--body",'"'+design.body_font+'",Georgia,serif');
- if(design.ui_font)document.documentElement.style.setProperty("--ui",'"'+design.ui_font+'",Arial,sans-serif');
- if(design.script_font)document.documentElement.style.setProperty("--script",'"'+design.script_font+'",cursive');
- set("brand-name",text.brand_name||"Honey Bee Cakes");set("announcement-text",text.announcement_text);
- set("nav-home",text.nav_home||"Home");set("nav-gallery",text.nav_gallery||"Cakes");set("nav-flavours",text.nav_flavours||"Menu");set("nav-contact",text.nav_contact||"Contact");set("nav-order",text.nav_order||"Order");
- set("hero-eyebrow",text.hero_eyebrow);set("hero-title-top",text.hero_title_top||"Custom cakes,");set("hero-title-script",text.hero_title_script||"made for your");set("hero-title-bottom",text.hero_title_bottom||"celebration");set("hero-copy",text.hero_subheading);set("hero-cta",text.hero_cta||"Order a cake");
- set("about-eyebrow",text.intro_eyebrow||"CUSTOM CAKES, YOUR WAY");set("about-title-top",text.intro_title_top||"Cakes with a");set("about-title-script",text.intro_title_script||"personal");set("about-title-bottom",text.intro_title_bottom||"touch.");set("about-copy-1",text.intro_copy);set("about-copy-2",text.intro_copy_2);
- set("values-eyebrow",text.values_eyebrow);set("values-heading",text.values_heading);set("values-copy",text.values_copy);set("value-card-title",text.value_card_title);set("value-card-copy",text.value_card_copy);
- set("gallery-eyebrow",text.gallery_eyebrow);set("gallery-heading",text.gallery_heading);set("gallery-copy",text.gallery_copy);set("gallery-button",text.gallery_button_text||"View more on Instagram");
- set("pricing-eyebrow",text.pricing_eyebrow);set("pricing-heading",text.pricing_heading);set("pricing-intro",text.pricing_intro);set("pricing-note",text.pricing_footnote);set("pricing-button",text.pricing_button_text||"Order your cake");
- set("flavours-eyebrow",text.flavours_eyebrow);set("flavours-title-top",text.flavours_title_top||"Choose your");set("flavours-title-script",text.flavours_title_script||"flavour.");set("flavours-copy",text.flavours_copy);
- set("reviews-eyebrow",text.reviews_eyebrow);set("reviews-heading",text.reviews_heading);set("reviews-copy",text.reviews_copy);
- set("faq-eyebrow",text.faq_eyebrow);set("faq-title-top",text.faq_title_top||"Good to");set("faq-title-script",text.faq_title_script||"know.");set("faq-intro",text.faq_intro);
- set("order-eyebrow",text.order_eyebrow);set("order-heading",text.order_heading);set("order-copy",text.order_copy);
- set("contact-eyebrow",text.contact_eyebrow);set("contact-heading",text.contact_heading);set("contact-copy",text.location);set("footer-brand",text.footer_brand||text.brand_name);set("footer-copyright",(text.footer_copyright||"© {year} Honey Bee Cakes Calgary").replace("{year}",new Date().getFullYear()));
- const hero=images.hero_image||"assets/uploads/15081.jpg";document.querySelector(".hero").style.backgroundImage='url("'+hero+'")';
- const about=images.about_image||images.hero_image||"assets/uploads/b925edf6-c69e-49e3-804e-1e5bb9ba1e97.jpg";document.getElementById("about-image").src=about;
- const flavourBg=images.flavour_background||hero;document.querySelector(".flavours").style.backgroundImage='url("'+flavourBg+'")';
- if(text.email){const a=document.getElementById("contact-email");a.textContent=text.email;a.href="mailto:"+text.email}
- if(text.instagram_url){document.getElementById("instagram-link").href=text.instagram_url} if(text.instagram_handle)set("instagram-link",text.instagram_handle);
- const gg=document.getElementById("gallery-grid");const gl=(Array.isArray(gallery)?gallery:[]).filter(x=>x&&x.image).slice(0,8);
- gg.innerHTML=gl.map(x=>'<figure class="gallery-item"><img src="'+esc(x.image)+'" alt="'+esc(x.alt||x.title||"Honey Bee Cakes custom cake")+'" loading="lazy"></figure>').join("");
- const pb=document.getElementById("pricing-body");pb.innerHTML=(Array.isArray(pricing)?pricing:[]).map(x=>'<tr><td>'+esc(x.size)+'</td><td>'+esc(x.servings)+'</td><td>'+esc(x.price)+'</td></tr>').join("");
- const groups=[flavours.sponges,flavours.frostings,flavours.fillings,flavours.add_ins].filter(Boolean);document.getElementById("flavour-columns").innerHTML=groups.map(g=>'<div class="flavour-group">'+(g.optional_label?'<div class="flavour-note">'+esc(g.optional_label)+'</div>':'')+'<h3>'+esc(g.title)+'</h3><ul>'+(Array.isArray(g.items)?g.items:[]).map(i=>'<li>'+esc(i.name)+'</li>').join("")+'</ul></div>').join("");
- const rg=document.getElementById("review-grid"), ri=Array.isArray(reviews.items)?reviews.items:[];rg.innerHTML=ri.map(x=>'<article class="review-card"><div class="stars">'+("★".repeat(Math.max(1,Math.min(5,Number(x.stars)||5))))+'</div><blockquote>“'+esc(x.text)+'”</blockquote><footer>'+esc(x.author||"Customer")+'</footer></article>').join("");if(!ri.length)rg.style.display="none";if(reviews.google_url)document.getElementById("google-link").href=reviews.google_url;
- const fq=document.getElementById("faq-list");fq.innerHTML=(Array.isArray(faq)?faq:[]).map((x,i)=>'<article class="faq-item '+(i===0?"open":"")+'"><button class="faq-q" type="button"><span>'+esc(x.question)+'</span><span class="plus">+</span></button><div class="faq-a">'+esc(x.answer)+'</div></article>').join("");fq.querySelectorAll(".faq-q").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
- const selector=document.getElementById("order-selector"),frame=document.getElementById("order-frame"),ph=document.getElementById("form-placeholder"),fs=(Array.isArray(forms)?forms:[]).filter(x=>x&&x.title);
- selector.innerHTML=fs.map((x,i)=>'<button type="button" data-i="'+i+'" '+(x.url?"":"disabled")+'>'+esc(x.title)+'</button>').join("");
- const openForm=i=>{const x=fs[i];if(!x||!x.url)return;selector.querySelectorAll("button").forEach((b,n)=>b.classList.toggle("active",n===i));frame.src=x.url;frame.style.display="block";ph.style.display="none"};
- selector.querySelectorAll("button:not(:disabled)").forEach(b=>b.addEventListener("click",()=>openForm(Number(b.dataset.i))));const first=fs.findIndex(x=>x.url);if(first>=0)openForm(first);
+ const map=["hero_heading","hero_accent","hero_copy","announcement","about_eyebrow","about_heading","about_accent","about_heading_end","about_copy_1","about_copy_2","services_eyebrow","services_heading","services_accent","services_heading_end","services_copy","portfolio_eyebrow","portfolio_heading","portfolio_accent","portfolio_heading_end","portfolio_copy","pricing_eyebrow","pricing_heading","pricing_accent","pricing_heading_end","pricing_copy","pricing_note","pricing_button","flavours_eyebrow","flavours_heading","flavours_accent","flavours_heading_end","flavours_copy","testimonials_eyebrow","testimonials_heading","testimonials_accent","testimonials_heading_end","testimonials_copy","faq_eyebrow","faq_heading","faq_accent","faq_heading_end","faq_copy","policies_eyebrow","policies_heading","policies_accent","policies_heading_end","policies_copy","contact_eyebrow","contact_heading","contact_accent","contact_heading_end","contact_copy","contact_email","contact_location","pickup_weekdays_label","pickup_weekdays","pickup_weekends_label","pickup_weekends","pickup_closed","order_category_label","order_note","footer_copy","footer_explore","footer_connect","footer_copyright"];
+ map.forEach(k=>set(k,text[k]));
+ set("hero-primary",text.hero_primary_cta);set("hero-secondary",text.hero_secondary_cta);set("portfolio-button",text.portfolio_button);
+ document.querySelectorAll("[data-nav]").forEach(a=>{const k="nav_"+a.dataset.nav;if(text[k])a.textContent=text[k]});
+ if(images.hero_image)document.getElementById("hero-image").src=images.hero_image;if(images.about_image)document.getElementById("about-image").src=images.about_image;if(images.flavour_background)document.getElementById("flavour-bg-image").src=images.flavour_background;
+ const sc=document.getElementById("services-scroller");sc.innerHTML=(Array.isArray(services)?services:[]).map((x,i)=>'<div class="slide"><article class="service-card"><div class="service-bg"><img src="'+esc(x.image||"")+'" alt=""></div><div class="service-content"><div class="service-icon">♧</div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p><button class="service-order" data-service-form="'+esc(x.form_title||"")+'">Order Inquiry →</button></div></article></div>').join("");
+ const gg=document.getElementById("portfolio-grid");gg.innerHTML=(Array.isArray(gallery)?gallery:[]).slice(0,12).map(x=>'<button class="portfolio-card" type="button"><img src="'+esc(x.image)+'" alt="'+esc(x.alt||x.title||"Custom cake")+'" loading="lazy"></button>').join("");
+ const pb=document.getElementById("portfolio-button");pb.href=text.instagram_url||"#";
+ document.getElementById("pricing-rows").innerHTML=(Array.isArray(pricing)?pricing:[]).map(x=>'<div class="pricing-row"><span class="pricing-size">'+esc(x.size)+'</span><span>'+esc(x.servings)+'</span><span class="pricing-price">'+esc(x.price)+'</span></div>').join("");
+ const fb=document.getElementById("flavour-boxes");fb.innerHTML=(menu.groups||[]).map(g=>'<section class="flavour-box"><h3>'+esc(g.title)+'</h3><ul>'+(g.items||[]).map(i=>'<li><h4>'+esc(i.name)+'</h4><p>'+esc(i.description)+'</p></li>').join("")+'</ul></section>').join("");set("flavour-note",menu.note);
+ const rs=document.getElementById("reviews-scroller");rs.innerHTML=(reviews.items||[]).map(x=>'<div class="slide"><article class="review-card"><div class="quote-mark">“</div><blockquote>“'+esc(x.text)+'”</blockquote><div class="review-author">'+esc(x.author)+'</div></article></div>').join("");
+ document.getElementById("faq-list").innerHTML=(faq||[]).map(x=>'<details><summary><span>'+esc(x.question)+'</span><span class="plus">+</span></summary><div class="details-answer">'+paragraphs(x.answer)+'</div></details>').join("");
+ document.getElementById("policies-list").innerHTML=(policies.sections||[]).map(x=>'<details><summary><span>'+esc(x.title)+'</span><span class="plus">+</span></summary><div class="details-answer">'+(x.paragraphs||[]).map(p=>"<p>"+esc(p)+"</p>").join("")+'</div></details>').join("");
+ const email=document.getElementById("email-link");email.href="mailto:"+(text.contact_email||"");document.getElementById("footer-email").href=email.href;set("footer-email",text.contact_email);
+ [["footer-instagram","instagram_url"],["footer-tiktok","tiktok_url"],["footer-facebook","facebook_url"],["footer-google","google_url"]].forEach(([id,k])=>document.getElementById(id).href=text[k]||"#");
+ const formList=Array.isArray(forms)?forms:[];const ob=document.getElementById("order-buttons"),frame=document.getElementById("order-frame"),ph=document.getElementById("order-placeholder");
+ ob.innerHTML=formList.map((x,i)=>'<button class="order-choice" type="button" data-form="'+i+'"><span>'+esc(x.title)+'</span><span>→</span></button>').join("");
+ const activate=i=>{const x=formList[i];if(!x)return;ob.querySelectorAll(".order-choice").forEach((b,n)=>b.classList.toggle("active",n===i));if(x.url){frame.src=x.url;frame.style.display="block";ph.style.display="none"}else{frame.style.display="none";ph.style.display="block"}};
+ ob.querySelectorAll(".order-choice").forEach(b=>b.addEventListener("click",()=>activate(Number(b.dataset.form))));
+ document.querySelectorAll("[data-service-form]").forEach(b=>b.addEventListener("click",()=>{const i=formList.findIndex(x=>x.title===b.dataset.serviceForm);document.getElementById("contact").scrollIntoView({behavior:"smooth"});if(i>=0)setTimeout(()=>activate(i),350)}));
+ const first=formList.findIndex(x=>x.url);if(first>=0)activate(first);
+ for(const name of ["services","reviews"]){const el=document.getElementById(name+"-scroller");const dots=document.getElementById(name+"-dots");const count=el.children.length;dots.innerHTML=Array.from({length:count},(_,i)=>'<button class="dot '+(i===0?"active":"")+'" data-i="'+i+'" aria-label="Go to slide '+(i+1)+'"></button>').join("");const go=i=>{const child=el.children[Math.max(0,Math.min(count-1,i))];if(child)el.scrollTo({left:child.offsetLeft-el.offsetLeft,behavior:"smooth"})};dots.querySelectorAll(".dot").forEach(d=>d.addEventListener("click",()=>go(Number(d.dataset.i))));el.addEventListener("scroll",()=>{let best=0,dist=Infinity;[...el.children].forEach((c,i)=>{const d=Math.abs(c.offsetLeft-el.offsetLeft-el.scrollLeft);if(d<dist){dist=d;best=i}});dots.querySelectorAll(".dot").forEach((d,i)=>d.classList.toggle("active",i===best))});}
+ document.querySelectorAll("[data-carousel]").forEach(b=>b.addEventListener("click",()=>{const el=document.getElementById(b.dataset.carousel+"-scroller");el.scrollBy({left:Number(b.dataset.dir)*el.clientWidth*.85,behavior:"smooth"})}));
 })();
-document.getElementById("mobile-toggle").addEventListener("click",()=>document.getElementById("site-header").classList.toggle("open"));
+const header=document.getElementById("site-header");const syncHeader=()=>header.classList.toggle("scrolled",scrollY>20);syncHeader();addEventListener("scroll",syncHeader,{passive:true});
+const mb=document.getElementById("menu-btn"),mp=document.getElementById("mobile-panel");mb.addEventListener("click",()=>mp.classList.toggle("open"));mp.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mp.classList.remove("open")));
 </script>
 </body>
 </html>
