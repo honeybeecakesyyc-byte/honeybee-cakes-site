@@ -49,22 +49,22 @@ content:
       - { name: intro_copy, label: "INTRO — Paragraph", type: text }
       - { name: gallery_eyebrow, label: "GALLERY — Small label", type: string }
       - { name: gallery_heading, label: "GALLERY — Heading", type: string }
-      - { name: gallery_copy, label: "GALLERY — Paragraph", type: text }
+      - { name: gallery_copy, label: "GALLERY — Paragraph", type: text }\n      - { name: gallery_button_text, label: "GALLERY — Button text", type: string }
       - { name: gallery_all_label, label: "GALLERY — All filter", type: string }
       - { name: gallery_categories, label: "GALLERY — Categories (comma separated)", type: string }
       - { name: gallery_category_labels, label: "GALLERY — Optional category display labels", type: string, description: "Keep the real category before = and the displayed label after it. Example: Floral=Floral,Kids=Kids" }
       - { name: gallery_empty_text, label: "GALLERY — Empty message", type: string }
       - { name: flavours_eyebrow, label: "FLAVOURS — Small label", type: string }
-      - { name: flavours_heading, label: "FLAVOURS — Heading", type: string }
+      - { name: flavours_heading, label: "FLAVOURS — Heading", type: string }\n      - { name: flavours_title_top, label: "FLAVOURS — Heading first part", type: string }\n      - { name: flavours_title_script, label: "FLAVOURS — Script word", type: string }
       - { name: flavours_copy, label: "FLAVOURS — Paragraph", type: text }
       - { name: pricing_eyebrow, label: "PRICE GUIDE — Small label", type: string }
       - { name: pricing_heading, label: "PRICE GUIDE — Heading", type: string }
       - { name: pricing_intro, label: "PRICE GUIDE — Paragraph", type: text }
       - { name: pricing_serves_label, label: "PRICE GUIDE — Servings label", type: string }
       - { name: pricing_price_label, label: "PRICE GUIDE — Price label", type: string }
-      - { name: pricing_footnote, label: "PRICE GUIDE — Footnote", type: text }
+      - { name: pricing_footnote, label: "PRICE GUIDE — Footnote", type: text }\n      - { name: pricing_button_text, label: "PRICE GUIDE — Button text", type: string }
       - { name: faq_eyebrow, label: "FAQ — Small label", type: string }
-      - { name: faq_heading, label: "FAQ — Heading", type: string }
+      - { name: faq_heading, label: "FAQ — Heading", type: string }\n      - { name: faq_title_top, label: "FAQ — Heading first part", type: string }\n      - { name: faq_title_script, label: "FAQ — Script word", type: string }
       - { name: faq_intro, label: "FAQ — Intro", type: text }
       - { name: faq_cta_eyebrow, label: "FAQ — CTA small label", type: string }
       - { name: faq_cta_heading, label: "FAQ — CTA heading", type: string }
