@@ -669,9 +669,202 @@ body { overflow-x: hidden; }
   .language-button .flag { font-size: 12px; margin-right: 3px; }
 }
 
+
+/* ===== TFWG-inspired boutique redesign ===== */
+:root{
+  --site-max:1180px;
+  --soft:#fbf8f4;
+  --soft-2:#f2ebe5;
+  --ink:#403733;
+  --muted:#776a65;
+  --dusty-blue:#8796b5;
+  --dusty-rose:#c58f9a;
+  --card-radius:18px;
+}
+body{background:#fffdfb;color:var(--body-color,var(--ink));font-family:var(--body-font,"DM Sans",Arial,sans-serif);font-weight:400;}
+.site-announcement{
+  min-height:34px;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:7px 20px;background:var(--heading-color,#4a403c);color:#fff;
+  font-family:var(--ui-font,"DM Sans",sans-serif);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+}
+.site-announcement:has(#announcement-text:empty){display:none;}
+.side-nav{
+  position:sticky;inset:auto;top:0;width:100%;height:76px;padding:0 clamp(22px,5vw,72px);
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:30px;
+  border:0;border-bottom:1px solid rgba(64,55,51,.12);background:rgba(251,248,244,.96);
+  backdrop-filter:blur(14px);box-shadow:0 4px 24px rgba(64,55,51,.035);z-index:70;
+}
+.side-brand{font-family:var(--heading-font,"Playfair Display",Georgia,serif);font-size:20px;letter-spacing:.035em;font-weight:500;white-space:nowrap;}
+.side-nav nav{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2.2vw,30px);margin:0;}
+.side-nav nav a{font-family:var(--ui-font,"DM Sans",sans-serif);font-size:10px;line-height:1;letter-spacing:.12em;text-transform:uppercase;font-weight:500;}
+.side-nav nav a::after{bottom:-10px;}
+.side-meta{display:none;}
+main{margin-left:0;}
+.language-switcher{top:91px;right:16px;box-shadow:none;background:rgba(255,253,251,.94);}
+
+.hero.hero-cinematic{
+  min-height:620px;height:auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);
+  border-bottom:0;background:var(--soft);overflow:visible;
+}
+.hero.hero-cinematic .hero-image-wrap{
+  position:relative;inset:auto;grid-column:2;grid-row:1;min-height:620px;background:#ddd1c8;
+  overflow:hidden;
+}
+.hero.hero-cinematic .hero-image-wrap::after{animation:none;opacity:.08;background:#2c2421;}
+.hero.hero-cinematic .hero-image{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:none;animation:none;
+}
+.hero.hero-cinematic .hero-copy{
+  grid-column:1;grid-row:1;min-height:620px;height:auto;padding:80px clamp(42px,7vw,100px);
+  align-items:flex-start;justify-content:center;text-align:left;background:var(--soft);color:var(--heading-color,var(--ink));
+}
+.hero.hero-cinematic .hero-logo-wrap{display:none;}
+.hero.hero-cinematic .eyebrow{opacity:1;animation:none;color:var(--accent-color,var(--dusty-rose));font-size:10px;margin-bottom:18px;}
+.hero.hero-cinematic h1{
+  opacity:1;transform:none;animation:none;color:inherit;font-family:var(--heading-font,"Playfair Display",serif);
+  font-size:clamp(48px,5.5vw,78px);line-height:1.02;letter-spacing:-.035em;max-width:720px;
+}
+.hero.hero-cinematic .hero-subheading{
+  opacity:1;transform:none;animation:none;color:var(--muted-color,var(--muted));
+  font-size:15px;line-height:1.75;max-width:520px;margin:24px 0 30px;
+}
+.hero.hero-cinematic .text-link,.text-link{
+  opacity:1;transform:none;animation:none;border:0;border-radius:999px;padding:13px 22px;
+  background:var(--heading-color,var(--ink));color:#fff;font-family:var(--ui-font,"DM Sans",sans-serif);
+  font-size:10px;letter-spacing:.12em;text-transform:uppercase;transition:transform .2s ease,opacity .2s ease;
+}
+.hero.hero-cinematic .text-link:hover,.text-link:hover{transform:translateY(-1px);opacity:.88;}
+
+.featured-strip{padding:28px clamp(18px,4vw,54px);background:#fffdfb;border-bottom:1px solid rgba(64,55,51,.1);}
+.featured-track{animation:none!important;width:100%;display:block;}
+.featured-group{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:0;width:100%;}
+.featured-group + .featured-group{display:none;}
+.featured-item{width:auto;height:220px;border-radius:14px;}
+.featured-item img{height:100%;object-fit:cover;}
+
+.section-pad{padding:clamp(74px,8vw,112px) clamp(24px,6vw,80px);}
+.section-heading{max-width:var(--site-max);margin:0 auto 42px;}
+.section-heading h2{font-family:var(--heading-font,"Playfair Display",serif);font-size:clamp(42px,5vw,64px);line-height:1.06;letter-spacing:-.025em;}
+.section-heading>p:last-child{font-family:var(--body-font,"DM Sans",sans-serif);font-size:14px;line-height:1.7;max-width:600px;}
+.split-heading{grid-template-columns:1fr 1fr;gap:55px;}
+.eyebrow{font-family:var(--ui-font,"DM Sans",sans-serif);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-color,var(--dusty-rose));}
+
+.pricing-section{background:#fffdfb;}
+.size-grid{max-width:var(--site-max);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;background:transparent;border:0;}
+.size-card{
+  min-height:315px;padding:26px 24px 24px;background:var(--soft-2)!important;border:1px solid rgba(64,55,51,.08);
+  border-radius:var(--card-radius);box-shadow:0 10px 30px rgba(64,55,51,.035);
+}
+.cake-illustration{height:145px;}
+.size-card h3{font-size:32px;}
+.size-details{border-top:1px solid rgba(64,55,51,.15);}
+.pricing-footnote{max-width:var(--site-max);margin:20px auto 0;font-size:11px;}
+
+.flavours-section{background:var(--soft);border:0;}
+.flavour-grid{max-width:var(--site-max);margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;border:0;}
+.builder-group,.builder-group:nth-child(odd),.builder-group:nth-child(even){
+  min-height:auto;padding:30px 30px 34px;border:1px solid rgba(64,55,51,.09);border-radius:var(--card-radius);
+  background:#fffdfb;
+}
+.builder-heading{margin-bottom:20px;}
+.builder-heading h3{font-family:var(--heading-font,"Playfair Display",serif);font-size:28px;}
+.builder-number{color:var(--accent-color,var(--dusty-rose));}
+.builder-options{margin-left:0;border-top:1px solid rgba(64,55,51,.12);}
+.builder-option{grid-template-columns:1fr auto;padding:11px 0;border-color:rgba(64,55,51,.09);}
+.builder-option strong{font-family:var(--body-font,"DM Sans",sans-serif);font-size:14px;font-weight:500;}
+
+.faq-flow{background:#fffdfb;}
+.faq-flow .faq-list{max-width:980px;margin:0 auto;border-top:1px solid rgba(64,55,51,.14);}
+.faq-question{font-family:var(--heading-font,"Playfair Display",serif);font-size:24px;padding:24px 4px;}
+.faq-answer p{font-family:var(--body-font,"DM Sans",sans-serif);font-size:14px;line-height:1.75;}
+.flow-cta{max-width:980px;margin:44px auto 0;padding:32px;border-radius:var(--card-radius);background:var(--soft);}
+.flow-cta h3{font-family:var(--heading-font,"Playfair Display",serif);font-size:36px;margin-bottom:20px;}
+
+.order-section{
+  display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:42px;
+  max-width:none;background:var(--dusty-blue)!important;color:#fff;padding-top:88px;padding-bottom:88px;
+}
+.order-copy{max-width:460px;justify-self:end;}
+.order-copy h2{font-family:var(--heading-font,"Playfair Display",serif);font-size:clamp(42px,5vw,66px);}
+.order-copy>p:not(.eyebrow){font-size:14px;line-height:1.7;}
+.order-meta{border-color:rgba(255,255,255,.28);}
+.order-form-selector{display:grid;gap:8px;margin-top:28px;}
+.order-form-button{
+  width:100%;text-align:left;border:1px solid rgba(255,255,255,.38);border-radius:12px;background:transparent;color:#fff;
+  padding:13px 15px;cursor:pointer;font-family:var(--ui-font,"DM Sans",sans-serif);font-size:11px;letter-spacing:.04em;
+}
+.order-form-button small{display:block;margin-top:3px;opacity:.72;font-size:10px;letter-spacing:0;}
+.order-form-button.active{background:#fff;color:var(--heading-color,var(--ink));border-color:#fff;}
+.order-form-button:disabled{opacity:.45;cursor:not-allowed;}
+.form-shell{max-width:760px;width:100%;min-height:680px;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(42,48,66,.18);}
+.form-shell iframe{height:760px;}
+.form-placeholder{min-height:680px;}
+
+.gallery-section{background:var(--soft);}
+.gallery-filters{max-width:var(--site-max);margin:0 auto 28px;}
+.gallery-grid{max-width:var(--site-max);margin:0 auto;columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.gallery-item{margin:0;border-radius:14px;aspect-ratio:4/5;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;}
+.gallery-overlay{opacity:1;background:linear-gradient(transparent 55%,rgba(35,29,27,.5));}
+.gallery-overlay strong{font-size:18px;}
+
+.contact-section{display:block;background:#fffdfb!important;border:0;}
+.contact-top,.contact-form-wrap,.contact-reviews{max-width:var(--site-max);margin-left:auto;margin-right:auto;}
+.contact-top{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;}
+.contact-main h2{font-family:var(--heading-font,"Playfair Display",serif);font-size:clamp(42px,5vw,64px);}
+.contact-email{font-family:var(--heading-font,"Playfair Display",serif);font-size:clamp(22px,2.5vw,34px);}
+.contact-form-wrap{margin-top:72px;padding:42px;background:var(--soft);border:1px solid rgba(64,55,51,.08);border-radius:var(--card-radius);}
+.contact-reviews{margin-top:72px;}
+.review-card{border-radius:14px;background:var(--soft);border:1px solid rgba(64,55,51,.08);}
+
+.policies-flow{background:var(--soft);}
+.policies-body{max-width:900px;background:#fffdfb;border-radius:var(--card-radius);padding:36px;border:1px solid rgba(64,55,51,.08);}
+.policies-body p:first-child{font-family:var(--body-font,"DM Sans",sans-serif);font-size:14px;line-height:1.8;}
+
+footer{padding:32px clamp(24px,6vw,80px);border-top:1px solid rgba(64,55,51,.1);background:#fffdfb!important;}
+.footer-mark{font-family:var(--heading-font,"Playfair Display",serif);}
+
+@media(max-width:980px){
+  .side-nav{display:none;}
+  .mobile-menu-button{
+    display:block;top:46px;right:14px;border:1px solid rgba(64,55,51,.14);border-radius:999px;background:#fffdfb;
+    padding:10px 13px;color:var(--heading-color,var(--ink));
+  }
+  .language-switcher{top:45px;right:78px;}
+  .hero.hero-cinematic{grid-template-columns:1fr;min-height:auto;}
+  .hero.hero-cinematic .hero-copy{grid-column:1;grid-row:1;min-height:460px;padding:72px 30px 54px;}
+  .hero.hero-cinematic .hero-image-wrap{grid-column:1;grid-row:2;min-height:58svh;}
+  .order-section{grid-template-columns:1fr;}
+  .order-copy{max-width:760px;justify-self:stretch;}
+  .form-shell{max-width:none;}
+  .contact-top{grid-template-columns:1fr;}
+}
+@media(max-width:700px){
+  .site-announcement{font-size:9px;}
+  .hero.hero-cinematic .hero-copy{min-height:430px;padding:68px 22px 46px;}
+  .hero.hero-cinematic h1{font-size:46px;}
+  .featured-strip{padding:12px;}
+  .featured-group{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .featured-item{height:180px;}
+  .featured-item:nth-child(n+7){display:none;}
+  .size-grid{grid-template-columns:1fr;}
+  .flavour-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .gallery-overlay{display:none;}
+  .section-pad{padding:64px 18px;}
+  .section-heading h2{font-size:42px;}
+  .split-heading{grid-template-columns:1fr;gap:14px;}
+  .builder-group,.builder-group:nth-child(odd),.builder-group:nth-child(even){padding:24px 20px 26px;}
+  .order-section{padding-top:64px;padding-bottom:64px;}
+  .form-shell,.form-placeholder{min-height:560px;}
+  .form-shell iframe{height:700px;}
+  .contact-form-wrap{padding:28px 20px;}
+  .policies-body{padding:26px 20px;}
+}
+
 </style>
 </head>
-<body data-build="HBC_BILINGUAL_V1">
+<body data-build="HBC_BILINGUAL_V1">\n<div class="site-announcement"><span id="announcement-text">CUSTOM CAKES IN CALGARY · PICKUP IN ERLTON</span></div>
 <button id="mobile-menu-text" class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">MENU</button>
 <aside class="side-nav" aria-label="Primary navigation">
   <a class="side-brand" href="#home" aria-label="Honey Bee Cakes home"><span id="brand-name">HONEY BEE CAKES</span></a>
@@ -704,7 +897,7 @@ body { overflow-x: hidden; }
 <section class="pricing-section section-pad" id="pricing"><div class="section-heading reveal"><p id="pricing-eyebrow" class="eyebrow">PLANNING YOUR CAKE</p><h2 id="pricing-heading">Price + size guide</h2><p id="pricing-intro">Starting prices are a guide. Final pricing depends on design detail, finish and decoration.</p></div><div id="size-grid" class="size-grid"></div><p id="pricing-footnote" class="pricing-footnote">Serving counts are estimates and can vary by cutting style.</p></section>
 <section class="flavours-section section-pad" id="flavours"><div class="section-heading split-heading reveal"><div><p id="flavours-eyebrow" class="eyebrow">THE MENU</p><h2 id="flavours-heading">Build your flavour</h2></div><p id="flavours-copy">Make it yours. Choose one sponge, one frosting and one filling, then add a little texture if you like.</p></div><div id="flavour-grid" class="flavour-grid"></div></section>
 <section class="faq-flow section-pad" id="faq"><div class="section-heading reveal"><p id="faq-eyebrow" class="eyebrow">BEFORE YOU ORDER</p><h2 id="faq-heading">Frequently asked questions</h2><p id="faq-intro">Everything you need to know about ordering, pickup, storage and allergens.</p></div><div id="faq-list" class="faq-list reveal"></div><div class="flow-cta reveal"><p id="faq-cta-eyebrow" class="eyebrow">READY?</p><h3 id="faq-cta-heading">Start your cake inquiry.</h3><a id="faq-order-link" class="text-link" href="#order"><span id="faq-cta-button">ORDER A CAKE</span> <span id="faq-cta-arrow">↗</span></a></div></section>
-<section class="order-section section-pad" id="order"><div class="order-copy reveal"><p id="order-eyebrow" class="eyebrow">START YOUR ORDER</p><h2 id="order-heading">Tell me what you’re celebrating.</h2><p id="order-copy">Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.</p><div class="order-meta"><span id="order-meta-1">Pickup near Stampede Park</span><span id="order-meta-2">Licensed home bakery</span><span id="order-meta-3">Pickup only</span></div></div><div class="form-shell reveal"><iframe id="youform-frame" title="Honey Bee Cakes order form" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="form-placeholder" class="form-placeholder"><h3 id="form-placeholder-heading">Your Youform goes here</h3><p id="form-placeholder-copy">Paste your Youform embed URL into Website text and it appears here automatically.</p></div></div></section>
+<section class="order-section section-pad" id="order"><div class="order-copy reveal"><p id="order-eyebrow" class="eyebrow">START YOUR ORDER</p><h2 id="order-heading">Tell me what you’re celebrating.</h2><p id="order-copy">Share your date, serving count, colours and inspiration. I’ll reply with availability and a quote.</p><div class="order-meta"><span id="order-meta-1">Pickup near Stampede Park</span><span id="order-meta-2">Licensed home bakery</span><span id="order-meta-3">Pickup only</span></div><div id="order-form-selector" class="order-form-selector" aria-label="Choose an order form"></div></div><div class="form-shell reveal"><iframe id="youform-frame" title="Honey Bee Cakes order form" loading="lazy" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><div id="form-placeholder" class="form-placeholder"><h3 id="form-placeholder-heading">Your Youform goes here</h3><p id="form-placeholder-copy">Paste your Youform embed URL into Website text and it appears here automatically.</p></div></div></section>
 <section class="gallery-section section-pad" id="gallery"><div class="section-heading reveal"><p id="gallery-eyebrow" class="eyebrow"></p><h2 id="gallery-heading">Gallery</h2><p id="gallery-copy"></p></div><div id="gallery-filters" class="gallery-filters reveal" aria-label="Gallery filters"></div><div id="gallery-grid" class="gallery-grid"></div></section>
 <section class="contact-section section-pad" id="contact"><div class="contact-top"><div class="contact-main reveal"><p id="contact-eyebrow" class="eyebrow">CONTACT</p><h2 id="contact-heading">Let’s make something beautiful.</h2><a id="contact-email" class="contact-email" href="mailto:hello@honeybeecakesyyc.ca">hello@honeybeecakesyyc.ca</a></div><div class="contact-details reveal"><div><span id="contact-location-label">LOCATION</span><p id="contact-location">Stampede Park · Calgary, AB</p></div><div><span id="contact-instagram-label">INSTAGRAM</span><p><a id="instagram-link" href="#">@honeybeecakesyyc</a></p></div><div><span id="contact-google-label">GOOGLE</span><p class="contact-google-line"><a id="google-reviews-link" href="https://share.google/7Y7cGbQnAvDyhmbJb" target="_blank" rel="noopener"><span id="reviews-button-text">SEE GOOGLE REVIEWS</span> <span id="reviews-button-arrow">↗</span></a></p></div><div><span id="contact-orders-label">ORDERS</span><p id="contact-orders">By inquiry · Pickup only</p></div></div></div><div class="contact-form-wrap reveal" id="contact-form-wrap"><div class="contact-form-head"><div><p id="contact-form-eyebrow" class="eyebrow">SEND A MESSAGE</p><h3 id="contact-form-heading">Have a question?</h3></div><div class="contact-form-note"><p id="contact-form-note">For cake orders, please use the Order form so I have all the details I need.</p><a id="contact-form-order-link" href="#order">GO TO ORDER FORM ↗</a></div></div><form id="contact-form" class="contact-form" action="https://formspree.io/f/xyeyqpjn" method="POST"><div class="contact-field"><label id="contact-form-name-label" for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="contact-field"><label id="contact-form-email-label" for="contact-form-email">Email</label><input id="contact-form-email" name="email" type="email" autocomplete="email" required></div><div class="contact-field full"><label id="contact-form-topic-label" for="contact-topic">Topic</label><select id="contact-topic" name="topic" required><option value="General question">General question</option><option value="Existing order">Existing order</option><option value="Collaboration">Collaboration</option><option value="Other">Other</option></select></div><div class="contact-field full"><label id="contact-form-message-label" for="contact-message">Message</label><textarea id="contact-message" name="message" required></textarea></div><input id="contact-form-subject" type="hidden" name="_subject" value="Honey Bee Cakes website message"><div class="contact-form-actions"><button id="contact-form-submit" class="contact-submit" type="submit">SEND MESSAGE</button><p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p></div></form></div><div class="contact-reviews"><div class="contact-reviews-head reveal"><div><p id="contact-reviews-eyebrow" class="eyebrow">KIND WORDS</p><h2 id="contact-reviews-heading">Google reviews</h2></div><div><p id="contact-reviews-copy">Read what customers have shared about their Honey Bee Cakes orders.</p><div id="reviews-summary" class="reviews-summary" hidden><strong id="reviews-rating"></strong><span id="reviews-count"></span></div></div></div><div id="contact-reviews-grid" class="contact-reviews-grid"></div></div></section>
 <section class="policies-flow section-pad" id="policies"><div class="section-heading reveal"><p id="policies-eyebrow" class="eyebrow">HONEY BEE CAKES</p><h2 id="policies-title">Policies</h2><p id="policies-intro">Please review these policies before placing your order.</p></div><div id="policies-body" class="policies-body reveal"></div><div class="flow-cta reveal"><p id="policies-cta-eyebrow" class="eyebrow">QUESTIONS?</p><h3 id="policies-cta-heading">Get in touch before ordering.</h3><a id="policies-contact-link" class="text-link" href="#contact"><span id="policies-cta-button">CONTACT</span> <span id="policies-cta-arrow">↗</span></a></div></section>
@@ -714,7 +907,7 @@ body { overflow-x: hidden; }
 <script>
 const DATA = {
   legacySite: 'content/site.json', text: 'content/text.json', textHu: 'content/text_hu.json', design: 'content/design.json', images: 'content/images.json',
-  gallery: 'content/gallery.json', reviews: 'content/reviews.json', flavours: 'content/flavours.json', flavoursHu: 'content/flavours_hu.json',
+  gallery: 'content/gallery.json', reviews: 'content/reviews.json', orderForms: 'content/order_forms.json', flavours: 'content/flavours.json', flavoursHu: 'content/flavours_hu.json',
   pricing: 'content/pricing.json', faq: 'content/faq.json', faqHu: 'content/faq_hu.json', policies: 'content/policies.json', policiesHu: 'content/policies_hu.json'
 };
 
@@ -868,6 +1061,30 @@ function renderGallery(items=[],site={}){
   draw(allLabel); filters.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{filters.querySelectorAll('button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');draw(btn.dataset.filter);}));
 }
 
+function renderOrderForms(items=[],site={}){
+  const selector=qs('#order-form-selector'), frame=qs('#youform-frame'), placeholder=qs('#form-placeholder');
+  if(!selector||!frame) return;
+  const forms=(Array.isArray(items)?items:[]).filter(x=>x&&x.title);
+  const fallback=String(site.youform_embed_url||'').trim();
+  if(!forms.length){
+    selector.innerHTML='';
+    if(fallback){ frame.src=fallback; frame.style.display='block'; placeholder?.remove(); }
+    return;
+  }
+  selector.innerHTML=forms.map((item,i)=>{
+    const valid=String(item.url||'').trim();
+    return `<button type="button" class="order-form-button" data-index="${i}" ${valid?'':'disabled'}><span>${escapeHTML(item.title||'Order')}</span>${item.description?`<small>${escapeHTML(item.description)}</small>`:''}</button>`;
+  }).join('');
+  const activate=(index)=>{
+    const item=forms[index]; if(!item||!String(item.url||'').trim()) return;
+    selector.querySelectorAll('.order-form-button').forEach((b,i)=>b.classList.toggle('active',i===index));
+    frame.src=String(item.url).trim(); frame.style.display='block'; placeholder?.remove();
+  };
+  selector.querySelectorAll('.order-form-button:not(:disabled)').forEach(btn=>btn.addEventListener('click',()=>activate(Number(btn.dataset.index))));
+  const first=forms.findIndex(x=>String(x.url||'').trim());
+  if(first>=0) activate(first); else if(fallback){ frame.src=fallback; frame.style.display='block'; placeholder?.remove(); }
+}
+
 function renderReviews(data={},site={}){
   const grid=qs('#contact-reviews-grid'); if(!grid) return; const items=Array.isArray(data.items)?data.items:[];
   const link=qs('#google-reviews-link'); if(link && data.google_url) link.href=data.google_url;
@@ -920,9 +1137,9 @@ function initLightbox(){ const d=qs('#lightbox');if(!d)return;qs('.lightbox-clos
 
 (async function init(){
   initMobileNav(); initLightbox();
-  const [legacySite,text,textHu,design,images,gallery,reviews,flavours,flavoursHu,pricing,faq,faqHu,policies,policiesHu]=await Promise.all([
+  const [legacySite,text,textHu,design,images,gallery,reviews,orderForms,flavours,flavoursHu,pricing,faq,faqHu,policies,policiesHu]=await Promise.all([
     getJSON(DATA.legacySite,{}),getJSON(DATA.text,{}),getJSON(DATA.textHu,{}),getJSON(DATA.design,{}),getJSON(DATA.images,{}),
-    getJSON(DATA.gallery,[]),getJSON(DATA.reviews,{}),getJSON(DATA.flavours,{}),getJSON(DATA.flavoursHu,{}),getJSON(DATA.pricing,[]),
+    getJSON(DATA.gallery,[]),getJSON(DATA.reviews,{}),getJSON(DATA.orderForms,[]),getJSON(DATA.flavours,{}),getJSON(DATA.flavoursHu,{}),getJSON(DATA.pricing,[]),
     getJSON(DATA.faq,[]),getJSON(DATA.faqHu,[]),getJSON(DATA.policies,{}),getJSON(DATA.policiesHu,{})
   ]);
   const englishSite=mergeSite(legacySite,text,design,images);
@@ -940,7 +1157,7 @@ function initLightbox(){ const d=qs('#lightbox');if(!d)return;qs('.lightbox-clos
     try { localStorage.setItem('hbc_language',chosen); } catch(e){}
     const u=new URL(location.href); u.searchParams.set('lang',chosen); history.replaceState(null,'',u.pathname+u.search+u.hash);
     qsa('[data-language]').forEach(btn=>btn.setAttribute('aria-pressed',btn.dataset.language===chosen?'true':'false'));
-    renderSite(pack.site); renderFeatured(gallery); renderGallery(gallery,pack.site); renderReviews(reviews,pack.site); renderFlavours(pack.flavours); renderPricing(pricing,pack.site); renderFAQ(pack.faq); renderPolicies(pack.policies); initContactForm(pack.site); initReveal();
+    renderSite(pack.site); renderFeatured(gallery); renderGallery(gallery,pack.site); renderReviews(reviews,pack.site); renderOrderForms(orderForms,pack.site); renderFlavours(pack.flavours); renderPricing(pricing,pack.site); renderFAQ(pack.faq); renderPolicies(pack.policies); initContactForm(pack.site); initReveal();
   }
 
   qsa('[data-language]').forEach(btn=>btn.addEventListener('click',()=>renderLanguage(btn.dataset.language)));
