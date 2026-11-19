@@ -1,9 +1,8 @@
 {
-  "logo_alt": "Honey Bee Cakes Calgary",
-  "hero_image": "assets/uploads/15081.jpg",
-  "hero_image_alt": "Honey Bee Cakes featured cake",
-  "about_image": "assets/uploads/b925edf6-c69e-49e3-804e-1e5bb9ba1e97.jpg",
+  "hero_image": "/assets/uploads/2f88f55f-cb25-4e0a-83d4-69882c3e6a43.jpg",
+  "hero_image_alt": "Honey Bee Cakes custom cake",
+  "about_image": "/assets/uploads/b925edf6-c69e-49e3-804e-1e5bb9ba1e97.jpg",
   "about_image_alt": "Honey Bee Cakes custom cake",
-  "flavour_background": "assets/uploads/15081.jpg",
+  "flavour_background": "/assets/uploads/04cfe66f-8127-46d0-a797-72494efcafa8.jpg",
   "flavour_background_alt": "Honey Bee Cakes cake detail"
 }
