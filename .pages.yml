@@ -15,6 +15,7 @@ content:
     operations: { delete: false }
     fields:
       - { name: brand_name, label: "NAV — Brand name", type: string }
+      - { name: announcement_text, label: "HOME — Announcement bar", type: string }
       - { name: mobile_menu_text, label: "NAV — Mobile menu button", type: string }
       - { name: nav_home, label: "NAV — Home", type: string }
       - { name: nav_gallery, label: "NAV — Gallery", type: string }

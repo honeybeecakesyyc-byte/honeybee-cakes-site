@@ -1,9 +1,30 @@
 [
-  {"question":"Where is pickup?","answer":"Pickup is in Erlton, Calgary SW, near Stampede Park. The exact pickup address is provided with your order details."},
-  {"question":"Do you offer delivery?","answer":"Honey Bee Cakes is pickup only at this time."},
-  {"question":"How do I order?","answer":"Submit the order form with your date, serving count and design ideas. Availability and a quote are confirmed before your deposit is due."},
-  {"question":"How much is the deposit?","answer":"A 50% deposit is required to secure your booking. The remaining balance is due at pickup."},
-  {"question":"Can you accommodate allergies?","answer":"The home kitchen handles common allergens including eggs, dairy, gluten and nuts, so cross-contact is possible. Cakes are not suitable for severe allergies."},
-  {"question":"How should I store my cake?","answer":"Keep buttercream cakes refrigerated and remove them approximately 1–2 hours before serving, unless your order instructions say otherwise."},
-  {"question":"Can I change my design after booking?","answer":"Changes are generally accepted when requested at least 3 days before pickup, subject to ingredient and decoration availability."}
+  {
+    "question": "How much do cakes cost, and what sizes and flavours are available?",
+    "answer": "Pricing depends on the cake size, design and selected extras. Current starting prices, size and serving guides, and flavour options are available on the website. Pricing is firm and discounts are not offered."
+  },
+  {
+    "question": "How do I reserve my date?",
+    "answer": "A 50% deposit is required within 24 hours to reserve your date. Until the deposit is received, your spot is not guaranteed. The remaining balance is due at pickup."
+  },
+  {
+    "question": "Can I change, reschedule or cancel my order?",
+    "answer": "Changes, rescheduling or cancellations must be requested at least 4 days before pickup. If you cancel more than 4 days before pickup, your deposit will be refunded. If you cancel within 4 days of pickup, the deposit is normally non-refundable, although a refund may be considered in rare and exceptional circumstances. A change of plans does not automatically qualify for a refund."
+  },
+  {
+    "question": "Where and when is pickup?",
+    "answer": "Pickup is in Erlton, Calgary SW near Stampede Park. Delivery is not available. Pickup is Wed–Fri between 11am–1pm and 4–6pm, and Sat–Sun between 10am–1pm."
+  },
+  {
+    "question": "What happens if I miss my pickup?",
+    "answer": "Please plan pickup in advance, as availability outside the scheduled window cannot be guaranteed. Cakes not picked up on the original date are kept for a maximum of 2 days and are then discarded."
+  },
+  {
+    "question": "Do you accommodate allergies or dietary restrictions?",
+    "answer": "All products are prepared in a home kitchen that handles common allergens including eggs, dairy, gluten, nuts, honey, berries, cinnamon and others. Cross-contact may occur, so products are not intended for individuals with severe allergies. Please disclose dietary requirements when ordering."
+  },
+  {
+    "question": "How should I store and transport my cake?",
+    "answer": "Keep the cake flat, refrigerated and away from heat or direct sunlight. For best texture, remove it from the refrigerator approximately 1–3 hours before serving, as buttercream is firm when cold."
+  }
 ]
